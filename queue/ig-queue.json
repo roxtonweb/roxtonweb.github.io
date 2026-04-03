@@ -8,8 +8,9 @@
     "score": 9,
     "variant": "detail-A",
     "dm": "Saw JD's Auto Detailing's work — looks legit. One question: can customers book you online or is it all calls/DMs? I build booking pages for detailers — one page, live in 24 hrs.",
-    "status": "PENDING",
-    "added": "2026-04-03"
+    "status": "SENT",
+    "added": "2026-04-03",
+    "sent_at": "2026-04-03T16:15:00"
   },
   {
     "username": "@blackposhmobilewash",
@@ -168,7 +169,7 @@
     "added": "2026-04-03"
   },
   {
-    "username": "@elevatedlawncarefl",
+    "username": "@elevatedlawncaref",
     "business_name": "Elevated Lawn Care",
     "niche": "lawn_care",
     "city": "Tampa, FL",
