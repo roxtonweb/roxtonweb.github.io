@@ -37,8 +37,10 @@ _Needs 3+ sends per variant to calculate._
 ## Recommendation
 _Will populate automatically once replies come in._
 
+⚠️ **Action needed:** Outreach DMs are now 5–7 days old with 0 replies. Consider sending follow-up DMs to the 13 leads. A brief, low-pressure follow-up ("Hey — just wanted to bump this in case it got buried. Happy to send a free mockup if you're open to it!") sent at day 7 typically recovers 10–15% of cold leads. Schedule follow-ups for ~2026-04-05 to ~2026-04-07.
+
 ## Inbox Observation — 2026-04-02
-13 business outreach DMs visible, all sent 4–5 days ago, all unanswered so far. Variants observed in the wild:
+13 business outreach DMs visible, all sent 4–6 days ago, all unanswered so far. Variants observed in the wild:
 - **"Do you have a website? I build them for detailers…"** (simple direct ask) — used on PRESTIGE DETAILS LLC, Fernando's, Vizion One, Dortch's, washedbyjavv
 - **"Free mockup, no commitment"** angle — used on TaelynnMadeDetailingLLC
 - **"[X] reviews is no joke… can they book without calling?"** (social proof + booking pain) — used on SlickWhips, High Voltage
@@ -71,4 +73,36 @@ NOTES:
 - Outreach is going out but zero engagement so far — normal for day 4-5 window.
 - Next check should watch for late replies; consider follow-up DMs if still silent at 7 days.
 - Fix Make.com token auth before variant tracking can go live.
+```
+
+---
+
+### RUN LOG — 2026-04-03 ~11:00 UTC — account: @Roxtonn
+```
+IG REPLY CHECK — 2026-04-03 — account: @Roxtonn
+Sent accounts checked: 13 (all from inbox observation; ig-queue.json is empty)
+Replies found: 0
+  INTERESTED:   0
+  OBJECTION:    0
+  UNSUBSCRIBE:  0
+  VAGUE:        0
+  NO_REPLY:     13
+
+Tabs checked: Primary (13 business + 2 personal), General (personal only), Requests (0 pending)
+Personal unreads skipped: sausage party insta (4 msgs), Mary Sunshine (2 msgs)
+GitHub queue updated: ⚠️ skipped — queue is empty, no records to update
+Analytics → GitHub: ✅ yes
+
+NOTES:
+- All 13 business leads (PRESTIGE DETAILS LLC, Fernando's Pro Car Cleaning,
+  Vizion One Detail, Dortch's Auto-Detailing, washedbyjavv,
+  TaelynnMadeDetailingLLC, SlickWhipsDetailing, High Voltage Detailing,
+  ALMILA MOBILE DETAILING, Bespoke Premium Detailing, Sir Mickens Inc.,
+  South Side Detailing, Elite Clean PW) remain silent.
+- DMs are now 5–6 days old (sent ~2026-03-28 to 2026-03-30).
+- No message requests, no General-tab business replies.
+- ACTION: Send follow-up DMs around 2026-04-05 to 2026-04-07 (day 7–8).
+- ig-queue.json remains [] — no formal queue tracking active yet.
+  Recommend pushing sent leads into queue via Make.com or manual entry
+  so reply tracking becomes fully automated.
 ```
