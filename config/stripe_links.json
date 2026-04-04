@@ -1,0 +1,17 @@
+{
+  "starter": {
+    "price": 399,
+    "label": "Starter — 1 page",
+    "url": "https://buy.stripe.com/fZu3cua5be945IL3zV3VC06"
+  },
+  "standard": {
+    "price": 599,
+    "label": "Standard — 2-3 pages",
+    "url": "https://buy.stripe.com/00w8wO5OV8OK4EH9Yj3VC07"
+  },
+  "pro": {
+    "price": 899,
+    "label": "Pro — 4-5 pages",
+    "url": "https://buy.stripe.com/6oU00i917ghcfjl2vR3VC08"
+  }
+}
