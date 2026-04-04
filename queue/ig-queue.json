@@ -10,7 +10,11 @@
     "dm": "Quick question, if someone finds your work tonight and wants to book you, where do they go? I build simple booking pages for detailers, live in 24 hours. I could put a free mockup together within the day if you wanted.",
     "status": "SENT",
     "added": "2026-04-03",
-    "sent_at": "2026-04-03T16:15:00"
+    "sent_at": "2026-04-03T16:15:00",
+    "replied": "yes",
+    "reply_text": "Hi, thanks for choosing JD's Auto Detailing! We've received your message, and we'll get back to you as soon as we can. Thank you!",
+    "outcome": "VAGUE",
+    "auto_replied": true
   },
   {
     "username": "@blackposhmobilewash",
