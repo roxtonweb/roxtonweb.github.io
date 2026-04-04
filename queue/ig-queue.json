@@ -147,8 +147,9 @@
     "score": 9,
     "variant": "wash-B",
     "dm": "Random question, how do you handle people who want pricing fast but don't want to wait on a DM? I build quote pages for pressure washing businesses. I could build you a free preview today if you wanted to see it.",
-    "status": "PENDING",
-    "added": "2026-04-03"
+    "status": "SENT",
+    "added": "2026-04-03",
+    "sent_at": "2026-04-03T17:16:00"
   },
   {
     "username": "@lillespristineclean",
@@ -159,8 +160,9 @@
     "score": 9,
     "variant": "wash-C",
     "dm": "Honest question, if someone wants a quote Sunday night after seeing your work, what do they do? I build pages for washing companies that collect quote requests 24/7. I could put a free mockup together within the day if you wanted.",
-    "status": "PENDING",
-    "added": "2026-04-03"
+    "status": "SENT",
+    "added": "2026-04-03",
+    "sent_at": "2026-04-03T17:20:00"
   },
   {
     "username": "@juajuacleaning",
@@ -195,8 +197,9 @@
     "score": 9,
     "variant": "lawn-B",
     "dm": "Random question, where do people go when they want an estimate and don't want to wait on a DM? I build quote pages for lawn companies. I could build you a free preview today if you wanted to see it.",
-    "status": "PENDING",
-    "added": "2026-04-03"
+    "status": "SENT",
+    "added": "2026-04-03",
+    "sent_at": "2026-04-03T17:22:00"
   },
   {
     "username": "@hensleymowing",
@@ -207,8 +210,9 @@
     "score": 9,
     "variant": "lawn-C",
     "dm": "Honest question, how many people see your page, like what they see, and just bounce because there's no clear way to book? I fix that for lawn companies. I could have a free mockup ready within the day if you wanted.",
-    "status": "PENDING",
-    "added": "2026-04-03"
+    "status": "SENT",
+    "added": "2026-04-03",
+    "sent_at": "2026-04-03T17:25:00"
   },
   {
     "username": "@sagelawncarenashville",
@@ -219,8 +223,9 @@
     "score": 9,
     "variant": "lawn-A",
     "dm": "Quick question, if someone wants lawn service and finds your page tonight, where do they book? I build simple sites for lawn companies, live in 24 hours. I could put a free mockup together within the day if you wanted.",
-    "status": "PENDING",
-    "added": "2026-04-03"
+    "status": "SENT",
+    "added": "2026-04-03",
+    "sent_at": "2026-04-03T17:27:00"
   },
   {
     "username": "@bryanlawncare",
@@ -231,8 +236,9 @@
     "score": 9,
     "variant": "lawn-B",
     "dm": "Random question, where do people go when they want an estimate and don't want to wait on a DM? I build quote pages for lawn companies. I could build you a free preview today if you wanted to see it.",
-    "status": "PENDING",
-    "added": "2026-04-03"
+    "status": "SENT",
+    "added": "2026-04-03",
+    "sent_at": "2026-04-03T17:29:00"
   },
   {
     "username": "@wright_brothers_landscaping",
