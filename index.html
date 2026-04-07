@@ -3,514 +3,570 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roxton Web — Websites That Win Clients</title>
-<meta name="description" content="We build high-converting websites for local service businesses. Auto detailers, med spas, pressure washers, lawn care, junk removal. Starts at $399.">
+<title>Roxton Web — Websites for Local Service Businesses</title>
+<meta name="description" content="We build fast, clean websites for auto detailers, med spas, pressure washers, lawn care, and junk removal companies in Las Vegas, Henderson, and Phoenix. Starting at $399.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #07080f;
-    --bg2: #0d0f1a;
-    --bg3: #111527;
-    --accent: #4f6ef7;
-    --accent2: #7c3aed;
-    --accent-glow: rgba(79,110,247,0.35);
-    --text: #f0f2ff;
-    --text-muted: #8b92b8;
-    --border: rgba(255,255,255,0.07);
-    --card: rgba(255,255,255,0.04);
-    --card-hover: rgba(255,255,255,0.08);
-    --radius: 12px;
-    --radius-lg: 20px;
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;font-size:16px}
-  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:#0a0a0a;color:#f0ece6;
+  line-height:1.65;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
 
-  body::before{
-    content:'';position:fixed;inset:0;
-    background:
-      radial-gradient(ellipse 80% 60% at 20% -10%, rgba(79,110,247,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 100%, rgba(124,58,237,0.10) 0%, transparent 60%);
-    pointer-events:none;z-index:0;
-  }
+/* ── Tokens ── */
+:root{
+  --bg:#0a0a0a;--bg2:#111111;--bg3:#181818;
+  --text:#f0ece6;--muted:#7a756d;--muted2:#4a4642;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --accent:#4f6ef7;--accent-bg:rgba(79,110,247,0.10);
+  --radius:8px;--max:1160px;
+}
 
-  .reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease}
-  .reveal.visible{opacity:1;transform:translateY(0)}
-  .delay-1{transition-delay:0.1s}.delay-2{transition-delay:0.2s}.delay-3{transition-delay:0.3s}
-  .delay-4{transition-delay:0.4s}.delay-5{transition-delay:0.5s}.delay-6{transition-delay:0.6s}
+/* ── Utility ── */
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+.fade-in{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.fade-in.visible{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}
+.d3{transition-delay:.24s}.d4{transition-delay:.32s}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:background 0.3s,backdrop-filter 0.3s}
-  nav.scrolled{background:rgba(7,8,15,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-size:1.2rem;font-weight:800;letter-spacing:-0.5px;color:var(--text);text-decoration:none}
-  .logo span{color:var(--accent)}
-  .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
-  .nav-links a:hover{color:var(--text)}
-  .nav-cta{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:9999px;font-size:0.875rem;font-weight:700;cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 20px rgba(79,110,247,0.4)}
-  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 24px rgba(79,110,247,0.55)}
-  .menu-btn{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:4px}
-  .mobile-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:32px}
-  .mobile-menu.open{display:flex}
-  .mobile-menu a{font-size:1.5rem;font-weight:700;color:var(--text);text-decoration:none}
-  .mobile-menu .nav-cta{font-size:1rem;padding:14px 32px}
+/* ── Nav ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:0 24px;transition:background .25s,border-color .25s;
+}
+nav.scrolled{
+  background:rgba(10,10,10,0.94);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;height:60px;
+}
+.logo{font-weight:700;font-size:1.05rem;letter-spacing:-.3px;color:var(--text)}
+.logo em{font-style:normal;color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  background:var(--accent);color:#fff;border:none;
+  padding:9px 20px;border-radius:var(--radius);
+  font-size:.875rem;font-weight:600;
+  transition:opacity .15s,transform .15s;
+}
+.nav-cta:hover{opacity:.88;transform:translateY(-1px)}
+.hamburger{
+  display:none;background:none;border:none;color:var(--text);
+  padding:4px;flex-direction:column;gap:5px;
+}
+.hamburger span{
+  display:block;width:22px;height:1.5px;background:currentColor;
+  transition:transform .2s,opacity .2s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-nav{
+  display:none;position:fixed;inset:0;top:60px;
+  background:var(--bg);z-index:199;
+  padding:32px 24px;flex-direction:column;gap:8px;
+  border-top:1px solid var(--border);
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  font-size:1.1rem;font-weight:600;color:var(--text);
+  padding:14px 0;border-bottom:1px solid var(--border);
+}
+.mobile-nav .nav-cta{margin-top:16px;text-align:center;display:block;padding:14px}
 
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 24px 80px;overflow:hidden}
-  .hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(79,110,247,0.12);border:1px solid rgba(79,110,247,0.3);border-radius:9999px;padding:6px 16px;margin-bottom:32px;font-size:0.8rem;font-weight:600;color:var(--accent);animation:fadeInDown 0.8s ease forwards}
-  .hero-badge .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse-dot 2s ease infinite}
-  @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
-  @keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+/* ── Hero ── */
+.hero{padding:140px 24px 96px;max-width:var(--max);margin:0 auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.78rem;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:28px;
+}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--muted2)}
+.hero h1{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(3rem,6.5vw,5rem);font-weight:400;
+  line-height:1.08;letter-spacing:-.025em;
+  color:var(--text);max-width:800px;margin-bottom:28px;
+}
+.hero h1 em{font-style:italic;color:var(--muted)}
+.hero-sub{
+  font-size:1.08rem;color:var(--muted);
+  max-width:500px;line-height:1.72;margin-bottom:44px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:64px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:var(--radius);
+  font-size:.95rem;font-weight:600;border:none;
+  transition:opacity .15s,transform .15s;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-ghost{
+  background:none;color:var(--muted);
+  border:1px solid var(--border2);
+  transition:color .15s,border-color .15s;
+}
+.btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,.22)}
+.hero-trust{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding-top:32px;border-top:1px solid var(--border);
+}
+.trust-label{
+  font-size:.78rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted2);
+}
+.niche-tags{display:flex;gap:8px;flex-wrap:wrap}
+.niche-tag{
+  font-size:.78rem;font-weight:500;color:var(--muted);
+  padding:5px 12px;border-radius:4px;
+  border:1px solid var(--border);background:var(--bg2);
+}
 
-  .hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;animation:fadeInUp 0.9s 0.1s ease both}
-  @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-  .hero h1 .gradient{background:linear-gradient(135deg,#4f6ef7 0%,#a78bfa 50%,#60a5fa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:gradientShift 4s ease infinite alternate}
-  @keyframes gradientShift{0%{background-position:0%}100%{background-position:100%}}
+/* ── Strip ── */
+.strip{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:18px 0;overflow:hidden;background:var(--bg2);
+}
+.strip-track{
+  display:flex;gap:48px;width:max-content;
+  animation:marquee 24s linear infinite;
+}
+.strip-track:hover{animation-play-state:paused}
+.strip-item{
+  font-size:.82rem;font-weight:500;color:var(--muted);
+  white-space:nowrap;display:flex;align-items:center;gap:12px;
+}
+.strip-item::after{content:'·';color:var(--muted2)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-  .hero-sub{font-size:1.2rem;color:var(--text-muted);max-width:560px;margin-bottom:40px;animation:fadeInUp 0.9s 0.2s ease both;line-height:1.7}
-  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;animation:fadeInUp 0.9s 0.3s ease both}
-  .btn-primary{background:var(--accent);color:#fff;padding:16px 32px;border-radius:9999px;font-weight:700;font-size:1rem;text-decoration:none;border:none;cursor:pointer;box-shadow:0 0 32px rgba(79,110,247,0.5);transition:transform 0.2s,box-shadow 0.2s;display:inline-flex;align-items:center;gap:8px}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(79,110,247,0.65)}
-  .btn-secondary{background:transparent;color:var(--text);padding:16px 32px;border-radius:9999px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid var(--border);cursor:pointer;transition:border-color 0.2s,background 0.2s;display:inline-flex;align-items:center;gap:8px}
-  .btn-secondary:hover{border-color:rgba(79,110,247,0.5);background:rgba(79,110,247,0.06)}
+/* ── Section ── */
+section{padding:96px 0}
+.section-label{
+  font-size:.76rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted2);
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;
+}
+.section-label::after{content:'';width:36px;height:1px;background:var(--muted2)}
+h2{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(1.9rem,4vw,3rem);font-weight:400;
+  line-height:1.1;letter-spacing:-.02em;
+  color:var(--text);margin-bottom:18px;
+}
+h2 em{font-style:italic;color:var(--muted)}
+.section-sub{
+  font-size:1rem;color:var(--muted);max-width:460px;
+  line-height:1.72;margin-bottom:56px;
+}
 
-  .hero-trust{margin-top:60px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;animation:fadeInUp 0.9s 0.4s ease both}
-  .hero-trust-item{display:flex;align-items:center;gap:8px;font-size:0.875rem;color:var(--text-muted)}
-  .hero-trust-item svg{color:var(--accent)}
-  .hero-divider{width:1px;height:20px;background:var(--border)}
+/* ── Why ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.why-list{list-style:none;margin-top:40px}
+.why-list li{
+  padding:22px 0;border-bottom:1px solid var(--border);
+  display:flex;gap:18px;align-items:flex-start;
+}
+.why-list li:first-child{border-top:1px solid var(--border)}
+.why-num{
+  font-size:.75rem;font-weight:700;color:var(--muted2);
+  padding-top:3px;flex-shrink:0;width:18px;
+}
+.why-text strong{
+  display:block;font-size:.925rem;font-weight:600;
+  color:var(--text);margin-bottom:5px;
+}
+.why-text p{font-size:.86rem;color:var(--muted);line-height:1.65}
+.proof-box{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:12px;padding:36px;
+  position:sticky;top:80px;
+}
+.proof-quote{
+  font-family:'Instrument Serif',serif;font-style:italic;
+  font-size:1.25rem;line-height:1.55;color:var(--text);margin-bottom:24px;
+}
+.proof-meta{font-size:.82rem;color:var(--muted)}
+.proof-meta strong{color:var(--text);display:block;margin-bottom:2px}
 
-  .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:floatOrb 8s ease-in-out infinite}
-  .orb1{width:500px;height:500px;background:rgba(79,110,247,0.08);top:-100px;right:-100px;animation-delay:0s}
-  .orb2{width:350px;height:350px;background:rgba(124,58,237,0.08);bottom:0;left:-100px;animation-delay:3s}
-  @keyframes floatOrb{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-20px)}}
+/* ── Pricing ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:12px;padding:32px;
+  display:flex;flex-direction:column;
+  transition:border-color .2s;
+}
+.plan:hover{border-color:var(--border2)}
+.plan.featured{
+  background:var(--bg2);border-color:rgba(79,110,247,.35);
+}
+.plan-badge{
+  font-size:.72rem;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:20px;
+}
+.plan-name{
+  font-size:.78rem;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;
+}
+.plan-price{
+  font-family:'Instrument Serif',serif;
+  font-size:3rem;line-height:1;letter-spacing:-.02em;
+  color:var(--text);margin-bottom:4px;
+}
+.plan-price sup{
+  font-family:'DM Sans',sans-serif;
+  font-size:1.1rem;vertical-align:.65em;font-weight:600;
+}
+.plan-freq{font-size:.82rem;color:var(--muted);margin-bottom:28px}
+.plan-divider{height:1px;background:var(--border);margin-bottom:24px}
+.plan-features{list-style:none;flex:1;margin-bottom:28px}
+.plan-features li{
+  font-size:.86rem;color:var(--muted);padding:9px 0;
+  border-bottom:1px solid var(--border);
+  display:flex;gap:10px;align-items:flex-start;line-height:1.5;
+}
+.plan-features li:last-child{border-bottom:none}
+.plan-features li::before{
+  content:'→';color:var(--muted2);flex-shrink:0;
+  font-size:.78rem;padding-top:2px;
+}
+.plan-features li strong{color:var(--text)}
+.plan-cta{display:block;text-align:center;margin-top:auto}
 
-  .stats{padding:48px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
-  .stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-  .stat-item{text-align:center}
-  .stat-num{font-size:2.5rem;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f6ef7,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .stat-label{font-size:0.875rem;color:var(--text-muted);margin-top:4px;font-weight:500}
+/* ── Process ── */
+.process-inner{max-width:620px}
+.steps{margin-top:16px}
+.step{
+  display:grid;grid-template-columns:52px 1fr;
+  gap:20px;padding:28px 0;
+  border-bottom:1px solid var(--border);align-items:start;
+}
+.step:first-child{border-top:1px solid var(--border)}
+.step-num{
+  font-family:'Instrument Serif',serif;font-style:italic;
+  font-size:1.8rem;color:var(--muted2);padding-top:2px;
+}
+.step h3{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:6px}
+.step p{font-size:.86rem;color:var(--muted);line-height:1.65}
+.step-time{font-size:.76rem;font-weight:600;color:var(--accent);margin-top:8px}
 
-  .section{padding:96px 24px;position:relative;z-index:1}
-  .section-inner{max-width:1200px;margin:0 auto}
-  .section-tag{font-size:0.8rem;font-weight:700;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
-  .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
-  .section-sub{font-size:1.05rem;color:var(--text-muted);max-width:520px;line-height:1.7;margin-bottom:64px}
+/* ── Testimonial ── */
+.testi-section{
+  background:var(--bg2);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:80px 0;text-align:center;
+}
+.testi-inner{max-width:760px;margin:0 auto;padding:0 24px}
+.testi-stars{display:flex;justify-content:center;gap:3px;margin-bottom:28px}
+.star{width:15px;height:15px;fill:#f59e0b}
+.testi-quote{
+  font-family:'Instrument Serif',serif;font-style:italic;
+  font-size:clamp(1.3rem,2.8vw,1.9rem);
+  line-height:1.48;color:var(--text);margin-bottom:28px;
+}
+.testi-name{font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.testi-biz{font-size:.82rem;color:var(--muted)}
 
-  .niches-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-  .niche-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 20px;text-align:center;transition:background 0.25s,border-color 0.25s,transform 0.25s;cursor:default}
-  .niche-card:hover{background:var(--card-hover);border-color:rgba(79,110,247,0.4);transform:translateY(-4px)}
-  .niche-icon{font-size:2.2rem;margin-bottom:12px;display:block}
-  .niche-name{font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:4px}
-  .niche-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.5}
+/* ── FAQ ── */
+.faq-inner{max-width:660px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{
+  width:100%;background:none;border:none;padding:20px 0;
+  display:flex;justify-content:space-between;align-items:center;
+  color:var(--text);font-size:.92rem;font-weight:600;
+  text-align:left;gap:16px;transition:color .15s;
+}
+.faq-q:hover{color:var(--muted)}
+.faq-icon{
+  flex-shrink:0;width:20px;height:20px;border-radius:50%;
+  border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;color:var(--muted);
+  transition:transform .25s,border-color .15s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--accent);color:var(--accent)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a-inner{padding:0 0 20px;font-size:.875rem;color:var(--muted);line-height:1.72}
+.faq-item.open .faq-a{max-height:240px}
 
-  .hiw-bg{background:var(--bg2)}
-  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  .step{text-align:center;padding:32px 24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);transition:background 0.25s,border-color 0.25s,transform 0.25s}
-  .step:hover{background:var(--card-hover);border-color:rgba(79,110,247,0.35);transform:translateY(-3px)}
-  .step-num{width:56px;height:56px;border-radius:50%;background:rgba(79,110,247,0.12);border:2px solid rgba(79,110,247,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.3rem;font-weight:900;color:var(--accent);position:relative}
-  .step-num::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(79,110,247,0.2);animation:ringPulse 3s ease infinite}
-  @keyframes ringPulse{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.3);opacity:0}}
-  .step h3{font-size:1rem;font-weight:700;margin-bottom:8px}
-  .step p{font-size:0.875rem;color:var(--text-muted);line-height:1.6}
+/* ── CTA ── */
+.cta-section{
+  background:var(--bg2);padding:96px 0;text-align:center;
+  border-top:1px solid var(--border);
+}
+.cta-section h2{margin:0 auto 16px;max-width:560px}
+.cta-section p{
+  font-size:1rem;color:var(--muted);max-width:400px;
+  margin:0 auto 40px;line-height:1.72;
+}
+.cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 
-  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .feature-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:background 0.25s,border-color 0.25s,transform 0.25s}
-  .feature-card:hover{background:var(--card-hover);border-color:rgba(79,110,247,0.35);transform:translateY(-3px)}
-  .feature-icon{width:44px;height:44px;border-radius:10px;background:rgba(79,110,247,0.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
-  .feature-card h3{font-size:1rem;font-weight:700;margin-bottom:8px}
-  .feature-card p{font-size:0.875rem;color:var(--text-muted);line-height:1.6}
+/* ── Footer ── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:40px;flex-wrap:wrap;margin-bottom:40px;
+}
+.footer-brand .logo{font-size:1rem;margin-bottom:10px;display:block}
+.footer-brand p{font-size:.82rem;color:var(--muted);max-width:220px;line-height:1.65}
+.footer-col h4{
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted2);margin-bottom:16px;
+}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:.82rem;color:var(--muted);transition:color .15s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{
+  padding-top:24px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+.footer-bottom p{font-size:.76rem;color:var(--muted2)}
 
-  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
-  .price-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 28px;transition:transform 0.25s,box-shadow 0.25s;display:flex;flex-direction:column}
-  .price-card.featured{background:linear-gradient(135deg,rgba(79,110,247,0.15),rgba(124,58,237,0.10));border-color:rgba(79,110,247,0.6);box-shadow:0 0 40px rgba(79,110,247,0.2);transform:scale(1.03);position:relative;overflow:hidden}
-  .price-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-  .price-card:hover:not(.featured){transform:translateY(-4px)}
-  .price-badge{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:9999px;margin-bottom:16px;letter-spacing:0.5px}
-  .price-tier{font-size:0.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
-  .price-amount{font-size:3rem;font-weight:900;letter-spacing:-2px;margin-bottom:4px}
-  .price-amount span{font-size:1.2rem;font-weight:600;vertical-align:super;letter-spacing:0}
-  .price-note{font-size:0.82rem;color:var(--text-muted);margin-bottom:24px}
-  .price-features{list-style:none;flex:1;margin-bottom:28px}
-  .price-features li{display:flex;align-items:flex-start;gap:10px;font-size:0.875rem;padding:8px 0;border-bottom:1px solid var(--border);color:var(--text-muted)}
-  .price-features li:last-child{border-bottom:none}
-  .price-features li .check{color:var(--accent);flex-shrink:0;margin-top:2px}
-  .price-features li strong{color:var(--text)}
-  .price-cta{margin-top:auto}
-
-  .testimonials-bg{background:var(--bg2)}
-  .testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .review-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:background 0.25s,border-color 0.25s,transform 0.25s}
-  .review-card:hover{background:var(--card-hover);border-color:rgba(79,110,247,0.3);transform:translateY(-3px)}
-  .stars{color:#fbbf24;font-size:1rem;margin-bottom:14px;letter-spacing:2px}
-  .review-text{font-size:0.95rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;font-style:italic}
-  .reviewer{display:flex;align-items:center;gap:12px}
-  .reviewer-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#fff;flex-shrink:0}
-  .reviewer-name{font-weight:700;font-size:0.9rem}
-  .reviewer-biz{font-size:0.8rem;color:var(--text-muted)}
-
-  .faq-list{max-width:720px;margin:0 auto}
-  .faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color 0.2s}
-  .faq-item.open{border-color:rgba(79,110,247,0.4)}
-  .faq-q{width:100%;background:none;border:none;padding:20px 24px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text);font-size:0.95rem;font-weight:600;transition:background 0.2s}
-  .faq-q:hover{background:rgba(255,255,255,0.02)}
-  .faq-icon{color:var(--accent);font-size:1.2rem;flex-shrink:0;transition:transform 0.25s;line-height:1}
-  .faq-item.open .faq-icon{transform:rotate(45deg)}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-  .faq-a-inner{padding:0 24px 20px;font-size:0.9rem;color:var(--text-muted);line-height:1.7}
-  .faq-item.open .faq-a{max-height:300px}
-
-  .cta-section{padding:120px 24px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
-  .cta-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
-  .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(79,110,247,0.12) 0%,transparent 70%);pointer-events:none}
-  .cta-section h2{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-1.5px;margin-bottom:20px}
-  .cta-section p{font-size:1.05rem;color:var(--text-muted);margin-bottom:40px;line-height:1.7}
-  .cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-
-  footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 24px 32px}
-  .footer-inner{max-width:1200px;margin:0 auto}
-  .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:40px}
-  .footer-brand .logo{font-size:1.3rem;display:block;margin-bottom:8px}
-  .footer-brand p{font-size:0.85rem;color:var(--text-muted);max-width:240px;line-height:1.6}
-  .footer-links h4{font-size:0.8rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}
-  .footer-links ul{list-style:none}
-  .footer-links li{margin-bottom:10px}
-  .footer-links a{font-size:0.875rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
-  .footer-links a:hover{color:var(--text)}
-  .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-  .footer-bottom p{font-size:0.82rem;color:var(--text-muted)}
-
-  .float-cta{position:fixed;bottom:24px;right:24px;z-index:200;background:var(--accent);color:#fff;border:none;padding:14px 24px;border-radius:9999px;font-weight:700;font-size:0.9rem;cursor:pointer;text-decoration:none;box-shadow:0 4px 32px rgba(79,110,247,0.6);transition:transform 0.2s,box-shadow 0.2s,opacity 0.3s;display:flex;align-items:center;gap:8px;animation:floatBtn 3s ease-in-out infinite;opacity:0;pointer-events:none}
-  .float-cta.show{opacity:1;pointer-events:auto}
-  @keyframes floatBtn{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-  .float-cta:hover{box-shadow:0 8px 40px rgba(79,110,247,0.75);animation:none;transform:translateY(-3px)}
-
-  @media(max-width:1024px){
-    .niches-grid{grid-template-columns:repeat(3,1fr)}
-    .steps-grid{grid-template-columns:repeat(2,1fr)}
-    .features-grid{grid-template-columns:repeat(2,1fr)}
-    .pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}
-    .price-card.featured{transform:none}
-    .testimonials-grid{grid-template-columns:1fr}
-    .stats-inner{grid-template-columns:repeat(2,1fr)}
-  }
-  @media(max-width:640px){
-    .nav-links{display:none}
-    .menu-btn{display:flex}
-    .hero h1{letter-spacing:-1px}
-    .niches-grid{grid-template-columns:repeat(2,1fr)}
-    .steps-grid{grid-template-columns:1fr}
-    .features-grid{grid-template-columns:1fr}
-    .hero-divider{display:none}
-    .footer-top{flex-direction:column}
-  }
+/* ── Responsive ── */
+@media(max-width:900px){
+  .why-grid{grid-template-columns:1fr;gap:48px}
+  .proof-box{position:static}
+  .pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
+@media(max-width:640px){
+  .hero{padding:120px 24px 72px}
+  section{padding:72px 0}
+  .hero h1{font-size:2.6rem}
+}
 </style>
 </head>
 <body>
 
+<!-- Nav -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">Roxton<span>Web</span></a>
+    <a href="#" class="logo">Roxton<em>.</em></a>
     <ul class="nav-links">
-      <li><a href="#niches">Niches</a></li>
-      <li><a href="#how">How It Works</a></li>
+      <li><a href="#why">Why us</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#process">Process</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="mailto:contact@roxtonweb.com" class="nav-cta">Get Your Site</a>
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    <a href="#pricing" class="nav-cta btn">Get started</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <button onclick="toggleMenu()" style="position:absolute;top:24px;right:24px;background:none;border:none;color:var(--text);cursor:pointer">
-    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
-  </button>
-  <a href="#niches" onclick="toggleMenu()">Niches</a>
-  <a href="#how" onclick="toggleMenu()">How It Works</a>
-  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
-  <a href="#faq" onclick="toggleMenu()">FAQ</a>
-  <a href="mailto:contact@roxtonweb.com" class="nav-cta">Get Your Site</a>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#why" onclick="closeMobile()">Why us</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#pricing" class="nav-cta btn" onclick="closeMobile()">Get your site →</a>
 </div>
 
-<section class="hero">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="hero-inner">
-    <div class="hero-badge">
-      <span class="dot"></span>
-      Taking new clients this week
-    </div>
-    <h1>
-      Websites that<br>
-      <span class="gradient">actually get you</span><br>
-      booked.
-    </h1>
-    <p class="hero-sub">
-      We build fast, high-converting sites for local service businesses. Your competitors have a website. Yours will win.
-    </p>
-    <div class="hero-actions">
-      <a href="mailto:contact@roxtonweb.com" class="btn-primary">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Get a Free Mockup
-      </a>
-      <a href="#how" class="btn-secondary">See How It Works</a>
-    </div>
-    <div class="hero-trust">
-      <div class="hero-trust-item">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-        Delivered in 48 hrs
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-trust-item">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-        100% satisfaction
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-trust-item">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-        No monthly fees
-      </div>
-    </div>
+<!-- Hero -->
+<div class="hero">
+  <p class="eyebrow fade-in">Las Vegas · Henderson · Phoenix</p>
+  <h1 class="fade-in d1">A website that actually<br>gets you <em>clients.</em></h1>
+  <p class="hero-sub fade-in d2">We build fast, clean sites for local service businesses. No monthly fees, no agency markup — just a site that makes you look like the best option in your market.</p>
+  <div class="hero-actions fade-in d3">
+    <a href="#pricing" class="btn btn-primary">See pricing →</a>
+    <a href="mailto:contact@roxtonweb.com" class="btn btn-ghost">Get a free mockup</a>
   </div>
-</section>
-
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat-item reveal delay-1">
-      <div class="stat-num"><span class="count-up" data-target="40">0</span>+</div>
-      <div class="stat-label">Sites Delivered</div>
-    </div>
-    <div class="stat-item reveal delay-2">
-      <div class="stat-num"><span class="count-up" data-target="48">0</span>hr</div>
-      <div class="stat-label">Average Turnaround</div>
-    </div>
-    <div class="stat-item reveal delay-3">
-      <div class="stat-num"><span class="count-up" data-target="5">0</span></div>
-      <div class="stat-label">Niches We Own</div>
-    </div>
-    <div class="stat-item reveal delay-4">
-      <div class="stat-num"><span class="count-up" data-target="100">0</span>%</div>
-      <div class="stat-label">Client Satisfaction</div>
+  <div class="hero-trust fade-in d4">
+    <span class="trust-label">Built for</span>
+    <div class="niche-tags">
+      <span class="niche-tag">Auto Detailers</span>
+      <span class="niche-tag">Med Spas</span>
+      <span class="niche-tag">Pressure Washing</span>
+      <span class="niche-tag">Lawn Care</span>
+      <span class="niche-tag">Junk Removal</span>
     </div>
   </div>
 </div>
 
-<section class="section" id="niches">
-  <div class="section-inner">
-    <div class="section-tag reveal">What We Build For</div>
-    <h2 class="section-title reveal delay-1">5 niches.<br>One specialist.</h2>
-    <p class="section-sub reveal delay-2">We don't build sites for everyone. We build sites for local service businesses that need more bookings.</p>
-    <div class="niches-grid">
-      <div class="niche-card reveal delay-1">
-        <span class="niche-icon">🚗</span>
-        <div class="niche-name">Auto Detailers</div>
-        <div class="niche-desc">Mobile and shop detailers who need online booking without phone tag</div>
+<!-- Marquee Strip -->
+<div class="strip">
+  <div class="strip-track" aria-hidden="true">
+    <span class="strip-item">Auto Detailers</span>
+    <span class="strip-item">Med Spas</span>
+    <span class="strip-item">Pressure Washing</span>
+    <span class="strip-item">Lawn Care</span>
+    <span class="strip-item">Junk Removal</span>
+    <span class="strip-item">Las Vegas NV</span>
+    <span class="strip-item">Henderson NV</span>
+    <span class="strip-item">Phoenix AZ</span>
+    <span class="strip-item">Scottsdale AZ</span>
+    <span class="strip-item">Auto Detailers</span>
+    <span class="strip-item">Med Spas</span>
+    <span class="strip-item">Pressure Washing</span>
+    <span class="strip-item">Lawn Care</span>
+    <span class="strip-item">Junk Removal</span>
+    <span class="strip-item">Las Vegas NV</span>
+    <span class="strip-item">Henderson NV</span>
+    <span class="strip-item">Phoenix AZ</span>
+    <span class="strip-item">Scottsdale AZ</span>
+  </div>
+</div>
+
+<!-- Why -->
+<section id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <p class="section-label fade-in">The situation</p>
+        <h2 class="fade-in d1">Most local businesses have the <em>wrong</em> website.</h2>
+        <p class="section-sub fade-in d2">Either they have nothing, or something from 2016 that loads slow, looks bad on phones, and doesn't tell anyone what to do next.</p>
+        <ul class="why-list">
+          <li class="fade-in">
+            <span class="why-num">01</span>
+            <div class="why-text">
+              <strong>Your competitor is getting calls you could be getting</strong>
+              <p>When someone searches for a detailer or lawn crew in your area, the business with the best-looking site usually wins — even if you're better.</p>
+            </div>
+          </li>
+          <li class="fade-in d1">
+            <span class="why-num">02</span>
+            <div class="why-text">
+              <strong>A bad site is worse than no site</strong>
+              <p>If someone lands on a slow, outdated, or broken page, they're gone in 5 seconds and calling the next result.</p>
+            </div>
+          </li>
+          <li class="fade-in d2">
+            <span class="why-num">03</span>
+            <div class="why-text">
+              <strong>Most agencies don't know your niche</strong>
+              <p>They build sites for tech companies. We only work with the five niches we know well: detailers, med spas, pressure washers, lawn, and junk removal.</p>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="niche-card reveal delay-2">
-        <span class="niche-icon">💉</span>
-        <div class="niche-name">Med Spas</div>
-        <div class="niche-desc">Aesthetic clinics that need to look premium and convert on mobile</div>
-      </div>
-      <div class="niche-card reveal delay-3">
-        <span class="niche-icon">💧</span>
-        <div class="niche-name">Pressure Washing</div>
-        <div class="niche-desc">Residential and commercial washers who want instant quote requests</div>
-      </div>
-      <div class="niche-card reveal delay-4">
-        <span class="niche-icon">🌿</span>
-        <div class="niche-name">Lawn Care</div>
-        <div class="niche-desc">Lawn and landscaping companies that need recurring clients online</div>
-      </div>
-      <div class="niche-card reveal delay-5">
-        <span class="niche-icon">🚛</span>
-        <div class="niche-name">Junk Removal</div>
-        <div class="niche-desc">Haulers and cleanout companies that need same-day booking pages</div>
+      <div class="fade-in d2">
+        <div class="proof-box">
+          <p class="proof-quote">“I went from zero online presence to booking 3–4 new clients a week. The site paid for itself on the first job.”</p>
+          <p class="proof-meta">
+            <strong>Marcus T.</strong>
+            Auto Detailing · Las Vegas, NV
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section hiw-bg" id="how">
-  <div class="section-inner">
-    <div class="section-tag reveal">The Process</div>
-    <h2 class="section-title reveal delay-1">Done in 4 steps.<br>Ready in 48 hours.</h2>
-    <p class="section-sub reveal delay-2">No back-and-forth. No dragging it out. We move fast because your business needs to be live.</p>
-    <div class="steps-grid">
-      <div class="step reveal delay-1">
-        <div class="step-num">1</div>
-        <h3>Tell Us About Your Business</h3>
-        <p>Send us a message. We learn your niche, city, and what you want people to do when they land on your site.</p>
-      </div>
-      <div class="step reveal delay-2">
-        <div class="step-num">2</div>
-        <h3>We Build Your Mockup</h3>
-        <p>Within 24 hours you get a full design preview. Real copy, real layout, your branding. No placeholders.</p>
-      </div>
-      <div class="step reveal delay-3">
-        <div class="step-num">3</div>
-        <h3>You Approve and We Launch</h3>
-        <p>One round of revisions, then we push it live on your domain. Fully hosted, SSL secured, mobile-perfect.</p>
-      </div>
-      <div class="step reveal delay-4">
-        <div class="step-num">4</div>
-        <h3>Start Getting Bookings</h3>
-        <p>Booking calendar connected, Google-indexed, and ready to take calls and appointments from day one.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="features">
-  <div class="section-inner">
-    <div class="section-tag reveal">What You Get</div>
-    <h2 class="section-title reveal delay-1">Everything included.<br>Nothing extra.</h2>
-    <p class="section-sub reveal delay-2">Every site comes with everything you need to convert visitors into paying customers.</p>
-    <div class="features-grid">
-      <div class="feature-card reveal delay-1">
-        <div class="feature-icon">&#x26A1;</div>
-        <h3>Loads Under 2 Seconds</h3>
-        <p>Speed kills your competitors in search results. We build lean, fast sites that Google rewards and users stay on.</p>
-      </div>
-      <div class="feature-card reveal delay-2">
-        <div class="feature-icon">&#x1F4F1;</div>
-        <h3>Mobile-First Design</h3>
-        <p>Most of your customers find you on their phone. Your site is built for thumbs first, desktops second.</p>
-      </div>
-      <div class="feature-card reveal delay-3">
-        <div class="feature-icon">&#x1F4C5;</div>
-        <h3>Booking Calendar Integrated</h3>
-        <p>Cal.com booking widget built in. Customers book directly. You get a notification. No more phone tag.</p>
-      </div>
-      <div class="feature-card reveal delay-4">
-        <div class="feature-icon">&#x1F50D;</div>
-        <h3>Local SEO Setup</h3>
-        <p>Your meta tags, Google index, and local keywords are dialed in from day one so the right people find you.</p>
-      </div>
-      <div class="feature-card reveal delay-5">
-        <div class="feature-icon">&#x1F6E1;&#xFE0F;</div>
-        <h3>Free Hosting and SSL</h3>
-        <p>We handle all the tech. Your site is hosted on premium infrastructure, HTTPS secured, no monthly fees ever.</p>
-      </div>
-      <div class="feature-card reveal delay-6">
-        <div class="feature-icon">&#x270F;&#xFE0F;</div>
-        <h3>Conversion Copy Written for You</h3>
-        <p>We write every word. Headlines, service descriptions, CTAs. All crafted to get someone to call or book.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section testimonials-bg" id="pricing">
-  <div class="section-inner">
-    <div class="section-tag reveal" style="text-align:center">Pricing</div>
-    <h2 class="section-title reveal delay-1" style="text-align:center">Straightforward prices.<br>No surprises.</h2>
-    <p class="section-sub reveal delay-2" style="text-align:center;margin:0 auto 64px">One-time payment. Revisions included. Free hosting included forever.</p>
+<!-- Pricing -->
+<section id="pricing" style="background:var(--bg2)">
+  <div class="container">
+    <p class="section-label fade-in">Pricing</p>
+    <h2 class="fade-in d1">Simple, flat-rate pricing.</h2>
+    <p class="section-sub fade-in d2">You pay once and own the site. No monthly fees, no retainers, no surprises.</p>
     <div class="pricing-grid">
-      <div class="price-card reveal delay-1">
-        <div class="price-tier">Starter</div>
-        <div class="price-amount"><span>$</span>399</div>
-        <div class="price-note">One-time, no monthly fees</div>
-        <ul class="price-features">
-          <li><span class="check">&#x2713;</span> <span>Single-page site</span></li>
-          <li><span class="check">&#x2713;</span> <span>Mobile-first design</span></li>
-          <li><span class="check">&#x2713;</span> <span>Booking calendar</span></li>
-          <li><span class="check">&#x2713;</span> <span>Free hosting + SSL</span></li>
-          <li><span class="check">&#x2713;</span> <span>1 revision round</span></li>
-          <li><span class="check">&#x2713;</span> <span>Delivered in 48 hrs</span></li>
+      <div class="plan fade-in">
+        <p class="plan-name">Starter</p>
+        <p class="plan-price"><sup>$</sup>399</p>
+        <p class="plan-freq">One-time · No monthly fees</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Single-page site</li>
+          <li>Mobile-optimized design</li>
+          <li>Services + pricing section</li>
+          <li>Contact form or phone CTA</li>
+          <li><strong>Live in 5 days</strong></li>
         </ul>
-        <div class="price-cta">
-          <a href="mailto:contact@roxtonweb.com?subject=Starter Site" class="btn-secondary" style="width:100%;justify-content:center">Get Started</a>
-        </div>
+        <a href="mailto:contact@roxtonweb.com?subject=Starter Package" class="btn btn-ghost plan-cta">Get started</a>
       </div>
-      <div class="price-card featured reveal delay-2">
-        <div class="price-badge">Most Popular</div>
-        <div class="price-tier">Growth</div>
-        <div class="price-amount"><span>$</span>599</div>
-        <div class="price-note">One-time, no monthly fees</div>
-        <ul class="price-features">
-          <li><span class="check">&#x2713;</span> <span><strong>Multi-page site</strong> (up to 4 pages)</span></li>
-          <li><span class="check">&#x2713;</span> <span>Premium animations</span></li>
-          <li><span class="check">&#x2713;</span> <span>Booking calendar + contact form</span></li>
-          <li><span class="check">&#x2713;</span> <span>Free hosting + SSL + domain setup</span></li>
-          <li><span class="check">&#x2713;</span> <span><strong>Up to 3 revision rounds</strong></span></li>
-          <li><span class="check">&#x2713;</span> <span>Local SEO optimization</span></li>
-          <li><span class="check">&#x2713;</span> <span>Google Business integration</span></li>
+
+      <div class="plan featured fade-in d1">
+        <p class="plan-badge">Most popular</p>
+        <p class="plan-name">Standard</p>
+        <p class="plan-price"><sup>$</sup>599</p>
+        <p class="plan-freq">One-time · No monthly fees</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>2–3 page site</li>
+          <li>Mobile-optimized design</li>
+          <li>Services, About, Contact pages</li>
+          <li>Google Maps embed</li>
+          <li>Before/after photo gallery</li>
+          <li><strong>Live in 7 days</strong></li>
         </ul>
-        <div class="price-cta">
-          <a href="mailto:contact@roxtonweb.com?subject=Growth Site" class="btn-primary" style="width:100%;justify-content:center">Get Started</a>
-        </div>
+        <a href="mailto:contact@roxtonweb.com?subject=Standard Package" class="btn btn-primary plan-cta">Get started →</a>
       </div>
-      <div class="price-card reveal delay-3">
-        <div class="price-tier">Premium</div>
-        <div class="price-amount"><span>$</span>899</div>
-        <div class="price-note">One-time, no monthly fees</div>
-        <ul class="price-features">
-          <li><span class="check">&#x2713;</span> <span><strong>Everything in Growth</strong></span></li>
-          <li><span class="check">&#x2713;</span> <span>Online quote calculator</span></li>
-          <li><span class="check">&#x2713;</span> <span>Review widget setup</span></li>
-          <li><span class="check">&#x2713;</span> <span>Custom photo direction</span></li>
-          <li><span class="check">&#x2713;</span> <span>30-day post-launch support</span></li>
-          <li><span class="check">&#x2713;</span> <span>Priority 24-hr delivery</span></li>
+
+      <div class="plan fade-in d2">
+        <p class="plan-name">Pro</p>
+        <p class="plan-price"><sup>$</sup>899</p>
+        <p class="plan-freq">One-time · No monthly fees</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>4–5 page site</li>
+          <li>Full mobile + tablet design</li>
+          <li>Online booking integration</li>
+          <li>Review section + testimonials</li>
+          <li>Blog or promo page</li>
+          <li>Basic SEO setup</li>
+          <li><strong>Live in 10 days</strong></li>
         </ul>
-        <div class="price-cta">
-          <a href="mailto:contact@roxtonweb.com?subject=Premium Site" class="btn-secondary" style="width:100%;justify-content:center">Get Started</a>
-        </div>
+        <a href="mailto:contact@roxtonweb.com?subject=Pro Package" class="btn btn-ghost plan-cta">Get started</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="reviews">
-  <div class="section-inner">
-    <div class="section-tag reveal">Reviews</div>
-    <h2 class="section-title reveal delay-1">Real clients.<br>Real results.</h2>
-    <p class="section-sub reveal delay-2">Every business here was getting zero online bookings before we built their site.</p>
-    <div class="testimonials-grid">
-      <div class="review-card reveal delay-1">
-        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-        <p class="review-text">"wasn't sure at first but he sent a preview fast and it actually looked good. been live about a month now and already had people book through it. worth it"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">M</div>
+<!-- Process -->
+<section id="process">
+  <div class="container">
+    <div class="process-inner">
+      <p class="section-label fade-in">How it works</p>
+      <h2 class="fade-in d1">From first message<br>to <em>live site</em> in days.</h2>
+      <div class="steps">
+        <div class="step fade-in">
+          <span class="step-num">1</span>
           <div>
-            <div class="reviewer-name">Marcus T.</div>
-            <div class="reviewer-biz">Auto Detailing, Atlanta GA</div>
+            <h3>You tell us about your business</h3>
+            <p>Business name, services, location, and any photos you have. No calls required — a quick message is enough.</p>
+            <p class="step-time">Day 1</p>
           </div>
         </div>
-      </div>
-      <div class="review-card reveal delay-2">
-        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-        <p class="review-text">"super clean design, finally looks professional. couple clients have mentioned it. turnaround was quick too, no complaints"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">S</div>
+        <div class="step fade-in">
+          <span class="step-num">2</span>
           <div>
-            <div class="reviewer-name">Sarah K.</div>
-            <div class="reviewer-biz">Med Spa, Dallas TX</div>
+            <h3>We send you a mockup first</h3>
+            <p>Before you pay anything, we show you exactly what your site will look like. You approve or request changes — no surprises.</p>
+            <p class="step-time">Day 2–3</p>
           </div>
         </div>
-      </div>
-      <div class="review-card reveal delay-3">
-        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-        <p class="review-text">"needed something fast, got a mockup same day. site was up in 2 days. quote requests actually come in now which is new lol. good work"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">J</div>
+        <div class="step fade-in">
+          <span class="step-num">3</span>
           <div>
-            <div class="reviewer-name">Jordan M.</div>
-            <div class="reviewer-biz">Pressure Washing, Phoenix AZ</div>
+            <h3>We build it</h3>
+            <p>Once you're happy with the design, we build the full site. Two rounds of revisions included in every package.</p>
+            <p class="step-time">Day 3–7</p>
           </div>
         </div>
-      </div>
-      <div class="review-card reveal delay-4">
-        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-        <p class="review-text">"just got it done, no back and forth. told him what I needed and he built it. simple as that"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">D</div>
+        <div class="step fade-in">
+          <span class="step-num">4</span>
           <div>
-            <div class="reviewer-name">Derek L.</div>
-            <div class="reviewer-biz">Lawn Care, Tampa FL</div>
+            <h3>Your site goes live</h3>
+            <p>We connect your domain, run a final check, and hand everything over. Fully owned by you, no strings attached.</p>
+            <p class="step-time">Day 5–10</p>
           </div>
         </div>
       </div>
@@ -518,143 +574,144 @@
   </div>
 </section>
 
-<section class="section testimonials-bg" id="faq">
-  <div class="section-inner">
-    <div class="section-tag reveal" style="text-align:center">FAQ</div>
-    <h2 class="section-title reveal delay-1" style="text-align:center;margin-bottom:48px">Common questions.</h2>
-    <div class="faq-list">
-      <div class="faq-item reveal delay-1">
-        <button class="faq-q" onclick="toggleFaq(this)">How fast will my site actually be live?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Most sites go live within 48 hours of you approving the mockup. Sometimes faster. We don't drag it out because your business needs to be online.</div></div>
+<!-- Testimonial -->
+<div class="testi-section">
+  <div class="testi-inner fade-in">
+    <div class="testi-stars">
+      <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    </div>
+    <p class="testi-quote">“Roxton built my site in less than a week. Clean, professional, and my phone started ringing within the first month. Best $599 I've spent on this business.”</p>
+    <p class="testi-name">Diana R.</p>
+    <p class="testi-biz">Med Spa Owner · Scottsdale, AZ</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <p class="section-label fade-in">Questions</p>
+      <h2 class="fade-in d1">Things people<br>usually <em>ask.</em></h2>
+
+      <div class="faq-item fade-in d2">
+        <button class="faq-q">Do you charge monthly fees?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. You pay once and own the site. The only ongoing costs are your domain (around $15/year) and hosting (around $10/month) — both are yours to control.</div></div>
       </div>
-      <div class="faq-item reveal delay-2">
-        <button class="faq-q" onclick="toggleFaq(this)">Do I have to pay monthly fees after?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">No. You pay once and own your site. We cover hosting at no ongoing charge. The only optional recurring cost is your domain name (about $12/year), and we help you get that set up.</div></div>
+
+      <div class="faq-item fade-in d2">
+        <button class="faq-q">What do you need from me to start?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Your business name, what you do, your location, and any photos you want to use. We handle the copy, design, and technical setup.</div></div>
       </div>
-      <div class="faq-item reveal delay-3">
-        <button class="faq-q" onclick="toggleFaq(this)">I already have a website but it looks bad. Can you rebuild it?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Yes. This is one of the most common things we do. If your current site isn't converting visitors into calls or bookings, we'll rebuild it. Same pricing applies.</div></div>
+
+      <div class="faq-item fade-in d2">
+        <button class="faq-q">How fast do you actually deliver?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Starter sites are done in 5 days. Standard in 7. Pro in 10. We send a mockup within 48 hours so you can see the design before we build anything.</div></div>
       </div>
-      <div class="faq-item reveal delay-4">
-        <button class="faq-q" onclick="toggleFaq(this)">Do I have to write anything or provide photos?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">No. We write all the copy for you. For photos, we use high-quality images that match your niche if you don't have your own. If you have photos, send them and we'll use them.</div></div>
+
+      <div class="faq-item fade-in d2">
+        <button class="faq-q">Can I make changes after the site is live?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Every package includes two revision rounds during the build. After launch, we offer small update packages — just reach out.</div></div>
       </div>
-      <div class="faq-item reveal delay-5">
-        <button class="faq-q" onclick="toggleFaq(this)">What if I don't like the design?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Growth and Premium plans include up to 3 revision rounds. Starter includes 1 round. In practice we rarely need more than one because we've built enough sites in your niche to know what works.</div></div>
-      </div>
-      <div class="faq-item reveal delay-6">
-        <button class="faq-q" onclick="toggleFaq(this)">What do I need to get started?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Just send us a message. Tell us your business name, what you do, and what city you're in. We take it from there. If you have a domain already, great. If not, we'll point you to get one for $12.</div></div>
+
+      <div class="faq-item fade-in d2">
+        <button class="faq-q">Do you work outside Vegas and Phoenix?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We're focused on Las Vegas, Henderson, Phoenix, and Scottsdale right now. If you're nearby, reach out and we'll let you know if we can help.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="cta-glow"></div>
-  <div class="cta-inner">
-    <div class="section-tag reveal" style="text-align:center;margin-bottom:16px">Ready?</div>
-    <h2 class="reveal delay-1">Your competitors<br>are already online.</h2>
-    <p class="reveal delay-2">Every day without a site is a booking going to someone else. Let's fix that this week.</p>
-    <div class="cta-actions reveal delay-3">
-      <a href="mailto:contact@roxtonweb.com" class="btn-primary">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Get Your Free Mockup
-      </a>
-      <a href="https://instagram.com/Roxtonn" target="_blank" rel="noopener" class="btn-secondary">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        DM on Instagram
-      </a>
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container">
+    <h2 class="fade-in">Stop losing clients to a<br><em>better-looking</em> competitor.</h2>
+    <p class="fade-in d1">We'll send you a free mockup of what your site could look like — no payment, no commitment required.</p>
+    <div class="cta-actions fade-in d2">
+      <a href="mailto:contact@roxtonweb.com?subject=Free Mockup Request" class="btn btn-primary">Get my free mockup →</a>
+      <a href="#pricing" class="btn btn-ghost">See pricing</a>
     </div>
   </div>
-</section>
+</div>
 
+<!-- Footer -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
+  <div class="container">
+    <div class="footer-inner">
       <div class="footer-brand">
-        <a href="#" class="logo">Roxton<span>Web</span></a>
-        <p>Websites built for local service businesses that need more customers, not more overhead.</p>
+        <a href="#" class="logo">Roxton<em>.</em></a>
+        <p>Websites for local service businesses in Las Vegas and Phoenix. Built fast, priced fairly.</p>
       </div>
-      <div class="footer-links">
-        <h4>Services</h4>
+      <div class="footer-col">
+        <h4>Packages</h4>
         <ul>
-          <li><a href="#niches">Auto Detailers</a></li>
-          <li><a href="#niches">Med Spas</a></li>
-          <li><a href="#niches">Pressure Washing</a></li>
-          <li><a href="#niches">Lawn Care</a></li>
-          <li><a href="#niches">Junk Removal</a></li>
+          <li><a href="#pricing">Starter — $399</a></li>
+          <li><a href="#pricing">Standard — $599</a></li>
+          <li><a href="#pricing">Pro — $899</a></li>
         </ul>
       </div>
-      <div class="footer-links">
-        <h4>Company</h4>
+      <div class="footer-col">
+        <h4>Niches</h4>
         <ul>
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="mailto:contact@roxtonweb.com">Contact</a></li>
+          <li><a href="#">Auto Detailers</a></li>
+          <li><a href="#">Med Spas</a></li>
+          <li><a href="#">Pressure Washing</a></li>
+          <li><a href="#">Lawn Care</a></li>
+          <li><a href="#">Junk Removal</a></li>
         </ul>
       </div>
-      <div class="footer-links">
+      <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:contact@roxtonweb.com">contact@roxtonweb.com</a></li>
-          <li><a href="https://instagram.com/Roxtonn" target="_blank">@Roxtonn on Instagram</a></li>
+          <li><a href="https://instagram.com/Roxtonn" target="_blank" rel="noopener">@Roxtonn on Instagram</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&#169; 2025 Roxton Web. All rights reserved.</p>
-      <p>Websites for local service businesses</p>
+      <p>© 2026 Roxton Web. All rights reserved.</p>
+      <p>Las Vegas · Henderson · Phoenix · Scottsdale</p>
     </div>
   </div>
 </footer>
 
-<a href="mailto:contact@roxtonweb.com" class="float-cta" id="floatCta">
-  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  Get Your Site
-</a>
-
 <script>
 const nav = document.getElementById('nav');
-const floatCta = document.getElementById('floatCta');
 window.addEventListener('scroll', () => {
-  if(window.scrollY > 60) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
-  if(window.scrollY > 400) floatCta.classList.add('show'); else floatCta.classList.remove('show');
-}, {passive:true});
+  nav.classList.toggle('scrolled', window.scrollY > 36);
+}, {passive: true});
 
-function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMobile() {
+  mobileNav.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
 
-const revealEls = document.querySelectorAll('.reveal');
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
 const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
-}, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
-revealEls.forEach(el => io.observe(el));
-
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if(!isOpen) item.classList.add('open');
-}
-
-function animateCount(el) {
-  const target = parseInt(el.dataset.target);
-  const duration = 1800;
-  const start = performance.now();
-  (function frame(now) {
-    const p = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.floor(eased * target);
-    if(p < 1) requestAnimationFrame(frame); else el.textContent = target;
-  })(performance.now());
-}
-const cio = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); }});
-}, {threshold:0.5});
-document.querySelectorAll('.count-up').forEach(el => cio.observe(el));
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.1, rootMargin: '0px 0px -32px 0px'});
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
