@@ -106,3 +106,29 @@ NOTES:
   Recommend pushing sent leads into queue via Make.com or manual entry
   so reply tracking becomes fully automated.
 ```
+
+---
+
+### RUN LOG — 2026-04-08 — account: @Roxtonn
+```
+IG INBOX WATCHER — 2026-04-08
+Unread threads found: 1
+Processed: 0 actionable
+
+  Unread thread: "sausage party insta" (group chat — not in queue, skipped)
+  Stage actions taken: none
+
+Queue leads checked (OUTREACH_SENT): 15
+  @ksmobiledetailing, @pmdpressurewashing, @lillespristineclean,
+  @hensleymowing, @chapasautodetailing, @superiorlawnsa,
+  @preciselandscapes, @izhepressurewashing, @orlandolawncare,
+  @fisherlawnlandscape, @mgdetailingmn, @solidsudznashvilletn,
+  @ldclawncare, @promise.lcs, @atymetoshinemobile
+  → All threads last message: "You:" — no new replies
+
+Other queue status:
+  @byebyejunk_kc — stage: REPLIED (auto-responder from business, previously logged)
+
+Queue updated: ✅ no changes needed (inbox clear)
+Analytics → GitHub: ✅ yes
+```
