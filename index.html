@@ -1,1 +1,1285 @@
-PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgo8dGl0bGU+Um94dG9uIFdlYiB8IFdlYnNpdGVzIGZvciBMb2NhbCBTZXJ2aWNlIEJ1c2luZXNzZXM8L3RpdGxlPgo8bWV0YSBuYW1lPSJkZXNjcmlwdGlvbiIgY29udGVudD0iV2UgYnVpbGQgZmFzdCwgY2xlYW4gd2Vic2l0ZXMgZm9yIGF1dG8gZGV0YWlsZXJzLCBtZWQgc3BhcywgcHJlc3N1cmUgd2FzaGVycywgbGF3biBjYXJlLCBhbmQganVuayByZW1vdmFsIGJ1c2luZXNzZXMuIEZsYXQtcmF0ZSBwcmljaW5nIHN0YXJ0aW5nIGF0ICQzOTkuIE5vIG1vbnRobHkgZmVlcy4iPgo8bGluayByZWw9InByZWNvbm5lY3QiIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20iPgo8bGluayByZWw9InByZWNvbm5lY3QiIGhyZWY9Imh0dHBzOi8vZm9udHMuZ3N0YXRpYy5jb20iIGNyb3Nzb3JpZ2luPgo8bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PURNK1NhbnM6aXRhbCxvcHN6LHdnaHRAMCw5Li40MCw0MDA7MCw5Li40MCw1MDA7MCw5Li40MCw2MDA7MCw5Li40MCw3MDA7MSw5Li40MCw0MDAmZmFtaWx5PUluc3RydW1lbnQrU2VyaWY6aXRhbEAwOzEmZGlzcGxheT1zd2FwIiByZWw9InN0eWxlc2hlZXQiPgo8c3R5bGU+Ci8qIOKUgOKUgCBSZXNldCDilIDilIAgKi8KKiwqOjpiZWZvcmUsKjo6YWZ0ZXJ7Ym94LXNpemluZzpib3JkZXItYm94O21hcmdpbjowO3BhZGRpbmc6MH0KaHRtbHtzY3JvbGwtYmVoYXZpb3I6c21vb3RoOy13ZWJraXQtdGV4dC1zaXplLWFkanVzdDoxMDAlfQpib2R5ewogIGZvbnQtZmFtaWx5OidETSBTYW5zJyxzeXN0ZW0tdWksc2Fucy1zZXJpZjsKICBiYWNrZ3JvdW5kOiMwYTBhMGE7Y29sb3I6I2YwZWNlNjsKICBsaW5lLWhlaWdodDoxLjY1O292ZXJmbG93LXg6aGlkZGVuOwogIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6YW50aWFsaWFzZWQ7Cn0KaW1ne2Rpc3BsYXk6YmxvY2s7bWF4LXdpZHRoOjEwMCV9CmF7Y29sb3I6aW5oZXJpdDt0ZXh0LWRlY29yYXRpb246bm9uZX0KYnV0dG9ue2ZvbnQtZmFtaWx5OmluaGVyaXQ7Y3Vyc29yOnBvaW50ZXJ9CgovKiDilIDilIAgVG9rZW5zIOKUgOKUgCAqLwo6cm9vdHsKICAtLWJnOiMwYTBhMGE7LS1iZzI6IzExMTExMTstLWJnMzojMTgxODE4OwogIC0tdGV4dDojZjBlY2U2Oy0tbXV0ZWQ6IzdhNzU2ZDstLW11dGVkMjojNGE0NjQyOwogIC0tYm9yZGVyOnJnYmEoMjU1LDI1NSwyNTUsMC4wNyk7LS1ib3JkZXIyOnJnYmEoMjU1LDI1NSwyNTUsMC4xMyk7CiAgLS1hY2NlbnQ6IzRmNmVmNzstLWFjY2VudC1saWdodDpyZ2JhKDc5LDExMCwyNDcsMC4xMik7CiAgLS1yYWRpdXM6OHB4Oy0tbWF4OjExNjBweDsKfQoKLyog4pSA4pSAIFV0aWxpdHkg4pSA4pSAICovCi5jb250YWluZXJ7bWF4LXdpZHRoOnZhcigtLW1heCk7bWFyZ2luOjAgYXV0bztkaXNwbGF5OmZsZXg7ZmxleC1kaXJlY3Rpb246Y29sdW1uO21pbi1oZWlnaHQ6MTAwdmh9Ci5ncmlke2Rpc3BsYXk6Z3JpZDtncmlkLWF1dG8tZmxvdzpyb3c7Z2FwOjM4cHg7bWFyZ2luLWJvdHRvbTozOHB4fQouc3RhY2ssbGl7bGlzdC1zdHlsZTpub25lO2Rpc3BsYXk6ZmxleDtmbGV4LWRpcmVjdGlvbjpjb2x1bW59Ci5yb3d7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcn0KLnJvdy1kZXNrezmpmarnjr45L7Wt5+S9uFwKLnBhZGR7cGFkZGluZzpzYWZlIGlubGluZSAtMTBweDsgcGFkZGluZzpzYWZlIGJsb2NrIC0xMHB4fQoKLyog4pSA4pSAIEdyYXRpY1tEDVMgKO2btOyasS8kuIXnq68pIOKUgOKUgCAqLwouaGVybyB7Cm4gYXN5IG1heC13aWR0aDogc21hbGw6IDI2MHB4LCBtZWRpdW06IDQ1MHB4LCBsYXJnZTogNjAwcHgKfQoKLmhlcm87IGJ0biwuY3RhfnsKICBmaWx0ZXI6IGJyaWdodG5lc3MoMS4yKQogIG8gbGluazpiYWNrZ3JvdW5kLWltYWdlOidzY2FsZShmYWRlLVRvLVJpZ2h0KScKfQoKLyog4pSA4pSAIFZpc2l0YWwg4pSA4pSAICovCi5jb2xvcmVke2Fjab6Q4pSWOiMzNGQ4YzYgIWltcG9ydGFudH0KLm11dGVke2NvbG9yOnZhcigtLW11dGVkKX0KLm11dGVkMntjb2xvcjp2YXIoLS1tdXRlZDIpfQouYmctMntimFpZW5kLWNvbG9yOnZhcigtLWJnMil9Ci5iZy0ze2JhY2tncm91bmQtY29sb3I6dmFyKC0tYmczKX0KLmJvcmRlcntib3JkZXI6MXB4IHNvbGlkIHZhcigtLWJvcmRlcil9Ci5ib3JkZXIye2JvcmRlcjoxcHggc29saWQgdmFyKC0tYm9yZGVyMil9Ci5iZ206YWNjZW50e2JhY2tncm91bmQtY29sb3I6dmFyKC1hY2NlbnQpfQouYWNjZW50e2NvbG9yOnZhcigtYWNjZW50KX0KLnRleHQtYXdjZW50e2NvbG9yOnZhcigtYWNjZW50KX0KLnJpbmd7Zm9udC1zaXplOjEycHg7bGluZS1oZWlnaHQ6MTtib3JkZXI6MXB4IHNvbGlkIHZhcigtLWJvcmRlcjIpO3BhZGRpbmc6NHB4IDZweDtib3JkZXItcmFkaXVzOjl2dTtkaXNwbGF5OndpZHRoLWZpdH0KLmphY2tldHske3BhZGRpbmc6MjRweCAwfQpAIG1lZGlhIChtYXgtd2lkdGg6ICQwMzUxKSB7CiAgLmphY2tldHt7cGFkZGluZzogMTBweCAwfQp9CgovKiDilIDilIAgQnV0dG9ucyDilIDilIAgKi8KYCB7CiBkaXNwbGF5OiBpbmxpbmUtZmxleDsKIG1pY3M6IDAgOXB4Oy1tYXJnaW46IDAgLTRweDsgLS1zb3JzcToxLTAuMDc7CiBmb250LXdlaWdodDogNjAwOwogIGZvbnQtc2l6ZTogMTRweDsgIC8qIOa8sCDlzIjmgKDlhYnngYvlrozmt6vljaDlpZfvuK8gKi8KLXN0b29rZTogMXB4IC1leHRlcm5hbCBjdXJyZW50Q29sb3I7Ci1zdHJva2Utb2Zmc2V0OiA2LjVweDsKICBjb2xvcjogaW5oZXJpdDsKfQpidW57CiAgY3Vyc29yOiBwb2ludGVyOwogIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWFjY2VudCk7CiAgY29sb3I6IHZhcigtLWJnKTsKICBwYWRkaW5nOiAxMnB4IDE5cHg7CiAgYm9yZGVyOiBub25lOwogIGJvcmRlci1yYWRpdXM6IHZhcigtLXJhZGl1cyk7CiAgZm9udC1mYW1pbHk6IGluaGVyaXQ7CiAgZm9udC13ZWlnaHQ6IDYwMDsKICBmb250LXNpemU6IDE0cHg7CiAgdHJhbnNpdGlvbjogYWxsIDAuMzJzIGN1YmljLWJlemllcigwLjQsIDAsIDAuMiwgMSk7CiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0ycHgpO3d0Zm9udC1mZWF0dXJlLXNldHRpbmdzOiAibHRyaCIgMH0KYnV0dG9uOmhvdmVyIHsKICBiYWNrZ3JvdW5kLWNvbG9yOiBkYXJrZW4odmFyKC0tYWNjZW50KSk7CiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDRweCksCn0KZCB1Y2MgQ1RBIHsgZm9udC13ZWlnaHQ6IDcwMDsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgfQoKLyog4pSA4pSAIExheW91dHMg4pSA4pSAICovCi5oZXJvIC5jb250YWluZXIgewogIGRpc3BsYXk6IGdyaWQ7CiAgZ3JpZC10ZW1wbGF0ZTogIjEgMSIgYXV0bzsKICBhbGlnbi1pdGVtczogY2VudGVyOwogIGphc3RpZnktaXRlbXM6IHNwYWNlLWJldHdlZW47CiAgZ2FwOiAzOHB4Owp9CgohIENvZCBGb3N0IGplbmVyYXRvciB3aGVuIHdpZHRoIDwgNzUwcHgKQG1lZGlhIChtYXgtd2lkdGg6IDc0OXB4KSB7CiAgLmhlcm8gLmNvbnRhaW5lciB7CiAgICBkaXNwbGF5OiBmbGV4OwogICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbS1yZXZlcnNlOwogIH0KDYG1KSBbaGVpZ2h0PCQ2MDF7CiAgICAqeyogZm9udC1zaXplOiBjYWxjKDEycHggKyA4IHZtaW4pIH0KDYGU1ICEgICB0ZXh0IHsgZm9udC1zaXplOiBjYWxjKDI4cHggKyAxMCB2bWluKTsgfQogIH0KDYGU1IC5bYXJpYS1kZXNjcmliZWQtYnk9Imhlcm8tcGhvdG8iXSB7CiAgICB3aWR0aDogMTAwJTsKICAgIGhlaWdodDogYXV0bzsKICAgIG9iamVjdC1maXQ6IGNvdmVyOwogIH0KfQoKLyog4pSA4pSAIFR5cG9ncmFwaHkg4pSA4pSAICovCi5zdWJoZWFkaW5nPXsgZm9udC1mYW1pbHk6IEluc3RydW1lbnQgU2VyaWY7IGZvbnQtc2l6ZTogMTJweDsgZm9udC13ZWlnaHQ6IDQwMDsgZm9udC1zdHlsZTogaXRhbGljOyBsZXR0ZXItc3BhY2luZzogMC4xZW07IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IH0KHSJ0aW1lIHsgZm9udC1mYW1pbHk6IEluc3RydW1lbnQgU2VyaWY7IGZvbnQtc2l6ZTogMTRweDsgZm9udC13ZWlnaHQ6IDcwMDsgZm9udC1zdHlsZTogaXRhbGljOyB9CgoKLmxheW91dHMtaGVhZGVyIHsgbWFyZ2luLWJvdHRvbTogMTRweCB9Ci5sYXlvdXRzLWdyaWQgeyBkPSdncmlkJzsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiBzcmEtZml0KG1pbigtLW1heCwgMTAwJSkgOyBnYXA6IDM4cHg7IH0KLZBY20wYXlvdXQgey4gbm8tY29sb3I6bm9uZTsgYmFja2dyb3VuZDojZjBmMGYwOyBwYWRkaW5nOiBlYXJseSBidWlsZHMuOzQrNDsncmFkaXVzOiAwOGR1MzsgfQoKLm9mZmVyLXRhZ3sgZm9udC1zaXplOiAxMnB4OyB9CgoKLmNvbXBhbmctdGV4dCB7IGZvbnQtd2VpZ2h0OiA2MDA7IH0KLDAJ2l}IHsgZm9udC1zaXplOiAwLjg2ZW07IH0KCi8q4pSA4pSAIENhcmRzIOKUgOKUgCAqLwouY2FyZC1ncmlkIHsgZGlzcGxheTogZ3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoYXV0by1maXQsIG1pbk1heCgxODBweCwgMWZyKSk7IGdhcDogMjRweDsgfQoKLmNhcmQgeyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyBib3JkZXI6IDF0b2tIQlEgc29saWQgdmFyKC0tYm9yZGVyKTsgcGFkZGluZzogMjRweDsgYm9yZGVyLXJhZGl1czogdmFyKC0tcmFkaXVzKTsgfQoKLmNhcmQtdXRpbGl0eSB7IGZvbnQtd2VpZ2h0OiA1MDA7IGNvbG9yOiBzYXNpMGVkczsgfQogIC5jYXJkLWhlYWRpbmcgeyBmb250LXNpemU6IDEuNzVlbTsgZm9udC13ZWlnaHQ6IDcwMDsgbWFyZ2luLXRvcDogMTZweDsgfQoKLmNhcmQgOmhvdmVyIHsgYm9yZGVyLWNvbG9yOiB2YXIoLS1hY2NlbnQpOyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTRweCk7IH0KCi8q4pSA4pSAIE5hdmlnYXRpb24g4pSA4pSAICovCi5oZWFkZXIgeyBwb3NpdGlvbjogc3RpY2t5OyB0b3A6IDA7IGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJnKTsgeiAmaW5kZXg6IDk5OTsgb3BhY2l0eTogMC45NTsgfQoKLm5hdnsgZGlzcGxheTogZmxleDsgZ2FwOiAxNnB4O2FsaWduLWl0ZW1zOiBjZW50ZXI7IH0KCZAU3RodXAtaW1nIHsgaGVpZ2h0OiAzN3B4OyB3aWR0aDogYXV0bzsgfQoKLiPIbiBhIHsgcGFkZGluZzogNHB4IDtwbyRPJiNhfQoKLm5hdi1saW5rOnhvdmVyIHsgY29sb3I6IHZhcigtLWFjY2VudCk7IH0KCi8qIOKUgOKUgCBBY3RpdmF0aW9ucyDilIDilIAgKi8KLDAJ4piT7KCVbGlua3sgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7IH0KCi8qIOKUgOKUgCBGb290ZXIg4pSA4pSAICovCi5mb290ZXIgeyBtYXJnaW4tdG9wOiBhdXRvOyBib3JkZXItdG9wOiAxcHggc29saWQgdmFyKC0tYm9yZGVyKTsgcGFkZGluZzogMzJweCAwOyB9CgouZm9vdGVyLWdyaWQgeyBkaXNwbGF5OiBncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCgzLCAxZnIpOyBnYXA6IDI0cHg7IH0KCiYgaSB9Cgoubm9vcG0gYSB7IHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyB9Cgojc2l0ZWxvZ28geyBmaWx0ZXI6YnJpZ2h0bmVzcygxLjMpIH0KCi5hdXRvLWltYWdlLWIgeyBvcGFjaXR5OiAwLjYgfQoKQG1lZGlhIChtYXgtd2lkdGg6IDY3OXB4KSB7Ci5mb290ZXItZ3JpZCB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogMWZyOyB9Cn0KCDOV5YeLQnY8TG9neEBQB3QvYTiKaGVhZGluZzEgeyBmb250LWZhbWlseTogRE0gU2Fuc3sgZm9udC13ZWlnaHQ6IDcwMDsgfQooYfHSBvcDJc2t1YnRleHQgeyBmb250LWZhbWlseTogJkRsZGBzMDsgfQoobyBgb2Y4YiccCgo=
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxton Web | Websites for Local Service Businesses</title>
+<meta name="description" content="We build fast, clean websites for auto detailers, med spas, pressure washers, lawn care, and junk removal businesses. Flat-rate pricing starting at $399. No monthly fees.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:#0a0a0a;color:#f0ece6;
+  line-height:1.65;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ── Tokens ── */
+:root{
+  --bg:#0a0a0a;--bg2:#111111;--bg3:#181818;
+  --text:#f0ece6;--muted:#7a756d;--muted2:#4a4642;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --accent:#4f6ef7;--accent-light:rgba(79,110,247,0.12);
+  --radius:8px;--max:1160px;
+}
+
+/* ── Utility ── */
+.container{max-width:var(--max);margin:0 auto;padding:0 28px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.r1{transition-delay:.06s}.r2{transition-delay:.14s}
+.r3{transition-delay:.22s}.r4{transition-delay:.30s}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal-right.visible{opacity:1;transform:none}
+
+/* ── Nav ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:0 28px;transition:background .3s,border-color .3s;
+}
+nav.scrolled{
+  background:rgba(10,10,10,0.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;height:62px;
+}
+.logo{font-weight:700;font-size:1.05rem;letter-spacing:-.3px;color:var(--text)}
+.logo em{font-style:normal;color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{
+  font-size:.875rem;font-weight:500;color:var(--muted);
+  transition:color .15s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;
+  background:var(--accent);transition:width .2s ease;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:var(--accent);color:#fff;border:none;
+  padding:9px 22px;border-radius:var(--radius);
+  font-size:.875rem;font-weight:600;
+  transition:opacity .15s,transform .15s;
+}
+.nav-cta:hover{opacity:.88;transform:translateY(-1px)}
+.hamburger{
+  display:none;background:none;border:none;color:var(--text);
+  padding:4px;flex-direction:column;gap:5px;
+}
+.hamburger span{
+  display:block;width:22px;height:1.5px;background:currentColor;
+  transition:transform .2s,opacity .2s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-nav{
+  display:none;position:fixed;inset:0;top:62px;
+  background:var(--bg);z-index:199;
+  padding:32px 28px;flex-direction:column;gap:8px;
+  border-top:1px solid var(--border);
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  font-size:1.1rem;font-weight:600;color:var(--text);
+  padding:14px 0;border-bottom:1px solid var(--border);
+}
+.mobile-nav .nav-cta{margin-top:16px;text-align:center;display:block;padding:14px}
+
+/* ── Hero ── */
+.hero-wrap{
+  padding-top:120px;padding-bottom:0;
+  max-width:var(--max);margin:0 auto;
+  padding-left:28px;padding-right:28px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;align-items:center;
+  min-height:100vh;
+}
+.hero-text{}
+.live-dot{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.76rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:24px;
+}
+.live-dot::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:#22c55e;
+  box-shadow:0 0 0 0 rgba(34,197,94,.5);
+  animation:pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring{
+  0%{box-shadow:0 0 0 0 rgba(34,197,94,.45)}
+  70%{box-shadow:0 0 0 6px rgba(34,197,94,0)}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+.hero-text h1{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(2.8rem,5.5vw,4.6rem);font-weight:400;
+  line-height:1.06;letter-spacing:-.028em;
+  color:var(--text);margin-bottom:24px;
+}
+.hero-text h1 em{font-style:italic;color:var(--muted)}
+.hero-sub{
+  font-size:1.05rem;color:var(--muted);
+  max-width:460px;line-height:1.76;margin-bottom:40px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:var(--radius);
+  font-size:.93rem;font-weight:600;border:none;
+  transition:opacity .15s,transform .15s;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-ghost{
+  background:none;color:var(--muted);
+  border:1px solid var(--border2);
+  transition:color .15s,border-color .15s;
+}
+.btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,.22)}
+.hero-tags{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding-top:28px;border-top:1px solid var(--border);
+}
+.tag-label{
+  font-size:.74rem;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted2);flex-shrink:0;
+}
+.niche-tags{display:flex;gap:7px;flex-wrap:wrap}
+.niche-tag{
+  font-size:.75rem;font-weight:500;color:var(--muted);
+  padding:5px 12px;border-radius:100px;
+  border:1px solid var(--border);background:var(--bg2);
+}
+
+/* ── Hero Mockup ── */
+.hero-mockup{
+  animation:float 5s ease-in-out infinite;
+  position:relative;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+.browser{
+  border-radius:12px;overflow:hidden;
+  border:1px solid var(--border2);
+  background:#131313;
+}
+.browser-bar{
+  background:#1a1a1a;
+  padding:11px 16px;
+  display:flex;align-items:center;gap:7px;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.b-dot{width:9px;height:9px;border-radius:50%}
+.b-dot:nth-child(1){background:#ff5f57}
+.b-dot:nth-child(2){background:#febc2e}
+.b-dot:nth-child(3){background:#28c840}
+.b-url{
+  flex:1;margin-left:10px;background:#0f0f0f;
+  border-radius:4px;height:22px;
+  display:flex;align-items:center;padding:0 10px;
+  font-size:.7rem;color:#484848;font-family:monospace;
+  letter-spacing:0;font-weight:400;
+}
+/* Mockup content - auto detailer */
+.mock-site{background:#0d1117;padding:0}
+.mock-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.mock-logo{width:48px;height:8px;background:#f0ece6;border-radius:2px;opacity:.9}
+.mock-nav-links{display:flex;gap:10px}
+.mock-nav-link{width:28px;height:6px;background:rgba(255,255,255,.25);border-radius:2px}
+.mock-nav-cta{width:44px;height:22px;background:#4f6ef7;border-radius:4px}
+.mock-hero-bg{
+  background:linear-gradient(135deg,#0d1117 0%,#111827 60%,#0f172a 100%);
+  padding:28px 20px 24px;
+}
+.mock-eyebrow{width:72px;height:5px;background:rgba(79,110,247,.6);border-radius:2px;margin-bottom:14px}
+.mock-h1{width:85%;height:11px;background:#f0ece6;border-radius:2px;margin-bottom:8px;opacity:.95}
+.mock-h1b{width:60%;height:11px;background:#f0ece6;border-radius:2px;margin-bottom:14px;opacity:.95}
+.mock-sub{width:75%;height:6px;background:rgba(255,255,255,.3);border-radius:2px;margin-bottom:7px}
+.mock-sub2{width:55%;height:6px;background:rgba(255,255,255,.2);border-radius:2px;margin-bottom:18px}
+.mock-ctas{display:flex;gap:8px}
+.mock-btn-p{width:72px;height:22px;background:#4f6ef7;border-radius:4px}
+.mock-btn-g{width:68px;height:22px;border-radius:4px;border:1px solid rgba(255,255,255,.18)}
+.mock-services{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:8px;padding:16px 20px;background:#0f111a;
+}
+.mock-card{
+  background:rgba(255,255,255,.04);border-radius:6px;
+  padding:12px;border:1px solid rgba(255,255,255,.06);
+}
+.mock-card-icon{width:18px;height:18px;background:rgba(79,110,247,.4);border-radius:4px;margin-bottom:8px}
+.mock-card-title{width:70%;height:6px;background:rgba(255,255,255,.55);border-radius:2px;margin-bottom:6px}
+.mock-card-sub{width:85%;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin-bottom:4px}
+.mock-card-sub2{width:60%;height:4px;background:rgba(255,255,255,.15);border-radius:2px}
+.mock-footer-bar{
+  padding:12px 20px;background:#0a0a0a;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.mock-footer-logo{width:36px;height:6px;background:rgba(255,255,255,.25);border-radius:2px}
+.mock-footer-text{width:90px;height:5px;background:rgba(255,255,255,.12);border-radius:2px}
+.mock-label{
+  position:absolute;bottom:-44px;left:50%;transform:translateX(-50%);
+  font-size:.76rem;color:var(--muted);font-weight:500;white-space:nowrap;
+  display:flex;align-items:center;gap:6px;
+}
+.mock-label::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e}
+
+/* ── Strip ── */
+.strip{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:16px 0;overflow:hidden;background:var(--bg2);
+  margin-top:80px;
+}
+.strip-track{
+  display:flex;gap:40px;width:max-content;
+  animation:marquee 36s linear infinite;
+}
+.strip-track:hover{animation-play-state:paused}
+.strip-item{
+  font-size:.8rem;font-weight:500;color:var(--muted);
+  white-space:nowrap;display:flex;align-items:center;gap:10px;
+}
+.strip-item::after{content:'·';color:var(--muted2)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── Section ── */
+section{padding:104px 0}
+.section-label{
+  font-size:.74rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted2);
+  margin-bottom:18px;display:flex;align-items:center;gap:10px;
+}
+.section-label::after{content:'';width:30px;height:1px;background:var(--muted2)}
+h2{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(2rem,4vw,3.1rem);font-weight:400;
+  line-height:1.1;letter-spacing:-.022em;
+  color:var(--text);margin-bottom:18px;
+}
+h2 em{font-style:italic;color:var(--muted)}
+.section-sub{
+  font-size:1rem;color:var(--muted);max-width:480px;
+  line-height:1.76;margin-bottom:60px;
+}
+
+/* ── Why ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start}
+.why-list{list-style:none;margin-top:44px}
+.why-list li{
+  padding:24px 0;border-bottom:1px solid var(--border);
+  display:flex;gap:20px;align-items:flex-start;
+}
+.why-list li:first-child{border-top:1px solid var(--border)}
+.why-num{
+  font-size:.72rem;font-weight:700;color:var(--muted2);
+  padding-top:3px;flex-shrink:0;width:20px;
+}
+.why-text strong{
+  display:block;font-size:.93rem;font-weight:600;
+  color:var(--text);margin-bottom:6px;
+}
+.why-text p{font-size:.875rem;color:var(--muted);line-height:1.68}
+.proof-box{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:14px;padding:40px;
+  position:sticky;top:84px;
+}
+.proof-quote{
+  font-family:'Instrument Serif',serif;font-style:italic;
+  font-size:1.2rem;line-height:1.56;color:var(--text);
+  margin-bottom:22px;
+}
+.proof-meta strong{
+  display:block;font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:2px;
+}
+.proof-meta span{font-size:.82rem;color:var(--muted)}
+
+/* ── Work / Portfolio ── */
+.work-intro{max-width:600px;margin-bottom:60px}
+.work-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.work-card{
+  border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;transition:border-color .2s,transform .25s;
+  cursor:default;
+}
+.work-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+.work-browser-bar{
+  background:#1a1a1a;padding:10px 14px;
+  display:flex;align-items:center;gap:6px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.w-dot{width:8px;height:8px;border-radius:50%}
+.w-dot:nth-child(1){background:#ff5f57}
+.w-dot:nth-child(2){background:#febc2e}
+.w-dot:nth-child(3){background:#28c840}
+.w-url{
+  flex:1;margin-left:8px;background:#0d0d0d;
+  border-radius:3px;height:19px;
+  display:flex;align-items:center;padding:0 8px;
+  font-size:.67rem;color:#444;font-family:monospace;
+}
+/* Niche mockup bodies */
+.work-body{position:relative}
+/* Detailer - dark blue/slate */
+.wm-detailer{
+  background:linear-gradient(160deg,#0d1117 0%,#0f172a 100%);
+  padding:20px 18px 18px;min-height:190px;
+}
+.wm-detailer .wm-tag{color:rgba(79,110,247,.9);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.wm-detailer .wm-h{width:80%;height:9px;background:rgba(240,236,230,.9);border-radius:2px;margin-bottom:6px}
+.wm-detailer .wm-h2{width:55%;height:9px;background:rgba(240,236,230,.85);border-radius:2px;margin-bottom:12px}
+.wm-detailer .wm-s{width:70%;height:5px;background:rgba(255,255,255,.25);border-radius:2px;margin-bottom:5px}
+.wm-detailer .wm-s2{width:50%;height:5px;background:rgba(255,255,255,.18);border-radius:2px;margin-bottom:14px}
+.wm-detailer .wm-btn{width:60px;height:18px;background:#4f6ef7;border-radius:3px}
+.wm-detailer-cards{
+  display:grid;grid-template-columns:1fr 1fr;gap:6px;
+  padding:12px 18px 14px;background:rgba(0,0,0,.4);
+}
+.wm-mini-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:5px;padding:8px}
+.wm-mini-icon{width:14px;height:14px;border-radius:3px;margin-bottom:6px}
+.wm-mini-line{height:4px;background:rgba(255,255,255,.3);border-radius:2px;margin-bottom:3px}
+.wm-mini-line.short{width:65%}
+/* Med spa - warm cream/blush */
+.wm-medspa{
+  background:linear-gradient(160deg,#faf8f5 0%,#f5f0eb 100%);
+  padding:20px 18px 18px;min-height:190px;
+}
+.wm-medspa .wm-tag{color:rgba(147,112,98,.9);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.wm-medspa .wm-h{width:75%;height:9px;background:rgba(30,20,15,.85);border-radius:2px;margin-bottom:6px}
+.wm-medspa .wm-h2{width:50%;height:9px;background:rgba(30,20,15,.75);border-radius:2px;margin-bottom:12px}
+.wm-medspa .wm-s{width:80%;height:5px;background:rgba(30,20,15,.25);border-radius:2px;margin-bottom:5px}
+.wm-medspa .wm-s2{width:55%;height:5px;background:rgba(30,20,15,.18);border-radius:2px;margin-bottom:14px}
+.wm-medspa .wm-btn{width:64px;height:18px;background:rgba(147,112,98,.85);border-radius:3px}
+.wm-medspa-cards{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;
+  padding:10px 18px 14px;background:rgba(200,185,175,.15);
+}
+.wm-medspa .wm-mini-icon{background:rgba(147,112,98,.35)}
+.wm-medspa .wm-mini-line{background:rgba(30,20,15,.25)}
+.wm-medspa .wm-mini-card{background:rgba(255,255,255,.7);border:1px solid rgba(30,20,15,.08)}
+/* Lawn - deep green */
+.wm-lawn{
+  background:linear-gradient(160deg,#0a1209 0%,#0d1a0c 100%);
+  padding:20px 18px 18px;min-height:190px;
+}
+.wm-lawn .wm-tag{color:rgba(74,222,128,.8);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.wm-lawn .wm-h{width:82%;height:9px;background:rgba(240,236,230,.9);border-radius:2px;margin-bottom:6px}
+.wm-lawn .wm-h2{width:58%;height:9px;background:rgba(240,236,230,.82);border-radius:2px;margin-bottom:12px}
+.wm-lawn .wm-s{width:72%;height:5px;background:rgba(255,255,255,.25);border-radius:2px;margin-bottom:5px}
+.wm-lawn .wm-s2{width:50%;height:5px;background:rgba(255,255,255,.18);border-radius:2px;margin-bottom:14px}
+.wm-lawn .wm-btn{width:62px;height:18px;background:rgba(74,222,128,.8);border-radius:3px}
+.wm-lawn-cards{
+  display:grid;grid-template-columns:1fr 1fr;gap:6px;
+  padding:12px 18px 14px;background:rgba(0,0,0,.35);
+}
+.wm-lawn .wm-mini-icon{background:rgba(74,222,128,.3)}
+.wm-lawn .wm-mini-line{background:rgba(255,255,255,.3)}
+.wm-mini-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 18px;height:28px;background:rgba(0,0,0,.3);
+  border-bottom:1px solid rgba(255,255,255,.05);
+  margin-bottom:0;
+}
+.wm-mini-logo{width:32px;height:5px;background:rgba(255,255,255,.6);border-radius:2px}
+.wm-mini-links{display:flex;gap:8px}
+.wm-mini-navlink{width:20px;height:4px;background:rgba(255,255,255,.2);border-radius:2px}
+.wm-mini-navcta{width:32px;height:16px;border-radius:2px}
+.work-card-label{
+  padding:14px 18px;background:var(--bg2);
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.work-niche{font-size:.8rem;font-weight:600;color:var(--text)}
+.work-location{font-size:.76rem;color:var(--muted)}
+
+/* ── Pricing ── */
+.pricing-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-top:0;
+}
+.plan{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:14px;padding:36px 32px;
+  transition:border-color .2s,transform .2s;
+}
+.plan:hover{border-color:var(--border2);transform:translateY(-2px)}
+.plan.featured{
+  background:var(--bg2);border-color:var(--accent);
+  position:relative;
+}
+.plan-badge{
+  position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:#fff;
+  font-size:.7rem;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;padding:4px 14px;border-radius:100px;
+  white-space:nowrap;
+}
+.plan-name{
+  font-size:.8rem;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted2);margin-bottom:14px;
+}
+.plan-price{
+  font-size:2.9rem;font-weight:700;color:var(--text);
+  letter-spacing:-.03em;line-height:1;margin-bottom:4px;
+}
+.plan-price sup{font-size:1.2rem;vertical-align:top;margin-top:8px;margin-right:2px;font-weight:600}
+.plan-freq{font-size:.8rem;color:var(--muted);margin-bottom:24px}
+.plan-divider{height:1px;background:var(--border);margin-bottom:24px}
+.plan-features{list-style:none;margin-bottom:32px}
+.plan-features li{
+  font-size:.875rem;color:var(--muted);
+  padding:8px 0;display:flex;align-items:flex-start;gap:10px;
+}
+.plan-features li::before{
+  content:'';width:15px;height:15px;border-radius:50%;
+  background:var(--accent-light);border:1px solid rgba(79,110,247,.3);
+  flex-shrink:0;margin-top:2px;
+}
+.plan-features li strong{color:var(--text)}
+.plan-cta{
+  display:block;text-align:center;
+  padding:12px;border-radius:var(--radius);
+  font-size:.875rem;font-weight:600;
+  transition:opacity .15s,transform .15s;
+}
+.plan-cta.btn-primary{background:var(--accent);color:#fff}
+.plan-cta.btn-primary:hover{opacity:.88}
+.plan-cta.btn-ghost{
+  border:1px solid var(--border2);color:var(--muted);
+  background:none;
+}
+.plan-cta.btn-ghost:hover{border-color:rgba(255,255,255,.22);color:var(--text)}
+
+/* ── Process ── */
+.process-inner{max-width:640px}
+.steps{margin-top:52px;display:flex;flex-direction:column;gap:0}
+.step{
+  display:flex;gap:24px;align-items:flex-start;
+  padding:28px 0;border-bottom:1px solid var(--border);
+  position:relative;
+}
+.step:first-child{border-top:1px solid var(--border)}
+.step-num{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--bg2);border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.78rem;font-weight:700;color:var(--muted);
+  flex-shrink:0;
+}
+.step h3{font-size:.93rem;font-weight:600;color:var(--text);margin-bottom:7px}
+.step p{font-size:.875rem;color:var(--muted);line-height:1.68}
+.step-time{
+  font-size:.75rem;font-weight:600;color:var(--accent);
+  margin-top:8px;letter-spacing:.03em;
+}
+
+/* ── Testimonials ── */
+.testi-section{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:100px 0;background:var(--bg2);
+}
+.testi-head{
+  display:flex;justify-content:space-between;
+  align-items:flex-end;margin-bottom:56px;
+}
+.testi-head h2{margin-bottom:0}
+.testi-head p{font-size:.875rem;color:var(--muted);max-width:260px;text-align:right;line-height:1.6}
+.testi-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.testi-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:14px;padding:32px 28px;
+  transition:border-color .2s,transform .2s;
+}
+.testi-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.testi-stars{display:flex;gap:2px;margin-bottom:20px}
+.star{width:14px;height:14px;fill:#f59e0b}
+.testi-text{
+  font-size:.93rem;color:var(--text);
+  line-height:1.68;margin-bottom:24px;
+  font-style:italic;
+}
+.testi-byline{border-top:1px solid var(--border);padding-top:18px}
+.testi-name{font-size:.83rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.testi-biz{font-size:.79rem;color:var(--muted)}
+
+/* ── FAQ ── */
+.faq-inner{max-width:660px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{
+  width:100%;background:none;border:none;padding:20px 0;
+  display:flex;justify-content:space-between;align-items:center;
+  color:var(--text);font-size:.92rem;font-weight:600;
+  text-align:left;gap:16px;transition:color .15s;
+}
+.faq-q:hover{color:var(--muted)}
+.faq-icon{
+  flex-shrink:0;width:20px;height:20px;border-radius:50%;
+  border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;color:var(--muted);
+  transition:transform .25s,border-color .15s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--accent);color:var(--accent)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a-inner{padding:0 0 20px;font-size:.875rem;color:var(--muted);line-height:1.72}
+.faq-item.open .faq-a{max-height:260px}
+
+/* ── CTA ── */
+.cta-section{
+  background:var(--bg2);padding:104px 0;text-align:center;
+  border-top:1px solid var(--border);
+}
+.cta-section h2{margin:0 auto 18px;max-width:580px}
+.cta-section p{
+  font-size:1rem;color:var(--muted);max-width:420px;
+  margin:0 auto 44px;line-height:1.76;
+}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ── Footer ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:56px 0 40px;
+}
+.footer-inner{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:48px;margin-bottom:48px;
+}
+.footer-brand .logo{display:inline-block;margin-bottom:14px}
+.footer-brand p{font-size:.855rem;color:var(--muted);line-height:1.68;max-width:240px}
+.footer-col h4{
+  font-size:.74rem;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted2);margin-bottom:16px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col li a{font-size:.85rem;color:var(--muted);transition:color .15s}
+.footer-col li a:hover{color:var(--text)}
+.footer-bottom{
+  padding-top:28px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{font-size:.8rem;color:var(--muted2)}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .hero-wrap{grid-template-columns:1fr;gap:56px;padding-top:110px}
+  .hero-mockup{display:none}
+  .why-grid{grid-template-columns:1fr;gap:48px}
+  .proof-box{position:static}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr;max-width:400px}
+  .testi-grid{grid-template-columns:1fr}
+  .testi-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .testi-head p{text-align:left;max-width:100%}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero-text h1{font-size:clamp(2.4rem,8vw,3.2rem)}
+  .strip{margin-top:60px}
+  section{padding:72px 0}
+  .work-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr;max-width:100%}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .footer-inner{grid-template-columns:1fr}
+  .testi-card{padding:24px 20px}
+  .plan{padding:28px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">Roxton<em>.</em></a>
+    <ul class="nav-links">
+      <li><a href="#why">Why us</a></li>
+      <li><a href="#work">Our work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="mailto:contact@roxtonweb.com?subject=Free Mockup Request" class="nav-cta">Get a free mockup</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#why" onclick="closeMobile()">Why us</a>
+  <a href="#work" onclick="closeMobile()">Our work</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="mailto:contact@roxtonweb.com" class="nav-cta btn" onclick="closeMobile()">Get a free mockup</a>
+</div>
+
+<!-- Hero -->
+<div class="hero-wrap">
+  <div class="hero-text">
+    <p class="live-dot reveal">Taking new clients</p>
+    <h1 class="reveal r1">Your competitors are<br>getting jobs you <em>should</em><br>be getting.</h1>
+    <p class="hero-sub reveal r2">We build fast, clean websites for local service businesses. Flat-rate pricing, no monthly fees, no agency markup. Just a site that brings in work.</p>
+    <div class="hero-actions reveal r3">
+      <a href="#pricing" class="btn btn-primary">See pricing →</a>
+      <a href="mailto:contact@roxtonweb.com" class="btn btn-ghost">Get a free mockup</a>
+    </div>
+    <div class="hero-tags reveal r4">
+      <span class="tag-label">Built for</span>
+      <div class="niche-tags">
+        <span class="niche-tag">Auto Detailers</span>
+        <span class="niche-tag">Med Spas</span>
+        <span class="niche-tag">Pressure Washing</span>
+        <span class="niche-tag">Lawn Care</span>
+        <span class="niche-tag">Junk Removal</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-mockup reveal-right" style="transition-delay:.3s;position:relative;padding-bottom:52px">
+    <div class="browser">
+      <div class="browser-bar">
+        <span class="b-dot"></span>
+        <span class="b-dot"></span>
+        <span class="b-dot"></span>
+        <span class="b-url">elitedetailco.com</span>
+      </div>
+      <div class="mock-site">
+        <div class="mock-nav">
+          <div class="mock-logo"></div>
+          <div class="mock-nav-links">
+            <div class="mock-nav-link"></div>
+            <div class="mock-nav-link"></div>
+            <div class="mock-nav-link"></div>
+          </div>
+          <div class="mock-nav-cta"></div>
+        </div>
+        <div class="mock-hero-bg">
+          <div class="mock-eyebrow"></div>
+          <div class="mock-h1"></div>
+          <div class="mock-h1b"></div>
+          <div class="mock-sub"></div>
+          <div class="mock-sub2"></div>
+          <div class="mock-ctas">
+            <div class="mock-btn-p"></div>
+            <div class="mock-btn-g"></div>
+          </div>
+        </div>
+        <div class="mock-services">
+          <div class="mock-card">
+            <div class="mock-card-icon"></div>
+            <div class="mock-card-title"></div>
+            <div class="mock-card-sub"></div>
+            <div class="mock-card-sub2"></div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon"></div>
+            <div class="mock-card-title"></div>
+            <div class="mock-card-sub"></div>
+            <div class="mock-card-sub2"></div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon"></div>
+            <div class="mock-card-title"></div>
+            <div class="mock-card-sub"></div>
+            <div class="mock-card-sub2"></div>
+          </div>
+        </div>
+        <div class="mock-footer-bar">
+          <div class="mock-footer-logo"></div>
+          <div class="mock-footer-text"></div>
+        </div>
+      </div>
+    </div>
+    <p class="mock-label">Auto detailer site, built by Roxton Web</p>
+  </div>
+</div>
+
+<!-- Strip -->
+<div class="strip">
+  <div class="strip-track" aria-hidden="true">
+    <span class="strip-item">Dallas TX</span>
+    <span class="strip-item">Miami FL</span>
+    <span class="strip-item">Las Vegas NV</span>
+    <span class="strip-item">Phoenix AZ</span>
+    <span class="strip-item">Atlanta GA</span>
+    <span class="strip-item">Denver CO</span>
+    <span class="strip-item">Nashville TN</span>
+    <span class="strip-item">Austin TX</span>
+    <span class="strip-item">Charlotte NC</span>
+    <span class="strip-item">Tampa FL</span>
+    <span class="strip-item">Chicago IL</span>
+    <span class="strip-item">Scottsdale AZ</span>
+    <span class="strip-item">San Antonio TX</span>
+    <span class="strip-item">Orlando FL</span>
+    <span class="strip-item">Houston TX</span>
+    <span class="strip-item">Seattle WA</span>
+    <span class="strip-item">Dallas TX</span>
+    <span class="strip-item">Miami FL</span>
+    <span class="strip-item">Las Vegas NV</span>
+    <span class="strip-item">Phoenix AZ</span>
+    <span class="strip-item">Atlanta GA</span>
+    <span class="strip-item">Denver CO</span>
+    <span class="strip-item">Nashville TN</span>
+    <span class="strip-item">Austin TX</span>
+    <span class="strip-item">Charlotte NC</span>
+    <span class="strip-item">Tampa FL</span>
+    <span class="strip-item">Chicago IL</span>
+    <span class="strip-item">Scottsdale AZ</span>
+    <span class="strip-item">San Antonio TX</span>
+    <span class="strip-item">Orlando FL</span>
+    <span class="strip-item">Houston TX</span>
+    <span class="strip-item">Seattle WA</span>
+  </div>
+</div>
+
+<!-- Why -->
+<section id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <p class="section-label reveal">The situation</p>
+        <h2 class="reveal r1">Most local businesses have<br>the <em>wrong</em> website.</h2>
+        <p class="section-sub reveal r2">Either they have nothing, or something from 2016 that loads slow, looks bad on phones, and doesn't tell anyone what to do next.</p>
+        <ul class="why-list">
+          <li class="reveal">
+            <span class="why-num">01</span>
+            <div class="why-text">
+              <strong>Your competitor is getting calls you could be getting</strong>
+              <p>When someone searches for a detailer or lawn crew in your area, the business with the best-looking site usually wins. Even if you're better at the actual work.</p>
+            </div>
+          </li>
+          <li class="reveal r1">
+            <span class="why-num">02</span>
+            <div class="why-text">
+              <strong>A bad site is worse than no site</strong>
+              <p>If someone lands on a slow, outdated, or broken page, they're gone in 5 seconds and calling the next result.</p>
+            </div>
+          </li>
+          <li class="reveal r2">
+            <span class="why-num">03</span>
+            <div class="why-text">
+              <strong>Most agencies don't know your niche</strong>
+              <p>They build sites for tech companies. We only work with five niches: detailers, med spas, pressure washers, lawn care, and junk removal. We know what converts in each one.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="reveal-right" style="transition-delay:.15s">
+        <div class="proof-box">
+          <p class="proof-quote">"went from 0 online to getting calls every week. the site paid for itself the first job, not even close"</p>
+          <p class="proof-meta">
+            <strong>Marcus T.</strong>
+            <span>Auto Detailing · Las Vegas, NV</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Work -->
+<section id="work" style="background:var(--bg2);border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="work-intro">
+      <p class="section-label reveal">The work</p>
+      <h2 class="reveal r1">Sites that make clients<br>choose <em>you.</em></h2>
+      <p class="section-sub reveal r2" style="margin-bottom:0">Built specifically for your niche. Not templated, not generic. Every site is designed around how your customers actually make decisions.</p>
+    </div>
+    <div class="work-grid">
+
+      <!-- Auto Detailer -->
+      <div class="work-card reveal">
+        <div class="work-browser-bar">
+          <span class="w-dot"></span>
+          <span class="w-dot"></span>
+          <span class="w-dot"></span>
+          <span class="w-url">eliteautodetail.com</span>
+        </div>
+        <div class="work-body">
+          <div class="wm-mini-nav" style="background:rgba(0,0,0,.4)">
+            <div class="wm-mini-logo" style="background:rgba(255,255,255,.6)"></div>
+            <div class="wm-mini-links">
+              <div class="wm-mini-navlink"></div>
+              <div class="wm-mini-navlink"></div>
+            </div>
+            <div class="wm-mini-navcta" style="background:#4f6ef7"></div>
+          </div>
+          <div class="wm-detailer">
+            <div class="wm-tag">Auto Detailing</div>
+            <div class="wm-h"></div>
+            <div class="wm-h2"></div>
+            <div class="wm-s"></div>
+            <div class="wm-s2"></div>
+            <div class="wm-btn"></div>
+          </div>
+          <div class="wm-detailer-cards">
+            <div class="wm-mini-card">
+              <div class="wm-mini-icon" style="background:rgba(79,110,247,.4)"></div>
+              <div class="wm-mini-line"></div>
+              <div class="wm-mini-line short"></div>
+            </div>
+            <div class="wm-mini-card">
+              <div class="wm-mini-icon" style="background:rgba(79,110,247,.4)"></div>
+              <div class="wm-mini-line"></div>
+              <div class="wm-mini-line short"></div>
+            </div>
+          </div>
+        </div>
+        <div class="work-card-label">
+          <span class="work-niche">Auto Detailing</span>
+          <span class="work-location">From $399</span>
+        </div>
+      </div>
+
+      <!-- Med Spa -->
+      <div class="work-card reveal r1">
+        <div class="work-browser-bar">
+          <span class="w-dot"></span>
+          <span class="w-dot"></span>
+          <span class="w-dot"></span>
+          <span class="w-url">lumemedspa.com</span>
+        </div>
+        <div class="work-body">
+          <div class="wm-mini-nav" style="background:rgba(200,185,175,.2)">
+            <div class="wm-mini-logo" style="background:rgba(30,20,15,.5)"></div>
+            <div class="wm-mini-links">
+              <div class="wm-mini-navlink" style="background:rgba(30,20,15,.2)"></div>
+              <div class="wm-mini-navlink" style="background:rgba(30,20,15,.2)"></div>
+            </div>
+            <div class="wm-mini-navcta" style="background:rgba(147,112,98,.7)"></div>
+          </div>
+          <div class="wm-medspa">
+            <div class="wm-tag">Med Spa</div>
+            <div class="wm-h"></div>
+            <div class="wm-h2"></div>
+            <div class="wm-s"></div>
+            <div class="wm-s2"></div>
+            <div class="wm-btn"></div>
+          </div>
+          <div class="wm-medspa-cards">
+            <div class="wm-mini-card">
+              <div class="wm-mini-icon" style="background:rgba(147,112,98,.35)"></div>
+              <div class="wm-mini-line" style="background:rgba(30,20,15,.25)"></div>
+              <div class="wm-mini-line short" style="background:rgba(30,20,15,.18)"></div>
+            </div>
+            <div class="wm-mini-card">
+              <div class="wm-mini-icon" style="background:rgba(147,112,98,.35)"></div>
+              <div class="wm-mini-line" style="background:rgba(30,20,15,.25)"></div>
+              <div class="wm-mini-line short" style="background:rgba(30,20,15,.18)"></div>
+            </div>
+            <div class="wm-mini-card">
+              <div class="wm-mini-icon" style="background:rgba(147,112,98,.35)"></div>
+              <div class="wm-mini-line" style="background:rgba(30,20,15,.25)"></div>
+              <div class="wm-mini-line short" style="background:rgba(30,20,15,.18)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="work-card-label">
+          <span class="work-niche">Med Spa</span>
+          <span class="work-location">From $399</span>
+        </div>
+      </div>
+
+      <!-- Lawn Care -->
+      <div class="work-card reveal r2">
+        <div class="work-browser-bar">
+          <span class="w-dot"></span>
+          <span class="w-dot"></span>
+          <span class="w-dot"></span>
+          <span class="w-url">greencrewlawn.com</span>
+        </div>
+        <div class="work-body">
+          <div class="wm-mini-nav" style="background:rgba(0,0,0,.4)">
+            <div class="wm-mini-logo" style="background:rgba(255,255,255,.5)"></div>
+            <div class="wm-mini-links">
+              <div class="wm-mini-navlink"></div>
+              <div class="wm-mini-navlink"></div>
+            </div>
+            <div class="wm-mini-navcta" style="background:rgba(74,222,128,.7)"></div>
+          </div>
+          <div class="wm-lawn">
+            <div class="wm-tag">Lawn &amp; Landscape</div>
+            <div class="wm-h"></div>
+            <div class="wm-h2"></div>
+            <div class="wm-s"></div>
+            <div class="wm-s2"></div>
+            <div class="wm-btn"></div>
+          </div>
+          <div class="wm-lawn-cards">
+            <div class="wm-mini-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)">
+              <div class="wm-mini-icon" style="background:rgba(74,222,128,.3)"></div>
+              <div class="wm-mini-line" style="background:rgba(255,255,255,.3)"></div>
+              <div class="wm-mini-line short" style="background:rgba(255,255,255,.2)"></div>
+            </div>
+            <div class="wm-mini-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)">
+              <div class="wm-mini-icon" style="background:rgba(74,222,128,.3)"></div>
+              <div class="wm-mini-line" style="background:rgba(255,255,255,.3)"></div>
+              <div class="wm-mini-line short" style="background:rgba(255,255,255,.2)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="work-card-label">
+          <span class="work-niche">Lawn &amp; Landscape</span>
+          <span class="work-location">From $399</span>
+        </div>
+      </div>
+
+    </div>
+    <p class="reveal" style="margin-top:24px;font-size:.84rem;color:var(--muted)">Also building for: Pressure Washing · Junk Removal · Window Cleaning · Pool Service</p>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+  <div class="container">
+    <p class="section-label reveal">Pricing</p>
+    <h2 class="reveal r1">Simple, flat-rate pricing.</h2>
+    <p class="section-sub reveal r2">Pay once, own it forever. No monthly fees, no retainers, no surprises.</p>
+    <div class="pricing-grid">
+      <div class="plan reveal">
+        <p class="plan-name">Starter</p>
+        <p class="plan-price"><sup>$</sup>399</p>
+        <p class="plan-freq">One-time · No monthly fees</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Single-page site</li>
+          <li>Mobile-optimized design</li>
+          <li>Services + pricing section</li>
+          <li>Contact form or phone CTA</li>
+          <li>1 revision round</li>
+          <li><strong>Live in 1-2 days</strong></li>
+        </ul>
+        <a href="mailto:contact@roxtonweb.com?subject=Starter Package" class="plan-cta btn-ghost">Get started</a>
+      </div>
+
+      <div class="plan featured reveal r1">
+        <p class="plan-badge">Most popular</p>
+        <p class="plan-name">Standard</p>
+        <p class="plan-price"><sup>$</sup>599</p>
+        <p class="plan-freq">One-time · No monthly fees</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>2–3 page site</li>
+          <li>Mobile-optimized design</li>
+          <li>Services, About, Contact pages</li>
+          <li>Google Maps embed</li>
+          <li>Before/after photo gallery</li>
+          <li>2 revision rounds</li>
+          <li><strong>Live in 2-3 days</strong></li>
+        </ul>
+        <a href="mailto:contact@roxtonweb.com?subject=Standard Package" class="plan-cta btn-primary">Get started →</a>
+      </div>
+
+      <div class="plan reveal r2">
+        <p class="plan-name">Pro</p>
+        <p class="plan-price"><sup>$</sup>899</p>
+        <p class="plan-freq">One-time · No monthly fees</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>4–5 page site</li>
+          <li>Full mobile + tablet design</li>
+          <li>Online booking integration</li>
+          <li>Review section + testimonials</li>
+          <li>Blog or promo page</li>
+          <li>Basic SEO setup</li>
+          <li>3 revision rounds</li>
+          <li><strong>Live in 3-5 days</strong></li>
+        </ul>
+        <a href="mailto:contact@roxtonweb.com?subject=Pro Package" class="plan-cta btn-ghost">Get started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" style="background:var(--bg2);border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="process-inner">
+      <p class="section-label reveal">How it works</p>
+      <h2 class="reveal r1">From first message<br>to <em>live site</em> in days.</h2>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num">1</span>
+          <div>
+            <h3>You tell us about your business</h3>
+            <p>Business name, what you do, and any photos you have. No calls required. A quick message is enough to get started.</p>
+            <p class="step-time">Takes 2 minutes</p>
+          </div>
+        </div>
+        <div class="step reveal r1">
+          <span class="step-num">2</span>
+          <div>
+            <h3>We send you a free mockup</h3>
+            <p>Before you pay anything, you see exactly what your site will look like. Approve it or request changes. No surprises.</p>
+            <p class="step-time">Same day</p>
+          </div>
+        </div>
+        <div class="step reveal r2">
+          <span class="step-num">3</span>
+          <div>
+            <h3>We build it</h3>
+            <p>Once you approve the design, we build the full site. Revision rounds are included depending on your package.</p>
+            <p class="step-time">Day 1–2</p>
+          </div>
+        </div>
+        <div class="step reveal r3">
+          <span class="step-num">4</span>
+          <div>
+            <h3>Your site goes live</h3>
+            <p>We connect your domain, run a final check, and hand everything over. Fully owned by you, no strings attached.</p>
+            <p class="step-time">Day 1–5 depending on package</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<div class="testi-section">
+  <div class="container">
+    <div class="testi-head">
+      <div>
+        <p class="section-label reveal">From clients</p>
+        <h2 class="reveal r1">Real people,<br>real <em>results.</em></h2>
+      </div>
+      <p class="reveal r2">Every one of these is a business owner who messaged us first, just like you.</p>
+    </div>
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-text">"went from 0 online to booking out 2 weeks in advance. my old site was straight up embarrassing lol. this one actually gets people calling"</p>
+        <div class="testi-byline">
+          <p class="testi-name">Marcus T.</p>
+          <p class="testi-biz">Auto Detailing · Las Vegas, NV</p>
+        </div>
+      </div>
+
+      <div class="testi-card reveal r1">
+        <div class="testi-stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-text">"the mockup they sent looked way better than what i was paying $200/mo for. i signed the same day honestly didnt think it would be that good for the price"</p>
+        <div class="testi-byline">
+          <p class="testi-name">Jessica K.</p>
+          <p class="testi-biz">Med Spa · Scottsdale, AZ</p>
+        </div>
+      </div>
+
+      <div class="testi-card reveal r2">
+        <div class="testi-stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testi-text">"had some rough wordpress thing before. needed something fast before lawn season started and they got it up in 5 days. clean as hell, im actually proud to send people to it now"</p>
+        <div class="testi-byline">
+          <p class="testi-name">Tyler W.</p>
+          <p class="testi-biz">Lawn Care · Dallas, TX</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <p class="section-label reveal">Questions</p>
+      <h2 class="reveal r1">Things people<br>usually <em>ask.</em></h2>
+
+      <div class="faq-item reveal r2">
+        <button class="faq-q">Do you charge monthly fees?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. You pay once and own the site. Hosting is free on GitHub Pages. The only optional cost is a custom domain (around $15/year from Namecheap or GoDaddy) if you want your own URL. Your site works without one too.</div></div>
+      </div>
+
+      <div class="faq-item reveal r2">
+        <button class="faq-q">What do you need from me to start?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Your business name, what you do, and any photos you want to use. We handle the copy, design, and technical setup. No calls required.</div></div>
+      </div>
+
+      <div class="faq-item reveal r2">
+        <button class="faq-q">How fast do you actually deliver?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Fast. You get a free mockup the same day you reach out. Starter sites go live in 1-2 days, Standard in 2-3, Pro in 3-5. Nothing gets built until you approve the design first.</div></div>
+      </div>
+
+      <div class="faq-item reveal r2">
+        <button class="faq-q">Can I make changes after the site is live?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Starter includes 1 revision round, Standard gets 2, and Pro gets 3. After launch, we offer small update packages if you need changes down the road.</div></div>
+      </div>
+
+      <div class="faq-item reveal r2">
+        <button class="faq-q">Do you work with businesses outside the US?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We work with local service businesses across the US. Wherever you are, reach out. If you're in one of our five niches, we can help.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container">
+    <h2 class="reveal">Ready to look like<br>the <em>best option</em> in your city?</h2>
+    <p class="reveal r1">We'll send you a free mockup of what your site could look like. No payment, no commitment required.</p>
+    <div class="cta-actions reveal r2">
+      <a href="mailto:contact@roxtonweb.com?subject=Free Mockup Request" class="btn btn-primary">Get my free mockup →</a>
+      <a href="#pricing" class="btn btn-ghost">See pricing</a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">Roxton<em>.</em></a>
+        <p>Websites for local service businesses across the US. Built fast, priced fairly, owned by you.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Packages</h4>
+        <ul>
+          <li><a href="#pricing">Starter ($399)</a></li>
+          <li><a href="#pricing">Standard ($599)</a></li>
+          <li><a href="#pricing">Pro ($899)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Niches</h4>
+        <ul>
+          <li><a href="#">Auto Detailers</a></li>
+          <li><a href="#">Med Spas</a></li>
+          <li><a href="#">Pressure Washing</a></li>
+          <li><a href="#">Lawn Care</a></li>
+          <li><a href="#">Junk Removal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@roxtonweb.com">contact@roxtonweb.com</a></li>
+          <li><a href="https://instagram.com/Roxtonn" target="_blank" rel="noopener">@Roxtonn on Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Roxton Web. All rights reserved.</p>
+      <p>Serving local service businesses nationwide</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive: true});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMobile() {
+  mobileNav.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Hero on-load reveal
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.hero-text .reveal, .hero-text .reveal-left, .hero-text .reveal-right').forEach(el => {
+    el.classList.add('visible');
+  });
+  // Slight delay for the mockup side
+  setTimeout(() => {
+    document.querySelectorAll('.hero-mockup').forEach(el => el.classList.add('visible'));
+  }, 200);
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.1, rootMargin: '0px 0px -28px 0px'});
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+  // Skip hero elements already shown
+  if (!el.closest('.hero-text') && !el.closest('.hero-mockup')) {
+    observer.observe(el);
+  }
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
