@@ -109,7 +109,7 @@ NOTES:
 
 ---
 
-### RUN LOG — 2026-04-08 — account: @Roxtonn
+### RUN LOG — 2026-04-08 (run 1) — account: @Roxtonn
 ```
 IG INBOX WATCHER — 2026-04-08
 Unread threads found: 1
@@ -130,5 +130,31 @@ Other queue status:
   @byebyejunk_kc — stage: REPLIED (auto-responder from business, previously logged)
 
 Queue updated: ✅ no changes needed (inbox clear)
+Analytics → GitHub: ✅ yes
+```
+
+---
+
+### RUN LOG — 2026-04-08 (run 2) — account: @Roxtonn
+```
+IG INBOX WATCHER — 2026-04-08
+Unread threads found: 2
+Processed: 0 actionable
+
+  Unread thread 1: "sausage party insta" (personal group chat, 10 members — not in queue, skipped)
+    Content: sports/recruiting discussion (football, Bishop Gorman)
+  Unread thread 2: "gwyneth" (@gwyneth.maddox — personal contact, not in queue, skipped)
+    Content: story reaction (heart emojis on @roxton's story)
+
+Queue leads active (OUTREACH_SENT): 15
+  @ksmobiledetailing, @pmdpressurewashing, @lillespristineclean,
+  @hensleymowing, @chapasautodetailing, @superiorlawnsa,
+  @preciselandscapes, @izhepressurewashing, @orlandolawncare,
+  @fisherlawnlandscape, @mgdetailingmn, @solidsudznashvilletn,
+  @ldclawncare, @promise.lcs, @atymetoshinemobile
+  → All show "You:" as last message — no business replies received
+
+Stage actions taken: none
+Queue updated: ✅ no changes needed
 Analytics → GitHub: ✅ yes
 ```
