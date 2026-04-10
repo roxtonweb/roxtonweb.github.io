@@ -13,3 +13,7 @@
 {"ts": "2026-04-09T07:00:00Z", "event": "LEAD_ADDED", "username": "@limitless__llc", "niche": "lawn_care", "score": 10}
 {"ts": "2026-04-09T07:00:00Z", "event": "LEAD_ADDED", "username": "@curbsidejunksolutions", "niche": "junk_removal", "score": 10}
 {"ts": "2026-04-09T07:00:00Z", "event": "LEAD_ADDED", "username": "@bluerhinohauling", "niche": "junk_removal", "score": 7}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@routejunk", "niche": "junk_removal", "score": 10, "variant": "junk-A"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@theking_detailandwash", "niche": "auto_detailing", "score": 10, "variant": "detail-A"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@figs.auto.detailing", "niche": "auto_detailing", "score": 10, "variant": "detail-B"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@pristine.detailing_llc", "niche": "auto_detailing", "score": 10, "variant": "detail-C"}
