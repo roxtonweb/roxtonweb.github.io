@@ -26,3 +26,14 @@
 {"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@reedandsonslawncare", "niche": "lawn_care", "score": 9, "variant": "lawn-B"}
 {"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@elc_landscaping0", "niche": "lawn_care", "score": 10, "variant": "lawn-A"}
 {"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@jdslawnmaintenancellc", "niche": "lawn_care", "score": 10, "variant": "lawn-B"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@snellautowash", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_A"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@dc_mobiledetailing_", "niche": "auto_detailing", "score": 8, "variant": "DETAIL_B"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@nickmobiledetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_C"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@royaltymobiledetail", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_D"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@luxeshinemobile", "niche": "auto_detailing", "score": 8, "variant": "DETAIL_A"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@pantherpowerclean", "niche": "pressure_washing", "score": 10, "variant": "WASH_A"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@new_leaf_lawn_and_landscaping", "niche": "lawn_care", "score": 10, "variant": "LAWN_A"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@thejunktrunkco", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@goldenlux_medspa", "niche": "med_spa", "score": 7, "variant": "MEDSPA_A"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@southaustinmobiledetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_B"}
+{"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@thespot_orlando", "niche": "auto_detailing", "score": 7, "variant": "DETAIL_C"}
