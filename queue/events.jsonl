@@ -37,3 +37,10 @@
 {"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@goldenlux_medspa", "niche": "med_spa", "score": 7, "variant": "MEDSPA_A"}
 {"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@southaustinmobiledetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_B"}
 {"ts": "2026-04-10T07:00:00Z", "event": "LEAD_ADDED", "username": "@thespot_orlando", "niche": "auto_detailing", "score": 7, "variant": "DETAIL_C"}
+{"ts": "2026-04-10T15:18:39", "event": "DM_SENT", "username": "@redrhinojunkremoval", "variant": "junk-B"}
+{"ts": "2026-04-10T15:22:58", "event": "DM_SENT", "username": "@colemobiledetailing", "variant": "detail-B"}
+{"ts": "2026-04-10T15:25:18", "event": "DM_SENT", "username": "@palace.aesthetics", "variant": "medspa-A"}
+{"ts": "2026-04-10T15:27:39", "event": "DM_SENT", "username": "@junkremoval_atl", "variant": "junk-C"}
+{"ts": "2026-04-10T15:30:05", "event": "DM_SENT", "username": "@secondtononedetailingmobile", "variant": "detail-C"}
+{"ts": "2026-04-10T15:32:26", "event": "DM_SENT", "username": "@jonesbrotherslawnandlandscape", "variant": "lawn-A"}
+{"ts": "2026-04-10T15:34:48", "event": "DM_SENT", "username": "@las_autodetailing", "variant": "detail-A"}
