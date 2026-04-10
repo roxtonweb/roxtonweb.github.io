@@ -44,3 +44,8 @@
 {"ts": "2026-04-10T15:30:05", "event": "DM_SENT", "username": "@secondtononedetailingmobile", "variant": "detail-C"}
 {"ts": "2026-04-10T15:32:26", "event": "DM_SENT", "username": "@jonesbrotherslawnandlandscape", "variant": "lawn-A"}
 {"ts": "2026-04-10T15:34:48", "event": "DM_SENT", "username": "@las_autodetailing", "variant": "detail-A"}
+{"ts": "2026-04-10T07:00:00-07:00", "event": "LEAD_EXPIRED", "username": "@ksmobiledetailing", "reason": "NO_REPLY_7_DAYS", "action": "CLOSED_LOST", "next_stage": "CLOSED_LOST"}
+{"ts": "2026-04-10T07:00:00-07:00", "event": "LEAD_EXPIRED", "username": "@pmdpressurewashing", "reason": "NO_REPLY_7_DAYS", "action": "CLOSED_LOST", "next_stage": "CLOSED_LOST"}
+{"ts": "2026-04-10T07:00:00-07:00", "event": "LEAD_EXPIRED", "username": "@lillespristineclean", "reason": "NO_REPLY_7_DAYS", "action": "CLOSED_LOST", "next_stage": "CLOSED_LOST"}
+{"ts": "2026-04-10T07:00:00-07:00", "event": "LEAD_EXPIRED", "username": "@hensleymowing", "reason": "NO_REPLY_7_DAYS", "action": "CLOSED_LOST", "next_stage": "CLOSED_LOST"}
+{"ts": "2026-04-10T07:00:00-07:00", "event": "INBOX_ROUTER_RUN", "unread_threads": 0, "replies_processed": 0, "leads_expired": 4, "action": "INBOX_CLEAR"}
