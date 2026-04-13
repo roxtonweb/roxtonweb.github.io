@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxton Web — Pipeline Dashboard</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0d1117;
+    --bg2:      #161b22;
+    --bg3:      #21262d;
+    --border:   rgba(255,255,255,0.08);
+    --accent:   #58a6ff;
+    --green:    #3fb950;
+    --yellow:   #d29922;
+    --red:      #f85149;
+    --orange:   #fd7e14;
+    --purple:   #bc8cff;
+    --text:     #e6edf3;
+    --sub:      #8b949e;
+    --font: -apple-system, 'Segoe UI', Roboto, monospace;
+  }
+
+  body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; padding: 20px 16px; }
+
+  /* TOPBAR */
+  .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  .brand { font-size: 18px; font-weight: 700; }
+  .brand span { color: var(--accent); }
+  .topbar-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .live-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; display: inline-block; }
+  @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:0.3; } }
+  .meta { font-size: 12px; color: var(--sub); }
+  .btn-sm { font-size: 12px; font-family: var(--font); background: var(--bg3); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: background 0.15s; }
+  .btn-sm:hover { background: rgba(88,166,255,0.15); border-color: var(--accent); }
+
+  /* SETUP BANNER */
+  #setup-banner { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.3); border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  #setup-banner label { font-size: 13px; color: var(--sub); white-space: nowrap; }
+  #token-input { flex: 1; min-width: 200px; font-size: 13px; font-family: var(--font); background: var(--bg3); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; }
+  #token-input:focus { outline: none; border-color: var(--accent); }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (min-width: 600px) { .stat-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 900px) { .stat-grid { grid-template-columns: repeat(6, 1fr); } }
+  .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 8px; }
+  .stat-num { font-size: 32px; font-weight: 800; line-height: 1; }
+  .stat-sub { font-size: 11px; color: var(--sub); margin-top: 4px; }
+  .num-green { color: var(--green); }
+  .num-yellow { color: var(--yellow); }
+  .num-blue { color: var(--accent); }
+  .num-purple { color: var(--purple); }
+  .num-orange { color: var(--orange); }
+
+  /* SECTION */
+  .section { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .section-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; }
+  .section-title { font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .section-count { font-size: 12px; color: var(--sub); background: var(--bg3); padding: 2px 8px; border-radius: 20px; }
+  .section-body { padding: 0; }
+
+  /* DM DRAFT CARDS */
+  .draft-list { display: flex; flex-direction: column; }
+  .draft-card { border-bottom: 1px solid var(--border); padding: 14px 18px; transition: background 0.1s; }
+  .draft-card:last-child { border-bottom: none; }
+  .draft-card.sent { opacity: 0.4; }
+  .draft-card:not(.sent):hover { background: rgba(255,255,255,0.02); }
+
+  .draft-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .draft-handle { font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; }
+  .draft-handle:hover { text-decoration: underline; }
+  .draft-name { font-size: 13px; color: var(--sub); }
+  .badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+  .badge-niche { background: rgba(188,140,255,0.15); color: var(--purple); }
+  .badge-city { background: rgba(88,166,255,0.1); color: var(--sub); }
+  .badge-score { background: rgba(63,185,80,0.15); color: var(--green); }
+  .badge-sent { background: rgba(63,185,80,0.2); color: var(--green); }
+
+  .draft-dm { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.6; white-space: pre-wrap; margin-bottom: 10px; color: var(--text); font-family: -apple-system, 'Segoe UI', sans-serif; }
+
+  .draft-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .btn-copy { font-size: 12px; font-family: var(--font); background: var(--bg3); color: var(--sub); border: 1px solid var(--border); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; }
+  .btn-copy:hover { background: rgba(88,166,255,0.1); color: var(--accent); border-color: var(--accent); }
+  .btn-copy.copied { color: var(--green); border-color: rgba(63,185,80,0.4); }
+  .btn-mark-sent { font-size: 12px; font-family: var(--font); background: rgba(63,185,80,0.1); color: var(--green); border: 1px solid rgba(63,185,80,0.3); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; }
+  .btn-mark-sent:hover { background: rgba(63,185,80,0.2); }
+  .btn-mark-sent:disabled { opacity: 0.4; cursor: default; }
+  .sent-label { font-size: 12px; color: var(--green); }
+  .draft-meta { font-size: 11px; color: var(--sub); }
+
+  /* SENT TABLE */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--sub); padding: 10px 18px; text-align: left; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 18px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* LOADING / ERROR */
+  .loading { padding: 40px; text-align: center; color: var(--sub); font-size: 14px; }
+  .error-msg { padding: 20px 18px; color: var(--red); font-size: 13px; }
+
+  /* COLLAPSED */
+  .section-body.collapsed { display: none; }
+  .chevron { transition: transform 0.2s; font-size: 10px; color: var(--sub); }
+  .chevron.open { transform: rotate(180deg); }
+
+  /* EMPTY */
+  .empty { padding: 30px; text-align: center; color: var(--sub); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Roxton<span>Web</span> Pipeline</div>
+  <div class="topbar-right">
+    <span class="live-dot"></span>
+    <span class="meta" id="last-updated">loading...</span>
+    <button class="btn-sm" onclick="loadQueue()">Refresh</button>
+  </div>
+</div>
+
+
+<!-- Token setup (hidden once saved) -->
+<div id="setup-banner" style="display:none;background:rgba(88,166,255,0.08);border:1px solid rgba(88,166,255,0.3);border-radius:10px;padding:14px 18px;margin-bottom:16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+  <span style="font-size:13px;color:var(--sub)">GitHub Token:</span>
+  <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxx" style="flex:1;min-width:180px;font-size:13px;font-family:var(--font);background:var(--bg3);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 10px;" />
+  <button class="btn-sm" onclick="saveToken()">Save &amp; Load</button>
+  <span style="font-size:12px;color:var(--sub)">Saved once per device.</span>
+</div>
+
+<!-- Stats -->
+<div class="stat-grid" id="stats">
+  <div class="stat-card"><div class="stat-label">Pending</div><div class="stat-num num-blue" id="s-pending">—</div><div class="stat-sub">ready to send</div></div>
+  <div class="stat-card"><div class="stat-label">Sent Today</div><div class="stat-num num-green" id="s-today">—</div><div class="stat-sub">auto + manual</div></div>
+  <div class="stat-card"><div class="stat-label">Sent Total</div><div class="stat-num" id="s-sent">—</div><div class="stat-sub">all time</div></div>
+  <div class="stat-card"><div class="stat-label">Manual Sent</div><div class="stat-num num-purple" id="s-manual">—</div><div class="stat-sub">sent by you</div></div>
+  <div class="stat-card"><div class="stat-label">Replied</div><div class="stat-num num-yellow" id="s-replied">—</div><div class="stat-sub">any response</div></div>
+  <div class="stat-card"><div class="stat-label">Queue Total</div><div class="stat-num" id="s-total">—</div><div class="stat-sub">all statuses</div></div>
+</div>
+
+<!-- DM Drafts -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection('drafts')">
+    <div class="section-title">
+      DM Drafts
+      <span class="section-count" id="drafts-count">0 pending</span>
+    </div>
+    <span class="chevron open" id="drafts-chevron">▼</span>
+  </div>
+  <div class="section-body" id="drafts-body">
+    <div class="loading">Loading queue from GitHub...</div>
+  </div>
+</div>
+
+<!-- Recently Sent -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection('sent')">
+    <div class="section-title">
+      Recently Sent
+      <span class="section-count" id="sent-count">0</span>
+    </div>
+    <span class="chevron open" id="sent-chevron">▼</span>
+  </div>
+  <div class="section-body" id="sent-body">
+    <div class="loading">Loading...</div>
+  </div>
+</div>
+
+<!-- Manual Review -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection('review')">
+    <div class="section-title">
+      Manual Review
+      <span class="section-count" id="review-count">0</span>
+    </div>
+    <span class="chevron" id="review-chevron">▼</span>
+  </div>
+  <div class="section-body collapsed" id="review-body">
+    <div class="loading">Loading...</div>
+  </div>
+</div>
+
+<script>
+const GH_REPO = "roxtonweb/roxtonweb.github.io";
+const GH_BRANCH = "main";
+const QUEUE_PATH = "queue/ig-queue.json";
+let queue = [];
+let queueSHA = "";
+
+function getToken() { return localStorage.getItem("gh_token") || ""; }
+function saveToken() {
+  const t = document.getElementById("token-input").value.trim();
+  if (!t) return;
+  localStorage.setItem("gh_token", t);
+  document.getElementById("setup-banner").style.display = "none";
+  loadQueue();
+}
+
+// ── GitHub helpers ────────────────────────────────────────────────────────────
+async function ghGet(path) {
+  const token = getToken();
+  const headers = { "Accept": "application/vnd.github.v3+json" };
+  if (token) headers["Authorization"] = `token ${token}`;
+  const r = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}`, { headers });
+  if (!r.ok) throw new Error(`GitHub ${r.status}: ${path}`);
+  const data = await r.json();
+  const content = atob(data.content.replace(/\n/g, ""));
+  return { content, sha: data.sha };
+}
+
+async function ghPut(path, contentStr, sha, message) {
+  const token = getToken();
+  if (!token) throw new Error("No GitHub token — save one above.");
+  const b64 = btoa(unescape(encodeURIComponent(contentStr)));
+  const r = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${path}`, {
+    method: "PUT",
+    headers: {
+      "Authorization": `token ${token}`,
+      "Accept": "application/vnd.github.v3+json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ message, content: b64, branch: GH_BRANCH, sha }),
+  });
+  if (!r.ok) {
+    const err = await r.json();
+    throw new Error(err.message || `GitHub write failed (${r.status})`);
+  }
+  return r.json();
+}
+
+// ── Load queue ────────────────────────────────────────────────────────────────
+async function loadQueue() {
+  document.getElementById("drafts-body").innerHTML = '<div class="loading">Fetching queue from GitHub...</div>';
+  document.getElementById("sent-body").innerHTML = '<div class="loading">Loading...</div>';
+  document.getElementById("review-body").innerHTML = '<div class="loading">Loading...</div>';
+
+  try {
+    const { content, sha } = await ghGet(QUEUE_PATH);
+    queue = JSON.parse(content);
+    queueSHA = sha;
+    renderAll();
+    document.getElementById("last-updated").textContent = "Updated " + new Date().toLocaleTimeString();
+  } catch (e) {
+    document.getElementById("setup-banner").style.display = "flex";
+    document.getElementById("drafts-body").innerHTML = `<div class="error-msg">Error: ${e.message}. Check your GitHub token above.</div>`;
+    document.getElementById("sent-body").innerHTML = "";
+    document.getElementById("review-body").innerHTML = "";
+  }
+}
+
+// ── Render everything ─────────────────────────────────────────────────────────
+function renderAll() {
+  const today = new Date().toISOString().slice(0, 10);
+
+  const pending = queue.filter(l => l.status === "PENDING").sort((a, b) => (b.score || 0) - (a.score || 0));
+  const manualSent = queue.filter(l => l.status === "MANUAL_SENT");
+  const autoSent = queue.filter(l => l.status === "SENT");
+  const allSent = [...autoSent, ...manualSent].sort((a, b) => (b.sent_at || b.added || "").localeCompare(a.sent_at || a.added || ""));
+  const sentToday = allSent.filter(l => (l.sent_at || "").startsWith(today) || (l.added || "").startsWith(today) && l.status === "MANUAL_SENT");
+  const replied = queue.filter(l => l.replied || l.reply_text || l.conversation_stage && l.conversation_stage !== "OUTREACH_SENT");
+  const manualReview = queue.filter(l => l.status === "MANUAL_REVIEW");
+
+  // Stats
+  document.getElementById("s-pending").textContent = pending.length;
+  document.getElementById("s-today").textContent = allSent.filter(l => (l.sent_at || "").startsWith(today)).length + manualSent.filter(l => (l.added || "").startsWith(today)).length;
+  document.getElementById("s-sent").textContent = autoSent.length;
+  document.getElementById("s-manual").textContent = manualSent.length;
+  document.getElementById("s-replied").textContent = replied.length;
+  document.getElementById("s-total").textContent = queue.length;
+
+  document.getElementById("drafts-count").textContent = `${pending.length} pending`;
+  document.getElementById("sent-count").textContent = allSent.slice(0, 20).length;
+  document.getElementById("review-count").textContent = manualReview.length;
+
+  // DM Drafts
+  renderDrafts(pending);
+
+  // Sent table
+  renderSentTable(allSent.slice(0, 20));
+
+  // Manual review table
+  renderReviewTable(manualReview);
+}
+
+function nicheLabel(n) {
+  const map = { auto_detailing: "Detailing", pressure_washing: "Pressure Wash", lawn_care: "Lawn Care", med_spa: "Med Spa", junk_removal: "Junk Removal" };
+  return map[n] || n;
+}
+
+function renderDrafts(leads) {
+  const el = document.getElementById("drafts-body");
+  if (!leads.length) {
+    el.innerHTML = '<div class="empty">No pending leads. Discovery runs at 2 AM and will refill.</div>';
+    return;
+  }
+
+  el.innerHTML = '<div class="draft-list">' + leads.map((l, i) => {
+    const handle = (l.username || "").replace("@", "");
+    const igUrl = `https://www.instagram.com/${handle}/`;
+    const dm = (l.dm || "").trim();
+    const niche = nicheLabel(l.niche);
+    const city = (l.city || "").split(",")[0].trim();
+    return `
+      <div class="draft-card" id="draft-${i}">
+        <div class="draft-top">
+          <a class="draft-handle" href="${igUrl}" target="_blank">@${handle}</a>
+          <span class="draft-name">${escHtml(l.business_name || "")}</span>
+          <span class="badge badge-niche">${niche}</span>
+          <span class="badge badge-city">${escHtml(city)}</span>
+          <span class="badge badge-score">Score ${l.score || 0}</span>
+          <span class="draft-meta">${l.followers ? fmtNum(l.followers) + " followers" : ""}</span>
+        </div>
+        <div class="draft-dm" id="dm-text-${i}">${escHtml(dm)}</div>
+        <div class="draft-actions">
+          <button class="btn-copy" onclick="copyDM(${i})">Copy DM</button>
+          <button class="btn-mark-sent" id="btn-sent-${i}" onclick="markManualSent('${escHtml(l.username)}', ${i})">Mark as Sent</button>
+        </div>
+      </div>
+    `;
+  }).join("") + "</div>";
+}
+
+function renderSentTable(leads) {
+  const el = document.getElementById("sent-body");
+  if (!leads.length) {
+    el.innerHTML = '<div class="empty">Nothing sent yet.</div>';
+    return;
+  }
+  el.innerHTML = `
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Account</th><th>Business</th><th>Niche</th><th>City</th><th>Status</th><th>Sent</th>
+        </tr></thead>
+        <tbody>${leads.map(l => {
+          const handle = (l.username || "").replace("@", "");
+          const statusBadge = l.status === "MANUAL_SENT"
+            ? '<span class="badge" style="background:rgba(188,140,255,0.15);color:var(--purple)">Manual</span>'
+            : '<span class="badge badge-sent">Auto</span>';
+          const sentDate = l.sent_at ? l.sent_at.slice(0, 10) : l.added || "";
+          return `<tr>
+            <td><a class="draft-handle" href="https://www.instagram.com/${handle}/" target="_blank">@${handle}</a></td>
+            <td>${escHtml(l.business_name || "")}</td>
+            <td>${nicheLabel(l.niche)}</td>
+            <td>${escHtml((l.city || "").split(",")[0])}</td>
+            <td>${statusBadge}</td>
+            <td style="color:var(--sub)">${sentDate}</td>
+          </tr>`;
+        }).join("")}</tbody>
+      </table>
+    </div>`;
+}
+
+function renderReviewTable(leads) {
+  const el = document.getElementById("review-body");
+  if (!leads.length) {
+    el.innerHTML = '<div class="empty">No items need manual review.</div>';
+    return;
+  }
+  el.innerHTML = `
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Account</th><th>Business</th><th>Niche</th><th>Reply</th></tr></thead>
+        <tbody>${leads.map(l => {
+          const handle = (l.username || "").replace("@", "");
+          return `<tr>
+            <td><a class="draft-handle" href="https://www.instagram.com/${handle}/" target="_blank">@${handle}</a></td>
+            <td>${escHtml(l.business_name || "")}</td>
+            <td>${nicheLabel(l.niche)}</td>
+            <td style="color:var(--sub);max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml(l.reply_text || "")}</td>
+          </tr>`;
+        }).join("")}</tbody>
+      </table>
+    </div>`;
+}
+
+// ── Actions ───────────────────────────────────────────────────────────────────
+function copyDM(idx) {
+  const el = document.getElementById(`dm-text-${idx}`);
+  const btn = document.querySelector(`#draft-${idx} .btn-copy`);
+  navigator.clipboard.writeText(el.textContent).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = "Copy DM"; btn.classList.remove("copied"); }, 2000);
+  });
+}
+
+async function markManualSent(username, idx) {
+  const btn = document.getElementById(`btn-sent-${idx}`);
+  btn.disabled = true;
+  btn.textContent = "Saving...";
+
+  try {
+    // Re-fetch fresh SHA to avoid conflicts
+    const { content, sha } = await ghGet(QUEUE_PATH);
+    const freshQueue = JSON.parse(content);
+    const now = new Date().toISOString();
+
+    const entry = freshQueue.find(l => l.username === username);
+    if (!entry) throw new Error("Lead not found in queue.");
+    entry.status = "MANUAL_SENT";
+    entry.sent_at = now;
+    entry.conversation_stage = "OUTREACH_SENT";
+
+    const updated = JSON.stringify(freshQueue, null, 2);
+    await ghPut(QUEUE_PATH, updated, sha, `manual: sent DM to ${username} ${now.slice(0, 10)}`);
+
+    // Update local queue
+    const local = queue.find(l => l.username === username);
+    if (local) { local.status = "MANUAL_SENT"; local.sent_at = now; }
+
+    // Update card UI
+    const card = document.getElementById(`draft-${idx}`);
+    card.classList.add("sent");
+    btn.textContent = "Sent";
+    btn.style.color = "var(--green)";
+
+    // Re-render stats
+    renderAll();
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = "Mark as Sent";
+    alert("Error: " + e.message);
+  }
+}
+
+// ── UI helpers ────────────────────────────────────────────────────────────────
+function toggleSection(id) {
+  const body = document.getElementById(`${id}-body`);
+  const chevron = document.getElementById(`${id}-chevron`);
+  body.classList.toggle("collapsed");
+  chevron.classList.toggle("open");
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function fmtNum(n) {
+  if (n >= 1000) return (n / 1000).toFixed(1) + "k";
+  return String(n);
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+if (!getToken()) {
+  document.getElementById("setup-banner").style.display = "flex";
+  document.getElementById("drafts-body").innerHTML = '<div class="empty">Enter your GitHub token above to load the queue.</div>';
+  document.getElementById("sent-body").innerHTML = "";
+  document.getElementById("review-body").innerHTML = "";
+} else {
+  loadQueue();
+}
+
+// Auto-refresh every 5 minutes
+setInterval(loadQueue, 5 * 60 * 1000);
+</script>
+</body>
+</html>
