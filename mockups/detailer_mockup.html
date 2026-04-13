@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<title>{BUSINESS_NAME} — Auto Detailing in {CITY}</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary:    #0a0a0a;
+    --secondary:  #141414;
+    --accent:     #e63946;
+    --accent-alt: #e8a87c;
+    --text-light: #f5f5f5;
+    --text-muted: #a0a0a0;
+    --surface:    #141414;
+    --card:       #1c1c1c;
+    --font: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--primary); color: var(--text-light); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,10,10,0.95); backdrop-filter: blur(8px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-brand { font-weight: 700; font-size: 17px; letter-spacing: -0.3px; color: var(--text-light); }
+  .nav-brand span { color: var(--accent); }
+  .btn-nav {
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 14px;
+    padding: 10px 20px; border-radius: 9999px; text-decoration: none;
+    transition: background 0.2s; white-space: nowrap;
+  }
+  .btn-nav:hover { background: #c62b37; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding: 120px 24px 80px;
+    background:
+      linear-gradient(to top, rgba(10,10,10,0.97) 25%, rgba(10,10,10,0.6) 70%, transparent 100%),
+      url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80') center/cover no-repeat;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .hero-trust {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    font-size: 13px; color: var(--text-muted); margin-bottom: 16px;
+  }
+  .hero-trust .stars { color: var(--accent-alt); font-size: 15px; }
+  .hero-trust .dot { opacity: 0.4; }
+  .hero h1 {
+    font-size: clamp(34px, 8vw, 58px); font-weight: 800; line-height: 1.1;
+    letter-spacing: -1px; margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p { font-size: 18px; color: var(--text-muted); max-width: 480px; margin-bottom: 32px; }
+  .btn-primary {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 17px; padding: 16px 36px;
+    border-radius: 9999px; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(230,57,70,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(230,57,70,0.5); }
+
+  /* SECTION BASE */
+  section { padding: 80px 24px; }
+  .section-label {
+    text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
+    color: var(--accent); font-weight: 700; margin-bottom: 12px;
+  }
+  h2 { font-size: clamp(26px, 5vw, 38px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; font-family: 'DM Serif Display', serif; }
+  .section-sub { color: var(--text-muted); font-size: 17px; max-width: 520px; margin-bottom: 48px; }
+
+  /* SERVICES */
+  .services-bg { background: var(--surface); }
+  .services-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .service-card {
+    background: var(--card); border-radius: 12px; padding: 28px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .service-icon { font-size: 32px; margin-bottom: 16px; }
+  .service-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+  .service-card p { color: var(--text-muted); font-size: 15px; margin-bottom: 16px; }
+  .service-price { color: var(--accent-alt); font-weight: 700; font-size: 22px; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--accent); padding: 20px 24px;
+    display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center;
+  }
+  .trust-bar .trust-item { font-weight: 700; font-size: 15px; color: #fff; }
+  .trust-bar .trust-item span { opacity: 0.85; font-weight: 400; }
+
+  /* REVIEWS */
+  .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .review-card {
+    background: var(--card); border-radius: 12px; padding: 24px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .review-stars { color: var(--accent-alt); font-size: 16px; margin-bottom: 12px; }
+  .review-text { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+  .review-author { font-weight: 700; font-size: 14px; color: var(--text-light); }
+  .review-date { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  /* BOOKING */
+  .booking-section {
+    background: var(--primary);
+    text-align: center; padding: 80px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .booking-section h2 { margin-bottom: 12px; }
+  .booking-section p { color: var(--text-muted); font-size: 17px; max-width: 440px; margin: 0 auto 40px; }
+  .booking-embed {
+    background: var(--card); border-radius: 16px; padding: 32px;
+    max-width: 480px; margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+  }
+  .booking-embed h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-muted); }
+  .form-group input, .form-group select {
+    width: 100%; padding: 12px 16px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06);
+    color: var(--text-light); font-size: 15px; outline: none;
+    font-family: var(--font);
+  }
+  .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+  .form-group select option { background: var(--secondary); }
+  .btn-book {
+    width: 100%; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 17px; padding: 16px;
+    border-radius: 9999px; border: none; cursor: pointer;
+    margin-top: 8px; transition: background 0.2s;
+  }
+  .btn-book:hover { background: #c62b37; }
+  .booking-note { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 12px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--surface); padding: 40px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .footer-brand { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+  .footer-brand span { color: var(--accent); }
+  .footer-contact { color: var(--text-muted); font-size: 15px; margin-bottom: 16px; line-height: 1.8; }
+  .footer-contact a { color: var(--text-muted); text-decoration: none; }
+  .footer-contact a:hover { color: var(--text-light); }
+  .footer-legal { font-size: 12px; color: rgba(173,181,189,0.5); margin-top: 24px; }
+
+  /* DESKTOP */
+  @media (min-width: 640px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .trust-bar { flex-direction: row; justify-content: center; gap: 32px; }
+  }
+  @media (min-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+    section { padding: 96px 48px; }
+    .hero { padding: 140px 48px 96px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">{BUSINESS_NAME}<span>.</span></div>
+  <a href="#booking" class="btn-nav">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-trust">
+    <span class="stars">★★★★★</span>
+    <strong style="color:var(--text-light)">{RATING} Stars</strong>
+    <span class="dot">•</span>
+    <span>{REVIEW_COUNT}+ Google Reviews</span>
+    <span class="dot">•</span>
+    <span>Serving {CITY}</span>
+  </div>
+  <h1>{CITY}'s <span>Premium</span><br>Mobile Detailing</h1>
+  <p>We come to you. Show-quality results, no dealership wait times, 100% satisfaction guaranteed.</p>
+  <a href="#booking" class="btn-primary">Book Your Detail →</a>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">What We Offer</p>
+    <h2>Services &amp; Pricing</h2>
+    <p class="section-sub">Every service is performed on-site at your home or office. No drop-off, no waiting.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Full Interior Detail</h3>
+        <p>Deep vacuum, shampoo, leather conditioning, odor elimination. Your cabin restored to showroom condition.</p>
+        <div class="service-price">From $149</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Exterior Detail + Polish</h3>
+        <p>Hand wash, clay bar, two-stage machine polish, spray wax. Deep gloss that lasts weeks.</p>
+        <div class="service-price">From $199</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💎</div>
+        <h3>Ceramic Coating</h3>
+        <p>Professional-grade ceramic protection. Repels water, UV damage, and minor scratches. 2–5 year protection.</p>
+        <div class="service-price">From $499</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧽</div>
+        <h3>Paint Correction</h3>
+        <p>Removes swirls, water spots, and light scratches. Single or dual-stage correction available.</p>
+        <div class="service-price">From $299</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Express Detail</h3>
+        <p>Quick interior wipe-down + exterior hand wash + tire shine. Perfect for a fast refresh.</p>
+        <div class="service-price">From $79</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <h3>Full Detail Package</h3>
+        <p>Our most popular combo: complete interior + exterior detail, polish, and protective coating. The works.</p>
+        <div class="service-price">From $349</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">★★★★★ <span>{RATING}/5 ({REVIEW_COUNT}+ reviews)</span></div>
+  <div class="trust-item">✅ <span>Licensed &amp; Insured</span></div>
+  <div class="trust-item">📍 <span>Mobile — We Come to You</span></div>
+  <div class="trust-item">⚡ <span>Same-Day Booking Available</span></div>
+</div>
+
+<!-- REVIEWS -->
+<section style="background:var(--primary);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">What Customers Say</p>
+    <h2>Real Reviews from {CITY}</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I honestly couldn't believe it was the same car. Booked online, they came to my house, and two hours later my 5-year-old SUV looked brand new. Would 100% book again."</p>
+        <div class="review-author">Michael T.</div>
+        <div class="review-date">Google Review · 2 weeks ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best detailer I've found in {CITY}. The ceramic coating they applied still looks perfect 8 months later. Professional, on time, and great communication."</p>
+        <div class="review-author">Sarah K.</div>
+        <div class="review-date">Google Review · 1 month ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Used them for my company fleet of 3 trucks. Competitive pricing and they knocked it all out in one day. My drivers were impressed. This is our new regular shop."</p>
+        <div class="review-author">Dave R.</div>
+        <div class="review-date">Google Review · 3 weeks ago</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section style="background:var(--surface);padding:80px 24px;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <p class="section-label" style="text-align:center;">Packages</p>
+    <h2 style="text-align:center;margin-bottom:8px;">Simple, Transparent Pricing</h2>
+    <p style="text-align:center;color:var(--text-muted);font-size:17px;margin-bottom:48px;">No monthly fees. No surprises. You own the site.</p>
+    <div style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+      <!-- STARTER -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,0.08);">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-bottom:12px;">Starter</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;margin-bottom:4px;">$399</div>
+        <div style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">One-time · delivered in 48 hrs</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Single-page mobile-first site</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Hero + 3 services + booking button</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Cal.com booking embed (free)</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Free Netlify hosting + SSL</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;1 revision round</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid rgba(255,255,255,0.2);color:var(--text-light);font-weight:700;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--accent);position:relative;">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:9999px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Most Popular</div>
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:12px;">Standard</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;margin-bottom:4px;">$599</div>
+        <div style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">One-time · delivered in 3–4 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Everything in Starter</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;2–3 pages (Home · Services · Contact)</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Google Reviews integration</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Contact form (email notifications)</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Basic SEO setup</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;2 revision rounds</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;background:var(--accent);color:#fff;font-weight:800;font-size:15px;padding:14px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- PRO -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,0.08);">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent-alt);margin-bottom:12px;">Pro</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;margin-bottom:4px;">$899</div>
+        <div style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">One-time · delivered in 5–7 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Everything in Standard</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;4–5 pages including Gallery & FAQ</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Before/after photo gallery</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Pricing table + service tiers</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Google Maps embed</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;">✓ &nbsp;Full SEO + Google Analytics</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;3 revision rounds + 30-day support</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid var(--accent-alt);color:var(--accent-alt);font-weight:700;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:24px;">All packages include free hosting, free SSL, and you own the site outright. No monthly fees ever.</p>
+  </div>
+  <style>@media(min-width:640px){.pricing-tiers-grid{grid-template-columns:repeat(3,1fr)!important}}</style>
+  <script>document.querySelector('[style*="grid-template-columns:1fr;gap:20px"]').classList.add('pricing-tiers-grid');</script>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="booking">
+  <p class="section-label">Ready to Book?</p>
+  <h2>Pick Your Date &amp; Time</h2>
+  <p>Online booking only takes 60 seconds. We confirm within the hour.</p>
+  <div class="booking-embed">
+    <h3>📅 Schedule Your Detail</h3>
+    <div class="form-group">
+      <label>Service</label>
+      <select>
+        <option>Full Detail Package — From $349</option>
+        <option>Interior Detail — From $149</option>
+        <option>Exterior + Polish — From $199</option>
+        <option>Ceramic Coating — From $499</option>
+        <option>Express Detail — From $79</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="John Smith">
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" placeholder="(702) 555-0100">
+    </div>
+    <div class="form-group">
+      <label>Address (we come to you)</label>
+      <input type="text" placeholder="123 Main St, {CITY}">
+    </div>
+    <button class="btn-book">Book My Detail →</button>
+    <p class="booking-note">No payment required to book. We'll confirm your appointment within 1 hour.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">{BUSINESS_NAME}<span>.</span></div>
+  <div class="footer-contact">
+    <a href="tel:{PHONE}">{PHONE}</a> · <a href="mailto:{EMAIL}">{EMAIL}</a><br>
+    Serving {CITY} and surrounding areas
+  </div>
+  <div class="footer-legal">© 2025 {BUSINESS_NAME}. Site by <a href="https://roxtonweb.com" style="color:var(--accent);text-decoration:none;">Roxton Web</a>.</div>
+</footer>
+
+</body>
+</html>
