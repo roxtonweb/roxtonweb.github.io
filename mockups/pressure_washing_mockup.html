@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>{BUSINESS_NAME} — Pressure Washing in {CITY}</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary:   #0a3d62;
+    --secondary: #1a5276;
+    --accent:    #27ae60;
+    --accent-lt: #2ecc71;
+    --text:      #1a1a1a;
+    --text-sub:  #6c757d;
+    --bg:        #ffffff;
+    --bg2:       #f5f5f5;
+    --card:      #ffffff;
+    --font: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,61,98,0.97); backdrop-filter: blur(8px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 24px;
+  }
+  .nav-brand { font-weight: 800; font-size: 17px; color: #fff; letter-spacing: -0.3px; }
+  .nav-brand span { color: var(--accent-lt); }
+  .btn-nav {
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 14px;
+    padding: 10px 20px; border-radius: 9999px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-nav:hover { background: #1e8449; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding: 120px 24px 80px;
+    background:
+      linear-gradient(to bottom, rgba(10,61,98,0.85) 0%, rgba(10,61,98,0.70) 60%, rgba(10,61,98,0.9) 100%),
+      url('https://images.unsplash.com/photo-1561347981-969cb2ee5150?w=1400&q=80') center/cover no-repeat;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .hero-trust-bar {
+    background: var(--accent); display: inline-flex; flex-wrap: wrap; gap: 16px;
+    padding: 10px 20px; border-radius: 8px; margin-bottom: 24px;
+    font-size: 14px; font-weight: 700; color: #fff; width: fit-content;
+  }
+  .hero-trust-bar span { opacity: 0.9; font-weight: 400; }
+  .hero h1 {
+    font-size: clamp(34px, 8vw, 58px); font-weight: 800; color: #fff;
+    line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px;
+  }
+  .hero h1 em { color: var(--accent-lt); font-style: normal; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 500px; margin-bottom: 32px; }
+  .hero-actions { display: flex; flex-direction: column; gap: 12px; }
+  .btn-primary {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 17px; padding: 16px 32px;
+    border-radius: 9999px; text-decoration: none; text-align: center;
+    box-shadow: 0 4px 20px rgba(39,174,96,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(39,174,96,0.5); }
+  .btn-secondary {
+    display: inline-block; background: transparent; color: #fff;
+    font-weight: 700; font-size: 17px; padding: 16px 32px;
+    border-radius: 9999px; text-decoration: none; text-align: center;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+  .section-label {
+    text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
+    color: var(--primary); font-weight: 700; margin-bottom: 12px;
+  }
+  h2 { font-size: clamp(26px, 5vw, 40px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; color: var(--text); }
+  .section-sub { color: var(--text-sub); font-size: 17px; max-width: 520px; margin-bottom: 48px; }
+
+  /* BEFORE/AFTER */
+  .ba-section { background: var(--bg2); }
+  .ba-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .ba-card { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .ba-images { display: grid; grid-template-columns: 1fr 1fr; }
+  .ba-img {
+    height: 200px; display: flex; align-items: flex-end;
+    background-size: cover; background-position: center;
+    padding: 10px;
+  }
+  .ba-before { background-image: url('https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=70'); filter: saturate(0.4) brightness(0.7); }
+  .ba-after  { background-image: url('https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=70'); filter: saturate(1.3) brightness(1.1); }
+  .ba-tag {
+    background: rgba(0,0,0,0.7); color: #fff; font-size: 11px; font-weight: 700;
+    padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .ba-before .ba-tag { background: rgba(0,0,0,0.7); }
+  .ba-after .ba-tag { background: rgba(39,174,96,0.85); }
+  .ba-label { background: var(--card); padding: 16px 20px; }
+  .ba-label h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .ba-label p { font-size: 13px; color: var(--text-sub); }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .service-card {
+    background: var(--card); border-radius: 12px; padding: 28px;
+    border: 2px solid var(--bg2);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .service-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .service-icon { font-size: 32px; margin-bottom: 14px; }
+  .service-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+  .service-card p { color: var(--text-sub); font-size: 15px; margin-bottom: 16px; }
+  .service-price { color: var(--primary); font-weight: 800; font-size: 20px; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--primary); padding: 20px 24px;
+    display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center;
+  }
+  .trust-item { color: #fff; font-size: 14px; font-weight: 700; }
+  .trust-item span { color: rgba(255,255,255,0.75); font-weight: 400; }
+
+  /* REVIEWS */
+  .reviews-bg { background: var(--bg2); }
+  .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .review-card { background: var(--card); border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .review-stars { color: #f4a261; font-size: 16px; margin-bottom: 12px; }
+  .review-text { font-size: 15px; color: var(--text-sub); line-height: 1.7; margin-bottom: 14px; }
+  .review-author { font-weight: 700; font-size: 14px; }
+  .review-service { font-size: 12px; color: var(--text-sub); }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .pricing-card {
+    background: var(--card); border-radius: 16px; padding: 32px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.2s;
+  }
+  .pricing-card.featured { border-color: var(--accent); position: relative; }
+  .pricing-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
+    padding: 4px 14px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .pricing-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+  .pricing-price { font-size: 36px; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
+  .pricing-price span { font-size: 16px; font-weight: 400; color: var(--text-sub); }
+  .pricing-desc { font-size: 14px; color: var(--text-sub); margin-bottom: 20px; }
+  .pricing-features { list-style: none; margin-bottom: 24px; }
+  .pricing-features li { font-size: 14px; padding: 6px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px; }
+  .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; }
+  .btn-quote {
+    display: block; background: var(--accent); color: #fff; text-align: center;
+    font-weight: 700; font-size: 15px; padding: 13px;
+    border-radius: 9999px; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-quote:hover { background: #1e8449; }
+  .pricing-card:not(.featured) .btn-quote { background: var(--primary); }
+  .pricing-card:not(.featured) .btn-quote:hover { background: #072b47; }
+
+  /* BOOKING */
+  .booking-section { background: var(--primary); padding: 80px 24px; text-align: center; }
+  .booking-section h2 { color: #fff; }
+  .booking-section p { color: rgba(255,255,255,0.75); font-size: 17px; max-width: 440px; margin: 0 auto 40px; }
+  .booking-card {
+    background: #fff; border-radius: 16px; padding: 32px;
+    max-width: 480px; margin: 0 auto; text-align: left;
+  }
+  .booking-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 20px; color: var(--text); }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-sub); }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 16px; border-radius: 8px;
+    border: 2px solid #e9ecef; color: var(--text); font-size: 15px;
+    outline: none; font-family: var(--font); background: var(--bg);
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+  .btn-book {
+    width: 100%; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 17px; padding: 16px;
+    border-radius: 9999px; border: none; cursor: pointer; margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .btn-book:hover { background: #1e8449; }
+  .booking-note { font-size: 12px; color: var(--text-sub); text-align: center; margin-top: 12px; }
+
+  /* FOOTER */
+  footer { background: #060e18; padding: 40px 24px; text-align: center; }
+  .footer-brand { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .footer-brand span { color: var(--accent-lt); }
+  .footer-contact { color: rgba(255,255,255,0.55); font-size: 15px; line-height: 1.8; margin-bottom: 8px; }
+  .footer-contact a { color: rgba(255,255,255,0.55); text-decoration: none; }
+  .footer-contact a:hover { color: #fff; }
+  .footer-legal { font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 16px; }
+
+  @media (min-width: 640px) {
+    .hero-actions { flex-direction: row; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    .trust-bar { flex-direction: row; justify-content: center; gap: 32px; }
+  }
+  @media (min-width: 1024px) {
+    section { padding: 96px 48px; }
+    .hero { padding: 140px 48px 96px; }
+    .ba-grid { grid-template-columns: repeat(3, 1fr); }
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">{BUSINESS_NAME}<span>.</span></div>
+  <a href="#booking" class="btn-nav">Get Free Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-trust-bar">
+    ⭐ {RATING} Stars <span>·</span> {REVIEW_COUNT}+ Reviews <span>·</span> Fully Insured <span>·</span> Same-Day Available
+  </div>
+  <h1>{CITY}'s #1<br><em>Pressure Washing</em><br>Service</h1>
+  <p>We blast away years of grime — driveways, roofs, decks, homes. Results that last. Quotes in 60 seconds.</p>
+  <div class="hero-actions">
+    <a href="#booking" class="btn-primary">Get a Free Quote →</a>
+    <a href="tel:{PHONE}" class="btn-secondary">📞 Call {PHONE}</a>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section class="ba-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Real Results</p>
+    <h2>Before &amp; After</h2>
+    <p class="section-sub">Every job we do delivers a dramatic transformation. See for yourself.</p>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-img ba-before"><span class="ba-tag">Before</span></div>
+          <div class="ba-img ba-after"><span class="ba-tag">After</span></div>
+        </div>
+        <div class="ba-label">
+          <h3>Driveway Cleaning</h3>
+          <p>10 years of oil stains and algae — removed in 2 hours</p>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-img ba-before" style="filter:saturate(0.3) brightness(0.65)"><span class="ba-tag">Before</span></div>
+          <div class="ba-img ba-after" style="filter:saturate(1.5) brightness(1.15)"><span class="ba-tag">After</span></div>
+        </div>
+        <div class="ba-label">
+          <h3>House &amp; Siding</h3>
+          <p>Mold, algae, and dirt — soft washed back to original</p>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-img ba-before" style="filter:saturate(0.2) brightness(0.6)"><span class="ba-tag">Before</span></div>
+          <div class="ba-img ba-after" style="filter:saturate(1.6) brightness(1.2)"><span class="ba-tag">After</span></div>
+        </div>
+        <div class="ba-label">
+          <h3>Deck &amp; Patio</h3>
+          <p>Discolored wood restored — ready for staining</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">What We Clean</p>
+    <h2>Our Services</h2>
+    <p class="section-sub">We handle every exterior surface on your property. One call, everything cleaned.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>House Washing</h3>
+        <p>Soft wash removes algae, mold, and dirt from siding, stucco, brick, and vinyl. No damage guarantee.</p>
+        <div class="service-price">From $199</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Driveway &amp; Sidewalk</h3>
+        <p>High-pressure hot water blast eliminates oil stains, tire marks, and years of buildup.</p>
+        <div class="service-price">From $99</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏡</div>
+        <h3>Roof Soft Wash</h3>
+        <p>Low-pressure treatment kills algae and removes black streaks safely. No shingles damaged, ever.</p>
+        <div class="service-price">From $299</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <h3>Deck &amp; Patio</h3>
+        <p>Restore faded wood and concrete to like-new condition. Ready for staining or sealing after.</p>
+        <div class="service-price">From $149</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Commercial Cleaning</h3>
+        <p>Storefronts, parking lots, and commercial buildings. Scheduled maintenance programs available.</p>
+        <div class="service-price">Custom Quote</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✅</div>
+        <h3>Full Property Package</h3>
+        <p>Everything in one visit: house + driveway + deck + sidewalks. Best value — most popular option.</p>
+        <div class="service-price">From $399</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">⭐ <span>{RATING}/5 ({REVIEW_COUNT}+ Reviews)</span></div>
+  <div class="trust-item">🛡️ <span>Fully Licensed &amp; Insured</span></div>
+  <div class="trust-item">⚡ <span>Same-Day Available</span></div>
+  <div class="trust-item">💰 <span>100% Satisfaction Guaranteed</span></div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews-bg">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Customer Reviews</p>
+    <h2>What {CITY} Says</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"My driveway had 15 years of stains on it. They came out the next day and it looked brand new in 90 minutes. HOA complaint gone. I booked them for the whole house the same week."</p>
+        <div class="review-author">Tom W.</div>
+        <div class="review-service">Driveway + House Wash · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best pressure washing company in {CITY}. I've tried two others before and nobody came close to the results these guys delivered. Fair price, showed up on time, left the property spotless."</p>
+        <div class="review-author">Maria S.</div>
+        <div class="review-service">Full Property Package · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Used them for my commercial property — parking lot and storefront. Professional, quick, and the results impressed my customers. Set up a monthly maintenance schedule with them."</p>
+        <div class="review-author">Kevin B.</div>
+        <div class="review-service">Commercial Cleaning · Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section style="background:var(--bg);padding:80px 24px;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <p class="section-label" style="text-align:center;">Packages</p>
+    <h2 style="text-align:center;margin-bottom:8px;">Simple, Transparent Pricing</h2>
+    <p style="text-align:center;color:var(--text-sub);font-size:17px;margin-bottom:48px;">No monthly fees. No contracts. You own the site.</p>
+    <div class="pricing-tiers-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+      <!-- STARTER -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--bg2);">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text-sub);margin-bottom:12px;">Starter</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$399</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 48 hrs</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Single-page mobile-first site</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Hero + services + quote CTA</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Contact form (email to you)</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Free Netlify hosting + SSL</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;1 revision round</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid var(--primary);color:var(--primary);font-weight:700;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--accent);position:relative;box-shadow:0 4px 16px rgba(39,174,96,0.12);">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:9999px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Most Popular</div>
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:12px;">Standard</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$599</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 3–4 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Everything in Starter</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;2–3 pages (Home · Services · Contact)</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Before/after photo section</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Google Reviews display</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Basic SEO setup</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;2 revision rounds</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;background:var(--accent);color:#fff;font-weight:800;font-size:15px;padding:14px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- PRO -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--bg2);">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text-sub);margin-bottom:12px;">Pro</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$899</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 5–7 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Everything in Standard</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;4–5 pages + before/after gallery</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Service area / coverage map</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Instant quote estimator</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Full SEO + Google Analytics</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;3 revisions + 30-day support</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid var(--primary);color:var(--primary);font-weight:700;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:var(--text-sub);font-size:13px;margin-top:24px;">All packages: you own the site outright. No monthly fees, ever.</p>
+  </div>
+  <style>@media(min-width:640px){.pricing-tiers-grid{grid-template-columns:repeat(3,1fr)!important}}</style>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="booking">
+  <p class="section-label" style="color:var(--accent-lt);">Free Estimate</p>
+  <h2>Get Your Free Quote</h2>
+  <p>Tell us what you need cleaned and we'll send a quote within the hour. No obligation, no pressure.</p>
+  <div class="booking-card">
+    <h3>📋 Request a Free Quote</h3>
+    <div class="form-group">
+      <label>Service Needed</label>
+      <select>
+        <option>Full Property Package — Best Value</option>
+        <option>House / Exterior Washing</option>
+        <option>Driveway &amp; Sidewalks</option>
+        <option>Roof Soft Wash</option>
+        <option>Deck &amp; Patio</option>
+        <option>Commercial Property</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="John Smith">
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="(702) 555-0100">
+    </div>
+    <div class="form-group">
+      <label>Property Address</label>
+      <input type="text" placeholder="123 Main St, {CITY}">
+    </div>
+    <div class="form-group">
+      <label>Anything else we should know? (optional)</label>
+      <textarea placeholder="e.g. 2-story house, large driveway, HOA requirements..."></textarea>
+    </div>
+    <button class="btn-book">Get My Free Quote →</button>
+    <p class="booking-note">We'll send your quote within 1 hour. Most jobs scheduled within 48 hours.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">{BUSINESS_NAME}<span>.</span></div>
+  <div class="footer-contact">
+    <a href="tel:{PHONE}">{PHONE}</a> · <a href="mailto:{EMAIL}">{EMAIL}</a><br>
+    Serving {CITY} and surrounding areas
+  </div>
+  <div class="footer-legal">© 2025 {BUSINESS_NAME}. Site by <a href="https://roxtonweb.com" style="color:var(--accent-lt);text-decoration:none;">Roxton Web</a>.</div>
+</footer>
+
+</body>
+</html>
