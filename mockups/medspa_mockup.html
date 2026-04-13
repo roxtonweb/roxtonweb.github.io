@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>{BUSINESS_NAME} — Med Spa in {CITY}</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary:   #1a1a1a;
+    --accent:    #c9a96e;
+    --accent-lt: #e8d5b0;
+    --text:      #1a1a1a;
+    --text-sub:  #6c757d;
+    --bg:        #faf8f5;
+    --bg2:       #f0ede8;
+    --card:      #ffffff;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,248,245,0.95); backdrop-filter: blur(8px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(201,169,110,0.2);
+  }
+  .nav-brand { font-family: var(--serif); font-weight: 700; font-size: 19px; letter-spacing: 0.3px; color: var(--text); }
+  .btn-nav {
+    background: var(--accent); color: #fff; font-weight: 600; font-size: 14px;
+    padding: 10px 22px; border-radius: 9999px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-nav:hover { background: #b8935a; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding: 120px 24px 80px;
+    display: flex; flex-direction: column; justify-content: center;
+    background:
+      linear-gradient(to right, rgba(250,248,245,0.97) 45%, rgba(250,248,245,0.5) 70%, transparent 100%),
+      url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1400&q=80') right center/cover no-repeat;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,169,110,0.12); border: 1px solid rgba(201,169,110,0.3);
+    color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+    padding: 6px 14px; border-radius: 9999px; text-transform: uppercase;
+    margin-bottom: 24px; width: fit-content;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(38px, 7vw, 64px);
+    font-weight: 700; line-height: 1.1; letter-spacing: -0.5px;
+    margin-bottom: 20px; max-width: 520px;
+  }
+  .hero p { font-size: 17px; color: var(--text-sub); max-width: 400px; margin-bottom: 36px; line-height: 1.7; }
+  .hero-trust {
+    display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 36px;
+    font-size: 13px; color: var(--text-sub);
+  }
+  .hero-trust strong { color: var(--text); }
+  .btn-primary {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-weight: 700; font-size: 16px; padding: 16px 36px;
+    border-radius: 9999px; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(201,169,110,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,169,110,0.4); }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px;
+  }
+  h2 { font-family: var(--serif); font-size: clamp(28px, 5vw, 42px); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+  .section-sub { color: var(--text-sub); font-size: 17px; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+  /* SERVICES */
+  .services-bg { background: var(--bg2); }
+  .services-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .service-card {
+    background: var(--card); border-radius: 16px; padding: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+  .service-icon { font-size: 28px; margin-bottom: 16px; }
+  .service-card h3 { font-family: var(--serif); font-size: 21px; font-weight: 700; margin-bottom: 10px; }
+  .service-card p { color: var(--text-sub); font-size: 15px; margin-bottom: 18px; line-height: 1.7; }
+  .service-price { color: var(--accent); font-weight: 700; font-size: 19px; }
+
+  /* TRUST STRIP */
+  .trust-strip {
+    background: var(--accent); padding: 24px;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;
+  }
+  .trust-item { color: #fff; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .trust-item span { opacity: 0.85; font-weight: 400; }
+
+  /* ABOUT */
+  .about-bg { background: var(--bg); }
+  .about-inner { display: flex; flex-direction: column; gap: 40px; max-width: 900px; }
+  .about-text h2 { margin-bottom: 20px; }
+  .about-text p { color: var(--text-sub); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+  .about-creds { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .cred-badge {
+    background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.3);
+    color: var(--text); font-size: 13px; font-weight: 600;
+    padding: 8px 16px; border-radius: 8px;
+  }
+
+  /* REVIEWS */
+  .reviews-bg { background: var(--bg2); }
+  .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .review-card {
+    background: var(--card); border-radius: 16px; padding: 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .review-stars { color: var(--accent); font-size: 16px; margin-bottom: 14px; }
+  .review-text { font-size: 15px; color: var(--text-sub); line-height: 1.8; margin-bottom: 16px; font-style: italic; }
+  .review-author { font-weight: 700; font-size: 14px; }
+  .review-service { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
+
+  /* BOOKING */
+  .booking-section { background: var(--bg); padding: 80px 24px; }
+  .booking-inner { max-width: 540px; margin: 0 auto; text-align: center; }
+  .booking-inner p { color: var(--text-sub); font-size: 17px; margin-bottom: 40px; line-height: 1.7; }
+  .booking-card {
+    background: var(--card); border-radius: 20px; padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    text-align: left;
+  }
+  .booking-card h3 { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 24px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-sub); }
+  .form-group input, .form-group select {
+    width: 100%; padding: 13px 16px; border-radius: 8px;
+    border: 1px solid #e0dcd6; background: var(--bg);
+    color: var(--text); font-size: 15px; outline: none; font-family: var(--sans);
+  }
+  .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+  .btn-book {
+    width: 100%; background: var(--accent); color: #fff;
+    font-weight: 700; font-size: 16px; padding: 16px;
+    border-radius: 9999px; border: none; cursor: pointer; margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .btn-book:hover { background: #b8935a; }
+  .booking-note { font-size: 12px; color: var(--text-sub); text-align: center; margin-top: 12px; line-height: 1.5; }
+
+  /* FOOTER */
+  footer {
+    background: var(--primary); color: #f8f9fa;
+    padding: 48px 24px; text-align: center;
+  }
+  .footer-brand { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .footer-brand span { color: var(--accent); }
+  .footer-contact { color: rgba(248,249,250,0.65); font-size: 15px; line-height: 1.8; margin-bottom: 16px; }
+  .footer-contact a { color: rgba(248,249,250,0.65); text-decoration: none; }
+  .footer-contact a:hover { color: var(--accent); }
+  .footer-legal { font-size: 12px; color: rgba(248,249,250,0.35); margin-top: 24px; }
+
+  /* DESKTOP */
+  @media (min-width: 640px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+    section { padding: 96px 48px; }
+    .hero { padding: 140px 48px 96px; }
+    .about-inner { flex-direction: row; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">{BUSINESS_NAME}</div>
+  <a href="#booking" class="btn-nav">Book Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✦ {CITY}'s Trusted Med Spa</div>
+  <h1>Feel Confident<br>in Your Skin</h1>
+  <p>Expert aesthetic treatments delivered with precision and care. Book your personalized consultation today.</p>
+  <div class="hero-trust">
+    <span>★★★★★ <strong>{RATING}</strong> · {REVIEW_COUNT}+ reviews</span>
+    <span>·</span>
+    <span>Licensed Providers</span>
+    <span>·</span>
+    <span>Free Consultations</span>
+  </div>
+  <a href="#booking" class="btn-primary">Book a Free Consultation</a>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Our Treatments</p>
+    <h2>Aesthetic Services</h2>
+    <p class="section-sub">Every treatment is customized to your goals. Our providers take time to understand what you want before recommending any service.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">💉</div>
+        <h3>Botox & Dysport</h3>
+        <p>Smooth fine lines and prevent new ones from forming. Results in 3–5 days, lasting 3–4 months. Natural-looking, never frozen.</p>
+        <div class="service-price">From $12/unit</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Dermal Fillers</h3>
+        <p>Restore volume to lips, cheeks, and under-eyes. Hyaluronic acid fillers for natural-looking results that last 12–18 months.</p>
+        <div class="service-price">From $599</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌟</div>
+        <h3>HydraFacial</h3>
+        <p>Deep cleanse, extract, and hydrate in one treatment. Immediate glow with no downtime. Perfect before any big event.</p>
+        <div class="service-price">From $179</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Laser Hair Removal</h3>
+        <p>Permanent reduction with FDA-cleared technology. 6–8 sessions for lasting results. All skin types welcome.</p>
+        <div class="service-price">From $99/session</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔆</div>
+        <h3>Chemical Peels</h3>
+        <p>Resurface and brighten your complexion. Targets sun damage, acne scars, and uneven texture. Multiple strengths available.</p>
+        <div class="service-price">From $129</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🩸</div>
+        <h3>IV Therapy</h3>
+        <p>Customized vitamin drips for energy, immunity, and skin health. Myers Cocktail, Glutathione, and more. 45-minute sessions.</p>
+        <div class="service-price">From $149</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item">★★★★★ <span>{RATING} Stars · {REVIEW_COUNT}+ Reviews</span></div>
+  <div class="trust-item">🩺 <span>Licensed Medical Providers</span></div>
+  <div class="trust-item">🎁 <span>Free Initial Consultation</span></div>
+  <div class="trust-item">💳 <span>Financing Available</span></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-bg">
+  <div class="about-inner" style="max-width:900px;margin:0 auto;">
+    <div class="about-text">
+      <p class="section-label">Meet Your Team</p>
+      <h2>Expert Care,<br>Personal Attention</h2>
+      <p>At {BUSINESS_NAME}, every treatment is performed by licensed medical professionals with years of aesthetic experience. We take time to understand your goals before recommending any service — and we'll always tell you if a treatment isn't right for you.</p>
+      <p>We're proud to be {CITY}'s most trusted aesthetic clinic, with over {REVIEW_COUNT} five-star reviews from patients who trust us with their results.</p>
+      <div class="about-creds">
+        <span class="cred-badge">🩺 RN &amp; NP Providers</span>
+        <span class="cred-badge">✅ FDA-Cleared Technology</span>
+        <span class="cred-badge">🏆 Top-Rated in {CITY}</span>
+        <span class="cred-badge">💊 Allergan Platinum Provider</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-bg">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Patient Reviews</p>
+    <h2>What Our Clients Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I was so nervous before my first filler appointment, but the provider made me feel completely comfortable. The results are natural and I get compliments constantly. I won't go anywhere else."</p>
+        <div class="review-author">Jennifer M.</div>
+        <div class="review-service">Dermal Fillers · Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best HydraFacial I've ever had. My skin was glowing for two weeks after. The staff explained everything and never pushed me into services I didn't need. Booking again next month."</p>
+        <div class="review-author">Ashley R.</div>
+        <div class="review-service">HydraFacial · Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I've been doing Botox at {BUSINESS_NAME} for two years. Consistent results every time. The fact that they keep records of exactly where and how much makes such a difference."</p>
+        <div class="review-author">Christine L.</div>
+        <div class="review-service">Botox · Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section style="background:var(--bg2);padding:80px 24px;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <p class="section-label" style="text-align:center;">Packages</p>
+    <h2 style="text-align:center;margin-bottom:8px;font-family:var(--serif);">Simple, Transparent Pricing</h2>
+    <p style="text-align:center;color:var(--text-sub);font-size:17px;margin-bottom:48px;">No monthly fees. No subscriptions. You own the site outright.</p>
+    <div class="pricing-tiers-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+      <!-- STARTER -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:1px solid #e8e2db;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--text-sub);margin-bottom:12px;">Starter</div>
+        <div style="font-size:42px;font-weight:800;line-height:1;color:var(--text);margin-bottom:4px;">$399</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 48 hrs</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;color:var(--text);">✓ &nbsp;Single-page mobile-first site</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;color:var(--text);">✓ &nbsp;Hero + treatments + booking button</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;color:var(--text);">✓ &nbsp;Cal.com consultation booking (free)</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;color:var(--text);">✓ &nbsp;Free Netlify hosting + SSL</li>
+          <li style="padding:8px 0;font-size:14px;color:var(--text);">✓ &nbsp;1 revision round</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid #d4c5a9;color:var(--text);font-weight:600;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--accent);position:relative;box-shadow:0 4px 20px rgba(201,169,110,0.15);">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 16px;border-radius:9999px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Most Popular</div>
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--accent);margin-bottom:12px;">Standard</div>
+        <div style="font-size:42px;font-weight:800;line-height:1;color:var(--text);margin-bottom:4px;">$599</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 3–4 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;Everything in Starter</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;2–3 pages (Home · Services · Contact)</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;Provider bio & credentials section</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;Google Reviews display</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;Contact form + basic SEO</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;2 revision rounds</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:14px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- PRO -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:1px solid #e8e2db;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--text-sub);margin-bottom:12px;">Pro</div>
+        <div style="font-size:42px;font-weight:800;line-height:1;color:var(--text);margin-bottom:4px;">$899</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 5–7 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;Everything in Standard</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;4–5 pages including Gallery & FAQ</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;Treatment results gallery</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;Individual treatment landing pages</li>
+          <li style="padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px;">✓ &nbsp;Full SEO + Google Analytics</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;3 revisions + 30-day support</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid var(--accent);color:var(--accent);font-weight:600;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:var(--text-sub);font-size:13px;margin-top:24px;">All packages: you own the site, no monthly fees, free hosting included.</p>
+  </div>
+  <style>@media(min-width:640px){.pricing-tiers-grid{grid-template-columns:repeat(3,1fr)!important}}</style>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="booking">
+  <div class="booking-inner">
+    <p class="section-label" style="text-align:center;">Get Started</p>
+    <h2 style="text-align:center;">Book Your Free Consultation</h2>
+    <p>No pressure, no obligations — just an honest conversation about what's possible for you. Complimentary for all new patients.</p>
+    <div class="booking-card">
+      <h3>Request Your Appointment</h3>
+      <div class="form-group">
+        <label>Treatment Interest</label>
+        <select>
+          <option>Not sure yet — I'd like a consultation</option>
+          <option>Botox / Dysport</option>
+          <option>Dermal Fillers</option>
+          <option>HydraFacial</option>
+          <option>Laser Hair Removal</option>
+          <option>IV Therapy</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="First &amp; Last Name">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(702) 555-0100">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@email.com">
+      </div>
+      <button class="btn-book">Request My Free Consultation →</button>
+      <p class="booking-note">We'll reach out within 24 hours to confirm your appointment. All consultations are free for new patients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">{BUSINESS_NAME}<span> ✦</span></div>
+  <div class="footer-contact">
+    <a href="tel:{PHONE}">{PHONE}</a> · <a href="mailto:{EMAIL}">{EMAIL}</a><br>
+    Serving {CITY} and surrounding areas
+  </div>
+  <div class="footer-legal">© 2025 {BUSINESS_NAME}. Site by <a href="https://roxtonweb.com" style="color:var(--accent);text-decoration:none;">Roxton Web</a>.</div>
+</footer>
+
+</body>
+</html>
