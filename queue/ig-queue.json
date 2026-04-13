@@ -873,8 +873,10 @@
     "score": 10,
     "variant": "MEDSPA_A",
     "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Charlotte, NC, Medi Spa Charlotte stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
-    "status": "PENDING",
-    "added": "2026-04-13"
+    "status": "MANUAL_SENT",
+    "added": "2026-04-13",
+    "sent_at": "2026-04-13T20:07:23.195Z",
+    "conversation_stage": "OUTREACH_SENT"
   },
   {
     "username": "@urbanmedspa_",
@@ -950,37 +952,37 @@
   },
   {
     "username": "@taowellnessmedspa",
-    "business_name": "Tampa Med Spa ÃÂ¢ÃÂÃÂ¨ TAO Wellness Med Spa",
+    "business_name": "Tampa Med Spa ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¨ TAO Wellness Med Spa",
     "niche": "med_spa",
     "city": "Tampa, FL",
     "followers": 1933,
     "score": 10,
     "variant": "MEDSPA_A",
-    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Tampa, FL, Tampa Med Spa ÃÂ¢ÃÂÃÂ¨ TAO Wellness Med Spa stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
+    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Tampa, FL, Tampa Med Spa ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¨ TAO Wellness Med Spa stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
     "status": "PENDING",
     "added": "2026-04-13"
   },
   {
     "username": "@wellmedcenter",
-    "business_name": "Wellness Med Spa | Botox ÃÂ¢ÃÂÃÂ¢ Facials ÃÂ¢ÃÂÃÂ¢ PRP ÃÂ¢ÃÂÃÂ¢ Fillers",
+    "business_name": "Wellness Med Spa | Botox ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ Facials ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ PRP ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ Fillers",
     "niche": "med_spa",
     "city": "Denver, CO",
     "followers": 3620,
     "score": 8,
     "variant": "MEDSPA_A",
-    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Denver, CO, Wellness Med Spa | Botox ÃÂ¢ÃÂÃÂ¢ Facials ÃÂ¢ÃÂÃÂ¢ PRP ÃÂ¢ÃÂÃÂ¢ Fillers stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
+    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Denver, CO, Wellness Med Spa | Botox ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ Facials ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ PRP ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¢ Fillers stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
     "status": "PENDING",
     "added": "2026-04-13"
   },
   {
     "username": "@kristina.injectables",
-    "business_name": "Kristina ÃÂ°ÃÂÃÂ«ÃÂ¦ Russian Lips Style",
+    "business_name": "Kristina ÃÂÃÂ°ÃÂÃÂÃÂÃÂ«ÃÂÃÂ¦ Russian Lips Style",
     "niche": "med_spa",
     "city": "Denver, CO",
     "followers": 4303,
     "score": 10,
     "variant": "MEDSPA_A",
-    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Denver, CO, Kristina ÃÂ°ÃÂÃÂ«ÃÂ¦ Russian Lips Style stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
+    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Denver, CO, Kristina ÃÂÃÂ°ÃÂÃÂÃÂÃÂ«ÃÂÃÂ¦ Russian Lips Style stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
     "status": "PENDING",
     "added": "2026-04-13"
   },
@@ -1050,14 +1052,14 @@
   },
   {
     "username": "@coatingsandcorrections",
-    "business_name": "C&C MOBILE DETAILING ÃÂ¢ÃÂÃÂ¨ Paint correction & Ceramic Coatings",
+    "business_name": "C&C MOBILE DETAILING ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¨ Paint correction & Ceramic Coatings",
     "niche": "auto_detailing",
     "city": "Denver, CO",
     "followers": 60,
     "score": 8,
     "variant": "DETAIL_A",
     "service_hint": "interior detail",
-    "dm": "Quick question about your booking setup.\n\nSaw your interior detail work, looks clean.\n\nIf someone finds your page late and wants to book, what do they actually do?\n\nNoticed C&C MOBILE DETAILING ÃÂ¢ÃÂÃÂ¨ Paint correction & Ceramic Coatings doesn't really have a place to send them. I could mock something up for you, free, and you can decide from there if it's worth it.",
+    "dm": "Quick question about your booking setup.\n\nSaw your interior detail work, looks clean.\n\nIf someone finds your page late and wants to book, what do they actually do?\n\nNoticed C&C MOBILE DETAILING ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¨ Paint correction & Ceramic Coatings doesn't really have a place to send them. I could mock something up for you, free, and you can decide from there if it's worth it.",
     "status": "PENDING",
     "added": "2026-04-13"
   },
