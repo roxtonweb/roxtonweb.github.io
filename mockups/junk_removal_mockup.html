@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>{BUSINESS_NAME} — Junk Removal in {CITY}</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary:   #212529;
+    --secondary: #343a40;
+    --accent:    #fd7e14;
+    --accent-dk: #e8690b;
+    --text:      #212529;
+    --text-sub:  #6c757d;
+    --bg:        #f8f9fa;
+    --bg2:       #e9ecef;
+    --card:      #ffffff;
+    --font: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--primary); display: flex; justify-content: space-between;
+    align-items: center; padding: 16px 24px;
+  }
+  .nav-brand { font-weight: 900; font-size: 18px; color: #fff; letter-spacing: -0.5px; }
+  .nav-brand span { color: var(--accent); }
+  .btn-nav {
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 14px;
+    padding: 10px 20px; border-radius: 9999px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-nav:hover { background: var(--accent-dk); }
+
+  /* HERO */
+  .hero {
+    background: var(--primary);
+    padding: 100px 24px 72px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 45%; opacity: 0.08;
+    background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=60') right/cover no-repeat;
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 700px; }
+  .urgency-bar {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(253,126,20,0.15); border: 1px solid rgba(253,126,20,0.3);
+    color: var(--accent); font-size: 13px; font-weight: 700;
+    padding: 8px 16px; border-radius: 8px; margin-bottom: 24px;
+  }
+  .urgency-bar .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: inline-block; }
+ 50%{ opacity:0.4; } }
+  .hero h1 {
+    font-size: clamp(36px, 9vw, 66px); font-weight: 900; color: #fff;
+    line-height: 1.0; letter-spacing: -2px; margin-bottom: 20px;
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero-sub { font-size: 20px; color: rgba(255,255,255,0.7); margin-bottom: 12px; max-width: 480px; }
+  .hero-bullets { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+  .hero-bullets li {
+    background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9);
+    font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hero-actions { display: flex; flex-direction: column; gap: 12px; }
+  .btn-primary {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-weight: 900; font-size: 18px; padding: 18px 36px;
+    border-radius: 9999px; text-decoration: none; text-align: center;
+    box-shadow: 0 4px 24px rgba(253,126,20,0.4);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(253,126,20,0.5); }
+  .btn-call {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: transparent; color: #fff; font-weight: 700; font-size: 18px;
+    padding: 18px 36px; border-radius: 9999px; text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.25); transition: border-color 0.2s;
+  }
+  .btn-call:hover { border-color: rgba(255,255,255,0.6); }
+
+  /* STATS */
+  .stats-bar { background: var(--accent); padding: 20px 24px; }
+  .stats-inner {
+    display: flex; flex-direction: column; gap: 12px;
+    align-items: center; text-align: center;
+    max-width: 900px; margin: 0 auto;
+  }
+  .stat { color: #fff; }
+  .stat-num { font-size: 28px; font-weight: 900; line-height: 1; }
+  .stat-label { font-size: 12px; opacity: 0.85; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+  .section-label {
+    text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
+    color: var(--accent); font-weight: 700; margin-bottom: 12px;
+  }
+  h2 { font-size: clamp(26px, 5vw, 42px); font-weight: 900; letter-spacing: -0.8px; margin-bottom: 16px; }
+  .section-sub { color: var(--text-sub); font-size: 17px; max-width: 520px; margin-bottom: 48px; }
+
+  /* WHAT WE TAKE */
+  .take-bg { background: var(--bg2); }
+  .take-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .take-item {
+    background: var(--card); border-radius: 10px; padding: 20px;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .take-icon { font-size: 28px; flex-shrink: 0; }
+  .take-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+  .take-item p { font-size: 13px; color: var(--text-sub); }
+
+  /* PRICING */
+  .pricing-bg { background: var(--bg); }
+  .pricing-note {
+    background: rgba(253,126,20,0.08); border: 1px solid rgba(253,126,20,0.2);
+    border-radius: 10px; padding: 16px 20px; margin-bottom: 32px;
+    font-size: 14px; color: var(--text-sub);
+  }
+  .pricing-note strong { color: var(--text); }
+  .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .pricing-card {
+    background: var(--card); border-radius: 16px; padding: 32px;
+    border: 2px solid var(--bg2); position: relative;
+  }
+  .pricing-card.featured { border-color: var(--accent); }
+  .pricing-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff; font-size: 11px; font-weight: 800;
+    padding: 4px 14px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .pricing-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+  .pricing-price { font-size: 36px; font-weight: 900; color: var(--text); margin-bottom: 4px; }
+  .pricing-price span { font-size: 15px; font-weight: 400; color: var(--text-sub); }
+  .pricing-desc { font-size: 14px; color: var(--text-sub); margin-bottom: 20px; }
+  .pricing-features { list-style: none; margin-bottom: 24px; }
+  .pricing-features li { font-size: 14px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 8px; }
+  .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .btn-pick {
+    display: block; background: var(--accent); color: #fff; text-align: center;
+    font-weight: 800; font-size: 15px; padding: 13px;
+    border-radius: 9999px; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-pick:hover { background: var(--accent-dk); }
+  .pricing-card:not(.featured) .btn-pick { background: var(--primary); }
+  .pricing-card:not(.featured) .btn-pick:hover { background: #0d1014; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--primary); padding: 20px 24px;
+    display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center;
+  }
+  .trust-item { color: #fff; font-size: 14px; font-weight: 700; }
+  .trust-item span { color: rgba(255,255,255,0.7); font-weight: 400; }
+
+  /* REVIEWS */
+  .reviews-bg { background: var(--bg2); }
+  .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .review-card { background: var(--card); border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  .review-stars { color: var(--accent); font-size: 16px; margin-bottom: 12px; }
+  .review-text { font-size: 15px; color: var(--text-sub); line-height: 1.7; margin-bottom: 14px; }
+  .review-author { font-weight: 700; font-size: 14px; }
+  .review-service { font-size: 12px; color: var(--text-sub); }
+
+  /* BOOKING */
+  .booking-section { background: var(--primary); padding: 80px 24px; text-align: center; }
+  .booking-section h2 { color: #fff; }
+  .booking-section > p { color: rgba(255,255,255,0.75); font-size: 17px; max-width: 440px; margin: 0 auto 40px; }
+  .booking-card {
+    background: #fff; border-radius: 16px; padding: 32px;
+    max-width: 480px; margin: 0 auto; text-align: left;
+  }
+  .booking-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 20px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-sub); }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 16px; border-radius: 8px;
+    border: 2px solid #e9ecef; color: var(--text); font-size: 15px;
+    outline: none; font-family: var(--font);
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+  .btn-book {
+    width: 100%; background: var(--accent); color: #fff;
+    font-weight: 900; font-size: 18px; padding: 16px;
+    border-radius: 9999px; border: none; cursor: pointer; margin-top: 8px;
+    transition: background 0.15s;
+  }
+  .btn-book:hover { background: var(--accent-dk); }
+  .booking-note { font-size: 12px; color: var(--text-sub); text-align: center; margin-top: 12px; }
+
+  /* FOOTER */
+  footer { background: #0d1014; padding: 40px 24px; text-align: center; }
+  .footer-brand { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 8px; }
+  .footer-brand span { color: var(--accent); }
+  .footer-contact { color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.8; }
+  .footer-contact a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-contact a:hover { color: var(--accent); }
+  .footer-legal { font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 20px; }
+
+  @media (min-width: 640px) {
+    .hero-actions { flex-direction: row; }
+    .stats-inner { flex-direction: row; justify-content: center; gap: 48px; }
+    .take-grid { grid-template-columns: repeat(4, 1fr); }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    .trust-bar { flex-direction: row; justify-content: center; gap: 32px; }
+  }
+  @media (min-width: 1024px) {
+    section { padding: 96px 48px; }
+    .hero { padding: 140px 48px 80px; }
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">{BUSINESS_NAME}<span>.</span></div>
+  <a href="#booking" class="btn-nav">Book Pickup</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="urgency-bar">
+      <span class="dot"></span>
+      Same-Day Pickup Available in {CITY}
+    </div>
+    <h1>Junk Gone<br>in <span class="accent">Hours.</span></h1>
+    <p class="hero-sub">We haul it, we lift it, we recycle it. You don't move a thing.</p>
+    <ul class="hero-bullets">
+      <li>✅ Upfront pricing — no surprises</li>
+      <li>⚡ Same-day &amp; next-day pickup</li>
+      <li>♻️ We recycle &amp; donate first</li>
+      <li>🛡️ Licensed &amp; insured</li>
+    </ul>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">Book Pickup in 60 Seconds →</a>
+      <a href="tel:{PHONE}" class="btn-call">📞 {PHONE}</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">{REVIEW_COUNT}+</div>
+      <div class="stat-label">5-Star Reviews</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Same Day</div>
+      <div class="stat-label">Pickup Available</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$0</div>
+      <div class="stat-label">Hidden Fees</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">80%+</div>
+      <div class="stat-label">Recycled / Donated</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE TAKE -->
+<section class="take-bg">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">We Take Almost Everything</p>
+    <h2>What We Haul Away</h2>
+    <p class="section-sub">If you can point to it, we'll take it. No job too big or too small.</p>
+    <div class="take-grid">
+      <div class="take-item"><div class="take-icon">🛋️</div><div><h3>Furniture</h3><p>Sofas, beds, tables, chairs</p></div></div>
+      <div class="take-item"><div class="take-icon">🏠</div><div><h3>Estate Cleanouts</h3><p>Full house &amp; attic cleanouts</p></div></div>
+      <div class="take-item"><div class="take-icon">🏗️</div><div><h3>Construction Debris</h3><p>Drywall, lumber, flooring</p></div></div>
+      <div class="take-item"><div class="take-icon">🖥️</div><div><h3>Electronics</h3><p>TVs, computers, appliances</p></div></div>
+      <div class="take-item"><div class="take-icon">🌿</div><div><h3>Yard Waste</h3><p>Branches, mulch, soil</p></div></div>
+      <div class="take-item"><div class="take-icon">🏢</div><div><h3>Office Cleanouts</h3><p>Desks, chairs, filing cabinets</p></div></div>
+      <div class="take-item"><div class="take-icon">🧹</div><div><h3>Garage Cleanouts</h3><p>Everything that's been piling up</p></div></div>
+      <div class="take-item"><div class="take-icon">⚡</div><div><h3>Appliances</h3><p>Fridges, washers, dryers</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-bg">
+  <div style="max-width:900px;margin:0 auto;">
+    <p class="section-label">Upfront Pricing</p>
+    <h2>Simple, Honest Pricing</h2>
+    <div class="pricing-note">
+      <strong>How our pricing works:</strong> We price by the fraction of the truck you fill. No itemized fees, no surprise charges. You only pay for the space you use.
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Minimum Load</h3>
+        <div class="pricing-price">$99<span>+</span></div>
+        <p class="pricing-desc">A few small items — quick in and out.</p>
+        <ul class="pricing-features">
+          <li>Up to 1/8 truck</li>
+          <li>2-3 items max</li>
+          <li>Labor included</li>
+          <li>Same-day available</li>
+        </ul>
+        <a href="#booking" class="btn-pick">Book Now</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <h3>Half Truck</h3>
+        <div class="pricing-price">$299<span>+</span></div>
+        <p class="pricing-desc">Room cleanout, garage partial, furniture haul.</p>
+        <ul class="pricing-features">
+          <li>Up to 1/2 truck</li>
+          <li>1–2 rooms worth</li>
+          <li>All labor included</li>
+          <li>Same-day available</li>
+          <li>Recycling &amp; donation</li>
+        </ul>
+        <a href="#booking" class="btn-pick">Book Half Truck</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Full Truck</h3>
+        <div class="pricing-price">$499<span>+</span></div>
+        <p class="pricing-desc">Full estate cleanout, major renovation haul.</p>
+        <ul class="pricing-features">
+          <li>Full truck load</li>
+          <li>Entire house possible</li>
+          <li>All labor included</li>
+          <li>Priority scheduling</li>
+          <li>Recycling &amp; donation</li>
+        </ul>
+        <a href="#booking" class="btn-pick">Book Full Truck</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">⭐ <span>{RATING}/5 ({REVIEW_COUNT}+ Reviews)</span></div>
+  <div class="trust-item">🚛 <span>Same-Day Pickup Available</span></div>
+  <div class="trust-item">💰 <span>No Hidden Fees, Ever</span></div>
+  <div class="trust-item">♻️ <span>We Recycle &amp; Donate</span></div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews-bg">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">5-Star Service</p>
+    <h2>What {CITY} Customers Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Booked them for a garage cleanout that had been piling up for 5 years. They came the same day, had everything out in 2 hours. The price was exactly what they quoted — not a penny more."</p>
+        <div class="review-author">Frank D.</div>
+        <div class="review-service">Garage Cleanout · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Had to clear out my mom's house after she passed. This crew was respectful, fast, and careful with anything I wanted to keep. They took almost everything to donation. Couldn't have done it without them."</p>
+        <div class="review-author">Sandra L.</div>
+        <div class="review-service">Estate Cleanout · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Used them twice now for construction debris from our remodel. On time both visits, competitive price, and they swept up after themselves. Will definitely use again for phase 2."</p>
+        <div class="review-author">Marcus J.</div>
+        <div class="review-service">Construction Debris · Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS — WEBSITE PACKAGES -->
+<section style="background:var(--bg);padding:80px 24px;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <p class="section-label" style="text-align:center;">Website Packages</p>
+    <h2 style="text-align:center;margin-bottom:8px;">Get a Site That Books Jobs</h2>
+    <p style="text-align:center;color:var(--text-sub);font-size:17px;margin-bottom:48px;">One-time price. You own it. No monthly fees, ever.</p>
+    <div class="pricing-tiers-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+      <!-- STARTER -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--bg2);">
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--text-sub);margin-bottom:12px;">Starter</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$399</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 48 hrs</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Single-page mobile-first site</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Hero + services + booking CTA</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Contact form (leads to your email)</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Free Netlify hosting + SSL</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;1 revision round</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid var(--primary);color:var(--primary);font-weight:800;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--accent);position:relative;box-shadow:0 4px 20px rgba(253,126,20,0.12);">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:9999px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Most Popular</div>
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:12px;">Standard</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$599</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 3–4 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Everything in Starter</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;2–3 pages (Home · Services · Contact)</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Instant price estimator widget</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Google Reviews display</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Basic SEO setup</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;2 revision rounds</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;background:var(--accent);color:#fff;font-weight:900;font-size:15px;padding:14px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- PRO -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--bg2);">
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--text-sub);margin-bottom:12px;">Pro</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$899</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 5–7 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Everything in Standard</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;4–5 pages + what we take gallery</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Service area coverage map</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Same-day booking automation</li>
+          <li style="padding:8px 0;border-bottom:1px solid var(--bg2);font-size:14px;">✓ &nbsp;Full SEO + Google Analytics</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;3 revisions + 30-day support</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid var(--accent);color:var(--accent);font-weight:800;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:var(--text-sub);font-size:13px;margin-top:24px;">All packages: you own the site outright. No monthly fees, ever.</p>
+  </div>
+  <style>@media(min-width:640px){.pricing-tiers-grid{grid-template-columns:repeat(3,1fr)!important}}</style>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="booking">
+  <p class="section-label" style="color:var(--accent);">Book in 60 Seconds</p>
+  <h2>Schedule Your Pickup</h2>
+  <p>Pick a time. We show up. Junk disappears. That's it.</p>
+  <div class="booking-card">
+    <h3>🗓️ Book Your Haul</h3>
+    <div class="form-group">
+      <label>What Are We Hauling?</label>
+      <select>
+        <option>Mixed junk / not sure yet</option>
+        <option>Furniture (sofa, bed, chairs, etc.)</option>
+        <option>Full Garage Cleanout</option>
+        <option>Estate / House Cleanout</option>
+        <option>Construction Debris</option>
+        <option>Appliances</option>
+        <option>Yard Waste</option>
+        <option>Office Cleanout</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="First &amp; Last Name">
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" placeholder="(702) 555-0100">
+    </div>
+    <div class="form-group">
+      <label>Pickup Address</label>
+      <input type="text" placeholder="123 Main St, {CITY}">
+    </div>
+    <div class="form-group">
+      <label>Describe What Needs to Go (optional)</label>
+      <textarea placeholder="e.g. 3-piece sofa, old fridge, boxes of misc stuff, 2 TVs..."></textarea>
+    </div>
+    <button class="btn-book">Book My Pickup Now →</button>
+    <p class="booking-note">We'll call within the hour to confirm. Same-day pickup often available. Upfront pricing guaranteed.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">{BUSINESS_NAME}<span>.</span></div>
+  <div class="footer-contact">
+    <a href="tel:{PHONE}">{PHONE}</a> · <a href="mailto:{EMAIL}">{EMAIL}</a><br>
+    Serving {CITY} and surrounding areas
+  </div>
+  <div class="footer-legal">© 2025 {BUSINESS_NAME}. Site by <a href="https://roxtonweb.com" style="color:var(--accent);text-decoration:none;">Roxton Web</a>.</div>
+</footer>
+
+</body>
+</html>
