@@ -718,8 +718,10 @@
     "score": 10,
     "variant": "LAWN_B",
     "dm": "Random but how do people usually sign up with you?\n\nIs it all DM or do you send them somewhere?\n\nI could put together a free mockup for JD's Lawn Maintenance LLC with a simple signup flow, then you can decide if it's worth it.",
-    "status": "PENDING",
-    "added": "2026-04-10"
+    "status": "MANUAL_SENT",
+    "added": "2026-04-10",
+    "sent_at": "2026-04-13T20:04:17.159Z",
+    "conversation_stage": "OUTREACH_SENT"
   },
   {
     "username": "@snellautowash",
@@ -946,37 +948,37 @@
   },
   {
     "username": "@taowellnessmedspa",
-    "business_name": "Tampa Med Spa â¨ TAO Wellness Med Spa",
+    "business_name": "Tampa Med Spa Ã¢ÂÂ¨ TAO Wellness Med Spa",
     "niche": "med_spa",
     "city": "Tampa, FL",
     "followers": 1933,
     "score": 10,
     "variant": "MEDSPA_A",
-    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Tampa, FL, Tampa Med Spa â¨ TAO Wellness Med Spa stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
+    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Tampa, FL, Tampa Med Spa Ã¢ÂÂ¨ TAO Wellness Med Spa stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
     "status": "PENDING",
     "added": "2026-04-13"
   },
   {
     "username": "@wellmedcenter",
-    "business_name": "Wellness Med Spa | Botox â¢ Facials â¢ PRP â¢ Fillers",
+    "business_name": "Wellness Med Spa | Botox Ã¢ÂÂ¢ Facials Ã¢ÂÂ¢ PRP Ã¢ÂÂ¢ Fillers",
     "niche": "med_spa",
     "city": "Denver, CO",
     "followers": 3620,
     "score": 8,
     "variant": "MEDSPA_A",
-    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Denver, CO, Wellness Med Spa | Botox â¢ Facials â¢ PRP â¢ Fillers stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
+    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Denver, CO, Wellness Med Spa | Botox Ã¢ÂÂ¢ Facials Ã¢ÂÂ¢ PRP Ã¢ÂÂ¢ Fillers stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
     "status": "PENDING",
     "added": "2026-04-13"
   },
   {
     "username": "@kristina.injectables",
-    "business_name": "Kristina ð«¦ Russian Lips Style",
+    "business_name": "Kristina Ã°ÂÂ«Â¦ Russian Lips Style",
     "niche": "med_spa",
     "city": "Denver, CO",
     "followers": 4303,
     "score": 10,
     "variant": "MEDSPA_A",
-    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Denver, CO, Kristina ð«¦ Russian Lips Style stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
+    "dm": "Quick question about your booking flow.\n\nBeen looking at med spas in Denver, CO, Kristina Ã°ÂÂ«Â¦ Russian Lips Style stood out.\n\nIf someone wants to book after seeing your page, where do they go?\n\nI could mock up something cleaner for you, free, and you can decide from there if it's a better fit.",
     "status": "PENDING",
     "added": "2026-04-13"
   },
@@ -1046,14 +1048,14 @@
   },
   {
     "username": "@coatingsandcorrections",
-    "business_name": "C&C MOBILE DETAILING â¨ Paint correction & Ceramic Coatings",
+    "business_name": "C&C MOBILE DETAILING Ã¢ÂÂ¨ Paint correction & Ceramic Coatings",
     "niche": "auto_detailing",
     "city": "Denver, CO",
     "followers": 60,
     "score": 8,
     "variant": "DETAIL_A",
     "service_hint": "interior detail",
-    "dm": "Quick question about your booking setup.\n\nSaw your interior detail work, looks clean.\n\nIf someone finds your page late and wants to book, what do they actually do?\n\nNoticed C&C MOBILE DETAILING â¨ Paint correction & Ceramic Coatings doesn't really have a place to send them. I could mock something up for you, free, and you can decide from there if it's worth it.",
+    "dm": "Quick question about your booking setup.\n\nSaw your interior detail work, looks clean.\n\nIf someone finds your page late and wants to book, what do they actually do?\n\nNoticed C&C MOBILE DETAILING Ã¢ÂÂ¨ Paint correction & Ceramic Coatings doesn't really have a place to send them. I could mock something up for you, free, and you can decide from there if it's worth it.",
     "status": "PENDING",
     "added": "2026-04-13"
   },
