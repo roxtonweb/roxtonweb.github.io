@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>{BUSINESS_NAME} — Lawn Care in {CITY}</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary:   #1b4332;
+    --secondary: #2d6a4f;
+    --accent:    #52b788;
+    --accent-lt: #74c69d;
+    --text:      #1a1a1a;
+    --text-sub:  #6c757d;
+    --bg:        #ffffff;
+    --bg2:       #f0faf4;
+    --card:      #ffffff;
+    --font: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(27,67,50,0.97); backdrop-filter: blur(8px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 24px;
+  }
+  .nav-brand { font-weight: 800; font-size: 17px; color: #fff; letter-spacing: -0.3px; }
+  .nav-brand span { color: var(--accent-lt); }
+  .btn-nav {
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 14px;
+    padding: 10px 20px; border-radius: 9999px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-nav:hover { background: #3d9970; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding: 120px 24px 80px;
+    background:
+      linear-gradient(to bottom, rgba(27,67,50,0.75) 0%, rgba(27,67,50,0.5) 50%, rgba(27,67,50,0.85) 100%),
+      url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80') center/cover no-repeat,
+      url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400&q=80') center/cover no-repeat;
+    background-image:
+      linear-gradient(to bottom, rgba(27,67,50,0.75) 0%, rgba(27,67,50,0.5) 50%, rgba(27,67,50,0.88) 100%),
+      url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .seasonal-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 8px 16px; border-radius: 9999px; margin-bottom: 20px;
+    width: fit-content;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 8vw, 56px); font-weight: 800; color: #fff;
+    line-height: 1.1; letter-spacing: -0.8px; margin-bottom: 16px;
+  }
+  .hero h1 em { color: var(--accent-lt); font-style: normal; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 480px; margin-bottom: 12px; }
+  .hero-tagline { font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 32px; }
+  .hero-trust { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+  .trust-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; font-size: 13px; font-weight: 600;
+    padding: 6px 14px; border-radius: 9999px;
+  }
+  .btn-primary {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 17px; padding: 16px 36px;
+    border-radius: 9999px; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(82,183,136,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(82,183,136,0.5); }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+  .section-label {
+    text-transform: uppercase; letter-spacing: 2px; font-size: 12px;
+    color: var(--secondary); font-weight: 700; margin-bottom: 12px;
+  }
+  h2 { font-size: clamp(26px, 5vw, 40px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .section-sub { color: var(--text-sub); font-size: 17px; max-width: 520px; margin-bottom: 48px; }
+
+  /* HOW IT WORKS */
+  .how-bg { background: var(--bg2); }
+  .steps { display: flex; flex-direction: column; gap: 32px; }
+  .step { display: flex; gap: 20px; align-items: flex-start; }
+  .step-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 18px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .step-content h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .step-content p { color: var(--text-sub); font-size: 15px; }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .service-card {
+    background: var(--card); border-radius: 12px; padding: 28px;
+    border: 2px solid var(--bg2); transition: border-color 0.2s, transform 0.2s;
+  }
+  .service-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .service-icon { font-size: 32px; margin-bottom: 14px; }
+  .service-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+  .service-card p { color: var(--text-sub); font-size: 15px; margin-bottom: 16px; }
+  .service-price { color: var(--primary); font-weight: 800; font-size: 20px; }
+  .service-tag {
+    display: inline-block; background: rgba(82,183,136,0.12);
+    color: var(--secondary); font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 12px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--primary); padding: 20px 24px;
+    display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center;
+  }
+  .trust-item { color: #fff; font-size: 14px; font-weight: 700; }
+  .trust-item span { color: rgba(255,255,255,0.75); font-weight: 400; }
+
+  /* REVIEWS */
+  .reviews-bg { background: var(--bg2); }
+  .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .review-card { background: var(--card); border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  .review-stars { color: #f4a261; font-size: 16px; margin-bottom: 12px; }
+  .review-text { font-size: 15px; color: var(--text-sub); line-height: 1.7; margin-bottom: 14px; }
+  .review-author { font-weight: 700; font-size: 14px; }
+  .review-service { font-size: 12px; color: var(--text-sub); }
+
+  /* PRICING */
+  .pricing-bg { background: var(--bg); }
+  .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .pricing-card {
+    background: var(--card); border-radius: 16px; padding: 32px;
+    border: 2px solid #e9f5ee; position: relative;
+  }
+  .pricing-card.featured { border-color: var(--accent); }
+  .pricing-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
+    padding: 4px 14px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .pricing-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+  .pricing-price { font-size: 36px; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
+  .pricing-price span { font-size: 16px; font-weight: 400; color: var(--text-sub); }
+  .pricing-desc { font-size: 14px; color: var(--text-sub); margin-bottom: 20px; }
+  .pricing-features { list-style: none; margin-bottom: 24px; }
+  .pricing-features li { font-size: 14px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; display: flex; gap: 8px; }
+  .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .btn-estimate {
+    display: block; background: var(--accent); color: #fff; text-align: center;
+    font-weight: 700; font-size: 15px; padding: 13px;
+    border-radius: 9999px; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-estimate:hover { background: #3d9970; }
+  .pricing-card:not(.featured) .btn-estimate { background: var(--primary); }
+  .pricing-card:not(.featured) .btn-estimate:hover { background: #122b21; }
+
+  /* BOOKING */
+  .booking-section { background: var(--secondary); padding: 80px 24px; text-align: center; }
+  .booking-section h2, .booking-section .section-label { color: #fff; }
+  .booking-section > p { color: rgba(255,255,255,0.8); font-size: 17px; max-width: 440px; margin: 0 auto 40px; }
+  .booking-card {
+    background: #fff; border-radius: 16px; padding: 32px;
+    max-width: 480px; margin: 0 auto; text-align: left;
+  }
+  .booking-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 20px; color: var(--text); }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-sub); }
+  .form-group input, .form-group select {
+    width: 100%; padding: 12px 16px; border-radius: 8px;
+    border: 2px solid #e4f2e8; color: var(--text); font-size: 15px;
+    outline: none; font-family: var(--font); background: var(--bg2);
+  }
+  .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+  .btn-book {
+    width: 100%; background: var(--accent); color: #fff;
+    font-weight: 800; font-size: 17px; padding: 16px;
+    border-radius: 9999px; border: none; cursor: pointer; margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .btn-book:hover { background: #3d9970; }
+  .booking-note { font-size: 12px; color: var(--text-sub); text-align: center; margin-top: 12px; }
+
+  /* FOOTER */
+  footer { background: var(--primary); padding: 40px 24px; text-align: center; }
+  .footer-brand { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .footer-brand span { color: var(--accent-lt); }
+  .footer-contact { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.8; }
+  .footer-contact a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  .footer-contact a:hover { color: #fff; }
+  .footer-legal { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 20px; }
+
+  @media (min-width: 640px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    .steps { flex-direction: row; flex-wrap: wrap; }
+    .step { flex: 1; min-width: 200px; flex-direction: column; text-align: center; align-items: center; }
+    .trust-bar { flex-direction: row; justify-content: center; gap: 32px; }
+  }
+  @media (min-width: 1024px) {
+    section { padding: 96px 48px; }
+    .hero { padding: 140px 48px 96px; }
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">{BUSINESS_NAME}<span> 🌿</span></div>
+  <a href="#booking" class="btn-nav">Free Estimate</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="seasonal-badge">🌱 Spring Cleanups Now Booking</div>
+  <h1>Lawn Care in {CITY}<br><em>You Set It,<br>We Handle It.</em></h1>
+  <p>Weekly mowing, edging, fertilization, and full-service landscaping — year-round, rain or shine.</p>
+  <p class="hero-tagline">Trusted by 150+ families in {CITY}</p>
+  <div class="hero-trust">
+    <span class="trust-pill">⭐ {RATING} Stars</span>
+    <span class="trust-pill">{REVIEW_COUNT}+ Reviews</span>
+    <span class="trust-pill">No Contracts</span>
+    <span class="trust-pill">Insured</span>
+  </div>
+  <a href="#booking" class="btn-primary">Get Your Free Estimate →</a>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-bg">
+  <div style="max-width:900px;margin:0 auto;">
+    <p class="section-label">Simple Process</p>
+    <h2>How It Works</h2>
+    <p class="section-sub">Three steps to a perfect lawn — and you don't have to lift a finger.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Book Online</h3>
+          <p>Pick your service and schedule in 60 seconds. No phone tag, no waiting for a callback.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>We Show Up</h3>
+          <p>Reliable, on-time crew with professional equipment. You don't even need to be home.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Enjoy Your Yard</h3>
+          <p>Come home to a perfectly maintained property. We repeat on your schedule, every time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">What We Do</p>
+    <h2>Our Lawn Services</h2>
+    <p class="section-sub">From weekly mowing to full landscape renovations — we handle it all so you don't have to.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✂️</div>
+        <div class="service-tag">Most Popular</div>
+        <h3>Weekly Mowing</h3>
+        <p>Consistent cuts on your schedule — mowing, trimming, edging, and blow-off every visit.</p>
+        <div class="service-price">From $45/visit</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Fertilization Program</h3>
+        <p>6-step seasonal fertilization to keep your lawn green, thick, and weed-free year-round.</p>
+        <div class="service-price">From $49/application</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <h3>Aeration &amp; Seeding</h3>
+        <p>Core aeration plus overseeding fills in thin patches and promotes a thicker, healthier lawn.</p>
+        <div class="service-price">From $199</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌻</div>
+        <h3>Spring &amp; Fall Cleanup</h3>
+        <p>Leaf removal, bed cleanup, edging, and a fresh start for the season. Most popular twice-yearly service.</p>
+        <div class="service-price">From $149</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌳</div>
+        <h3>Tree &amp; Shrub Trimming</h3>
+        <p>Professional shaping of ornamental trees, shrubs, and hedgerows to keep your property looking sharp.</p>
+        <div class="service-price">From $99</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💧</div>
+        <h3>Irrigation Check-Up</h3>
+        <p>Inspect and adjust your sprinkler system for seasonal changes. Prevents overwatering and dead zones.</p>
+        <div class="service-price">From $79</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">⭐ <span>{RATING}/5 · {REVIEW_COUNT}+ Reviews</span></div>
+  <div class="trust-item">📋 <span>No Long-Term Contracts</span></div>
+  <div class="trust-item">🛡️ <span>Licensed &amp; Insured</span></div>
+  <div class="trust-item">🗓️ <span>Same-Week Scheduling</span></div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews-bg">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-label">Happy Neighbors</p>
+    <h2>What {CITY} Homeowners Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I've been using them for weekly mowing since spring. Show up every week, same time, yard looks perfect. Finally found a lawn service I don't have to chase down."</p>
+        <div class="review-author">Linda P.</div>
+        <div class="review-service">Weekly Mowing · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"My lawn was a disaster when I called them — weeds everywhere, bare patches. After their fertilization program and aeration it's genuinely the nicest yard on the block now. Neighbors keep asking who does it."</p>
+        <div class="review-author">Robert H.</div>
+        <div class="review-service">Fertilization + Aeration · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The spring cleanup they did was incredible — hauled everything away, edged all the beds, trimmed the hedges. Property looked like we just moved in. Will book every spring from now on."</p>
+        <div class="review-author">Karen M.</div>
+        <div class="review-service">Spring Cleanup · Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-bg">
+  <div style="max-width:900px;margin:0 auto;">
+    <p class="section-label">Simple Pricing</p>
+    <h2>Choose Your Plan</h2>
+    <p class="section-sub">No contracts. Cancel or pause any time. Most customers start with Bi-Weekly and upgrade.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>One-Time</h3>
+        <div class="pricing-price">$65<span>/visit</span></div>
+        <p class="pricing-desc">For occasional cleanups or first visits.</p>
+        <ul class="pricing-features">
+          <li>Mow, trim &amp; edge</li>
+          <li>Blow off clippings</li>
+          <li>No scheduling commitment</li>
+        </ul>
+        <a href="#booking" class="btn-estimate">Get a Quote</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <h3>Bi-Weekly</h3>
+        <div class="pricing-price">$55<span>/visit</span></div>
+        <p class="pricing-desc">Perfect maintenance — every other week.</p>
+        <ul class="pricing-features">
+          <li>Mow, trim &amp; edge</li>
+          <li>Blow off clippings</li>
+          <li>Consistent schedule</li>
+          <li>Priority booking</li>
+        </ul>
+        <a href="#booking" class="btn-estimate">Start Bi-Weekly</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Weekly</h3>
+        <div class="pricing-price">$45<span>/visit</span></div>
+        <p class="pricing-desc">Best results — for HOA properties or fast-growing lawns.</p>
+        <ul class="pricing-features">
+          <li>Mow, trim &amp; edge</li>
+          <li>Blow off clippings</li>
+          <li>Edging every visit</li>
+          <li>Priority same-day scheduling</li>
+        </ul>
+        <a href="#booking" class="btn-estimate">Start Weekly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section style="background:var(--bg2);padding:80px 24px;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <p class="section-label" style="text-align:center;">Packages</p>
+    <h2 style="text-align:center;margin-bottom:8px;">Simple, Transparent Pricing</h2>
+    <p style="text-align:center;color:var(--text-sub);font-size:17px;margin-bottom:48px;">No monthly fees. No contracts. You own the site.</p>
+    <div class="pricing-tiers-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+      <!-- STARTER -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid #e4f2e8;">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text-sub);margin-bottom:12px;">Starter</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$399</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 48 hrs</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Single-page mobile-first site</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Hero + services + estimate CTA</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Contact form (email to you)</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Free Netlify hosting + SSL</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;1 revision round</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid var(--primary);color:var(--primary);font-weight:700;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid var(--accent);position:relative;box-shadow:0 4px 16px rgba(82,183,136,0.12);">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:9999px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Most Popular</div>
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:12px;">Standard</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$599</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 3–4 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Everything in Starter</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;2–3 pages (Home · Services · Contact)</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Recurring service sign-up flow</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Google Reviews display</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Basic SEO setup</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;2 revision rounds</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;background:var(--accent);color:#fff;font-weight:800;font-size:15px;padding:14px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+      <!-- PRO -->
+      <div style="background:var(--card);border-radius:16px;padding:32px;border:2px solid #e4f2e8;">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text-sub);margin-bottom:12px;">Pro</div>
+        <div style="font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px;">$899</div>
+        <div style="font-size:14px;color:var(--text-sub);margin-bottom:24px;">One-time · delivered in 5–7 days</div>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Everything in Standard</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;4–5 pages + service area map</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Seasonal promotion sections</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Neighborhood social proof section</li>
+          <li style="padding:8px 0;border-bottom:1px solid #e4f2e8;font-size:14px;">✓ &nbsp;Full SEO + Google Analytics</li>
+          <li style="padding:8px 0;font-size:14px;">✓ &nbsp;3 revisions + 30-day support</li>
+        </ul>
+        <a href="#booking" style="display:block;text-align:center;border:2px solid var(--accent);color:var(--accent);font-weight:700;font-size:15px;padding:13px;border-radius:9999px;text-decoration:none;">Get Started</a>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:var(--text-sub);font-size:13px;margin-top:24px;">All packages: you own the site outright. No monthly fees, ever.</p>
+  </div>
+  <style>@media(min-width:640px){.pricing-tiers-grid{grid-template-columns:repeat(3,1fr)!important}}</style>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="booking">
+  <p class="section-label">Book Today</p>
+  <h2>Get Your Free Estimate</h2>
+  <p>Takes 30 seconds. We'll confirm your first visit and schedule within 48 hours.</p>
+  <div class="booking-card">
+    <h3>📅 Schedule a Free Estimate</h3>
+    <div class="form-group">
+      <label>Service Interested In</label>
+      <select>
+        <option>Weekly Mowing — Best Value</option>
+        <option>Bi-Weekly Mowing</option>
+        <option>Spring / Fall Cleanup</option>
+        <option>Fertilization Program</option>
+        <option>Aeration &amp; Seeding</option>
+        <option>Other / Not Sure</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="First &amp; Last Name">
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" placeholder="(702) 555-0100">
+    </div>
+    <div class="form-group">
+      <label>Property Address</label>
+      <input type="text" placeholder="123 Oak St, {CITY}">
+    </div>
+    <button class="btn-book">Get My Free Estimate →</button>
+    <p class="booking-note">No contracts. No obligations. We'll call within a few hours to confirm.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">{BUSINESS_NAME}<span> 🌿</span></div>
+  <div class="footer-contact">
+    <a href="tel:{PHONE}">{PHONE}</a> · <a href="mailto:{EMAIL}">{EMAIL}</a><br>
+    Serving {CITY} and surrounding areas
+  </div>
+  <div class="footer-legal">© 2025 {BUSINESS_NAME}. Site by <a href="https://roxtonweb.com" style="color:var(--accent-lt);text-decoration:none;">Roxton Web</a>.</div>
+</footer>
+
+</body>
+</html>
