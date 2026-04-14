@@ -89,6 +89,12 @@
   .btn-mark-sent { font-size: 12px; font-family: var(--font); background: rgba(63,185,80,0.1); color: var(--green); border: 1px solid rgba(63,185,80,0.3); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; }
   .btn-mark-sent:hover { background: rgba(63,185,80,0.2); }
   .btn-mark-sent:disabled { opacity: 0.4; cursor: default; }
+  .btn-skip { font-size: 12px; font-family: var(--font); background: rgba(248,81,73,0.08); color: var(--red); border: 1px solid rgba(248,81,73,0.25); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; }
+  .btn-skip:hover { background: rgba(248,81,73,0.18); }
+  .btn-skip:disabled { opacity: 0.4; cursor: default; }
+  .btn-remove { font-size: 12px; font-family: var(--font); background: transparent; color: var(--sub); border: 1px solid transparent; border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; margin-left: auto; }
+  .btn-remove:hover { background: rgba(248,81,73,0.08); color: var(--red); border-color: rgba(248,81,73,0.2); }
+  .btn-remove:disabled { opacity: 0.4; cursor: default; }
   .sent-label { font-size: 12px; color: var(--green); }
   .draft-meta { font-size: 11px; color: var(--sub); }
 
@@ -191,6 +197,7 @@ const GH_BRANCH = "main";
 const QUEUE_PATH = "queue/ig-queue.json";
 let queue = [];
 let queueSHA = "";
+let writeInProgress = false;
 
 function getToken() { return localStorage.getItem("gh_token") || ""; }
 function saveToken() {
@@ -204,12 +211,33 @@ function saveToken() {
 // ── GitHub helpers ────────────────────────────────────────────────────────────
 async function ghGet(path) {
   const token = getToken();
-  const headers = { "Accept": "application/vnd.github.v3+json" };
+  const headers = {
+    "Accept": "application/vnd.github.v3+json",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+  };
   if (token) headers["Authorization"] = `token ${token}`;
-  const r = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}`, { headers });
+  const bust = `&_=${Date.now()}`;
+  const r = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}${bust}`, { headers, cache: "no-store" });
   if (!r.ok) throw new Error(`GitHub ${r.status}: ${path}`);
   const data = await r.json();
-  const content = atob(data.content.replace(/\n/g, ""));
+
+  let content;
+  if (!data.content || data.encoding === "none") {
+    // File > 1MB — GitHub doesn't inline base64 for large files.
+    // Fall back to fetching raw content via download_url.
+    if (!data.download_url) throw new Error(`File too large and no download_url available: ${path}`);
+    const rawHeaders = {};
+    if (token) rawHeaders["Authorization"] = `token ${token}`;
+    const rawR = await fetch(data.download_url, { headers: rawHeaders });
+    if (!rawR.ok) throw new Error(`Raw download failed (${rawR.status}): ${path}`);
+    content = await rawR.text();
+  } else {
+    // Normal path: TextDecoder handles UTF-8 multi-byte chars that atob alone mangles
+    const raw = atob(data.content.replace(/\n/g, ""));
+    const bytes = Uint8Array.from(raw, c => c.charCodeAt(0));
+    content = new TextDecoder("utf-8").decode(bytes);
+  }
   return { content, sha: data.sha };
 }
 
@@ -246,8 +274,9 @@ async function loadQueue() {
     renderAll();
     document.getElementById("last-updated").textContent = "Updated " + new Date().toLocaleTimeString();
   } catch (e) {
-    document.getElementById("setup-banner").style.display = "flex";
-    document.getElementById("drafts-body").innerHTML = `<div class="error-msg">Error: ${e.message}. Check your GitHub token above.</div>`;
+    const isAuthError = e.message.includes("401") || e.message.includes("403") || e.message.includes("No GitHub token");
+    if (isAuthError) document.getElementById("setup-banner").style.display = "flex";
+    document.getElementById("drafts-body").innerHTML = `<div class="error-msg">Error: ${e.message}${isAuthError ? " — check your GitHub token above." : ""}</div>`;
     document.getElementById("sent-body").innerHTML = "";
     document.getElementById("review-body").innerHTML = "";
   }
@@ -319,6 +348,8 @@ function renderDrafts(leads) {
         <div class="draft-actions">
           <button class="btn-copy" onclick="copyDM(${i})">Copy DM</button>
           <button class="btn-mark-sent" id="btn-sent-${i}" onclick="markManualSent('${escHtml(l.username)}', ${i})">Mark as Sent</button>
+          <button class="btn-skip" id="btn-skip-${i}" onclick="skipLead('${escHtml(l.username)}', ${i})" title="Mark as skip (private, has website, etc.)">Skip</button>
+          <button class="btn-remove" id="btn-remove-${i}" onclick="removeLead('${escHtml(l.username)}', ${i})" title="Remove from queue entirely">Remove</button>
         </div>
       </div>
     `;
@@ -391,12 +422,14 @@ function copyDM(idx) {
 }
 
 async function markManualSent(username, idx) {
+  if (writeInProgress) { alert("Another save is in progress. Please wait a moment."); return; }
+  writeInProgress = true;
   const btn = document.getElementById(`btn-sent-${idx}`);
   btn.disabled = true;
   btn.textContent = "Saving...";
 
   try {
-    // Re-fetch fresh SHA to avoid conflicts
+    // Always re-fetch fresh SHA — never use a cached one
     const { content, sha } = await ghGet(QUEUE_PATH);
     const freshQueue = JSON.parse(content);
     const now = new Date().toISOString();
@@ -426,6 +459,84 @@ async function markManualSent(username, idx) {
     btn.disabled = false;
     btn.textContent = "Mark as Sent";
     alert("Error: " + e.message);
+  } finally {
+    writeInProgress = false;
+  }
+}
+
+async function skipLead(username, idx) {
+  if (writeInProgress) { alert("Another save is in progress. Please wait a moment."); return; }
+
+  const reason = prompt(`Skip reason for ${username}:\n(e.g. has_website, private, low_quality, wrong_niche)`) || "manual_skip";
+  if (reason === null) return;
+
+  writeInProgress = true;
+  const btn = document.getElementById(`btn-skip-${idx}`);
+  const sentBtn = document.getElementById(`btn-sent-${idx}`);
+  btn.disabled = true;
+  sentBtn.disabled = true;
+  btn.textContent = "Skipping...";
+
+  try {
+    const { content, sha } = await ghGet(QUEUE_PATH);
+    const q = JSON.parse(content);
+
+    const entry = q.find(l => l.username === username);
+    if (!entry) throw new Error("Lead not found in queue.");
+    entry.status = "SKIP";
+    entry.skip_reason = reason;
+
+    await ghPut(QUEUE_PATH, JSON.stringify(q, null, 2), sha, `skip: ${username} (${reason})`);
+
+    const local = queue.find(l => l.username === username);
+    if (local) { local.status = "SKIP"; local.skip_reason = reason; }
+
+    const card = document.getElementById(`draft-${idx}`);
+    card.style.transition = "opacity 0.3s";
+    card.style.opacity = "0.3";
+    card.style.pointerEvents = "none";
+    btn.textContent = "Skipped";
+    setTimeout(() => renderAll(), 600);
+  } catch (e) {
+    btn.disabled = false;
+    sentBtn.disabled = false;
+    btn.textContent = "Skip";
+    alert("Error: " + e.message);
+  } finally {
+    writeInProgress = false;
+  }
+}
+
+async function removeLead(username, idx) {
+  if (writeInProgress) { alert("Another save is in progress. Please wait a moment."); return; }
+  if (!confirm(`Remove ${username} from queue entirely?\n\nThis cannot be undone.`)) return;
+
+  writeInProgress = true;
+  const btn = document.getElementById(`btn-remove-${idx}`);
+  btn.disabled = true;
+  btn.textContent = "Removing...";
+
+  try {
+    const { content, sha } = await ghGet(QUEUE_PATH);
+    const q = JSON.parse(content);
+
+    const filtered = q.filter(l => l.username !== username);
+    if (filtered.length === q.length) throw new Error("Lead not found in queue.");
+
+    await ghPut(QUEUE_PATH, JSON.stringify(filtered, null, 2), sha, `remove: ${username} 2026-04-13`);
+
+    queue = queue.filter(l => l.username !== username);
+
+    const card = document.getElementById(`draft-${idx}`);
+    card.style.transition = "opacity 0.3s";
+    card.style.opacity = "0";
+    setTimeout(() => { card.remove(); renderAll(); }, 350);
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = "Remove";
+    alert("Error: " + e.message);
+  } finally {
+    writeInProgress = false;
   }
 }
 
