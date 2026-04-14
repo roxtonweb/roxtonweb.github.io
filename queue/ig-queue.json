@@ -1122,9 +1122,8 @@
     "score": 10,
     "variant": "WASH_B",
     "dm": "How do people get pricing from your business right now, like if they're ready after seeing your page? Most people won't wait around in DM. I could build a free website so they can request a quote right away, then you decide from there.",
-    "status": "SKIP",
-    "added": "2026-04-13",
-    "skip_reason": "has wbesite"
+    "status": "PENDING",
+    "added": "2026-04-13"
   },
   {
     "username": "@satinmedspa",
@@ -1292,7 +1291,7 @@
     "variant": "JUNK_B",
     "service_hint": "",
     "dm": "Same-day jobs go to whoever is easiest to reach online. Your business looks solid but there's nowhere obvious for someone to request a pickup right now without DMing and waiting. I could build a free website with pricing and a request form, and you can check it out before deciding anything.",
-    "status": "PENDING",
+    "status": "SKIP",
     "added": "2026-04-14",
     "conversation_stage": null,
     "replied": null,
@@ -1310,7 +1309,8 @@
     "paid_at": null,
     "site_live_url": null,
     "revision_requested": false,
-    "revision_notes": null
+    "revision_notes": null,
+    "skip_reason": "has website"
   },
   {
     "username": "@bullstxaustin",
