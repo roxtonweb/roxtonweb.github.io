@@ -131,7 +131,7 @@ DM_TEMPLATES = {
     "DETAIL_D": "I saw your work, it's clean. Only thing I noticed is there's nowhere obvious to send people when they're ready to book. I could build a free website for your business and you can decide from there.",
     "DETAIL_E": "Most detailers lose bookings not because someone wasn't interested but because there was nowhere obvious to go after seeing the page. I could build a free website for your business today, booking page, package list, everything, and you can check it out before deciding anything.",
     "DETAIL_F": "Searched for detailers in {city} and your page came up. Good work. Only thing missing is somewhere to send people who are ready to book right now instead of waiting in DM. I could build that out for free, takes about a day, and you decide from there if it's worth keeping.",
-    "WASH_A":   "I noticed your business doesn't have a website. If someone wants pricing, where do they go right now? I could build a free website with a quote form and you can decide from there if it's worth using.",
+    "WASH_A":   "I noticed your business doesn't have a website. If someone wants pricing, where do they go right now? I could build a free website with a quote form and you decide from there if it's worth using.",
     "WASH_B":   "How do people get pricing from your business right now, like if they're ready after seeing your page? Most people won't wait around in DM. I could build a free website so they can request a quote right away, then you decide from there.",
     "WASH_C":   "Most pressure washing companies in {city} either have no site or one that looks like it was built in 2012. Your business has good photos but nowhere to actually capture the lead. I could build a free website with a quote form and you can see it before committing to anything.",
     "WASH_D":   "Businesses in {city} lose quote requests every week to competitors who have an easy way to capture them online. I could build a free website for your business today, quote form, pricing, mobile-ready, and you decide if it makes sense to keep it.",
@@ -169,6 +169,15 @@ def gh_put_file(path, content_str, sha, message):
         f"https://api.github.com/repos/{GH_REPO}/contents/{path}",
         headers=GH_HEADERS, json=payload
     )
+    if r.status_code == 409:
+        # Stale SHA — re-fetch current SHA and retry once
+        print(f"  SHA conflict on {path} — re-fetching and retrying...")
+        _, fresh_sha = gh_get_file(path)
+        payload["sha"] = fresh_sha
+        r = requests.put(
+            f"https://api.github.com/repos/{GH_REPO}/contents/{path}",
+            headers=GH_HEADERS, json=payload
+        )
     r.raise_for_status()
     return r.json()["commit"]["sha"]
 
@@ -340,11 +349,14 @@ def apify_get_profiles(usernames):
 def is_real_website(url):
     if not url:
         return False
-    blocked = ["facebook.com", "fb.com", "instagram.com", "yelp.com",
-               "google.com", "linktr.ee", "linkin.bio", "beacons.ai",
-               "taplink.cc", "bio.site", "allmylinks.com"]
+    # These social/directory profiles are NOT real websites — keep lead in pool
+    not_a_website = ["facebook.com", "fb.com", "instagram.com", "yelp.com", "google.com"]
     url_lower = url.lower()
-    return not any(b in url_lower for b in blocked)
+    if any(b in url_lower for b in not_a_website):
+        return False
+    # Everything else — including linktree, beacons, bio.site, etc — means the
+    # business has organized online presence. Treat as real website and skip them.
+    return True
 
 def score_lead(profile, niche_slug):
     score = 0
