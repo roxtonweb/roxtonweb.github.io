@@ -92,8 +92,8 @@
   .btn-skip { font-size: 12px; font-family: var(--font); background: rgba(248,81,73,0.08); color: var(--red); border: 1px solid rgba(248,81,73,0.25); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; }
   .btn-skip:hover { background: rgba(248,81,73,0.18); }
   .btn-skip:disabled { opacity: 0.4; cursor: default; }
-  .btn-remove { font-size: 12px; font-family: var(--font); background: transparent; color: var(--sub); border: 1px solid transparent; border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; margin-left: auto; }
-  .btn-remove:hover { background: rgba(248,81,73,0.08); color: var(--red); border-color: rgba(248,81,73,0.2); }
+  .btn-remove { font-size: 12px; font-family: var(--font); background: rgba(248,81,73,0.06); color: var(--red); border: 1px solid rgba(248,81,73,0.2); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.15s; margin-left: auto; opacity: 0.7; }
+  .btn-remove:hover { background: rgba(248,81,73,0.18); border-color: rgba(248,81,73,0.4); opacity: 1; }
   .btn-remove:disabled { opacity: 0.4; cursor: default; }
   .sent-label { font-size: 12px; color: var(--green); }
   .draft-meta { font-size: 11px; color: var(--sub); }
@@ -256,9 +256,32 @@ async function ghPut(path, contentStr, sha, message) {
   });
   if (!r.ok) {
     const err = await r.json();
-    throw new Error(err.message || `GitHub write failed (${r.status})`);
+    const e = new Error(err.message || `GitHub write failed (${r.status})`);
+    e.isConflict = r.status === 409 || r.status === 422;
+    throw e;
   }
   return r.json();
+}
+
+// Re-fetches queue, applies mutator fn, then writes back. Retries once on SHA conflict.
+async function queueWrite(commitMsg, mutator) {
+  async function attempt() {
+    const { content, sha } = await ghGet(QUEUE_PATH);
+    const q = JSON.parse(content);
+    const result = mutator(q);
+    if (result === false) return null; // mutator signalled abort
+    await ghPut(QUEUE_PATH, JSON.stringify(q, null, 2), sha, commitMsg);
+    return q;
+  }
+  try {
+    return await attempt();
+  } catch (e) {
+    if (e.isConflict) {
+      await new Promise(r => setTimeout(r, 600));
+      return await attempt(); // one retry
+    }
+    throw e;
+  }
 }
 
 // ── Load queue ────────────────────────────────────────────────────────────────
@@ -428,32 +451,24 @@ async function markManualSent(username, idx) {
   btn.disabled = true;
   btn.textContent = "Saving...";
 
+  const now = new Date().toISOString();
   try {
-    // Always re-fetch fresh SHA — never use a cached one
-    const { content, sha } = await ghGet(QUEUE_PATH);
-    const freshQueue = JSON.parse(content);
-    const now = new Date().toISOString();
+    const newQueue = await queueWrite(`manual: sent DM to ${username} ${now.slice(0, 10)}`, q => {
+      const entry = q.find(l => l.username === username);
+      if (!entry) throw new Error("Lead not found in queue.");
+      entry.status = "MANUAL_SENT";
+      entry.sent_at = now;
+      entry.conversation_stage = "OUTREACH_SENT";
+    });
 
-    const entry = freshQueue.find(l => l.username === username);
-    if (!entry) throw new Error("Lead not found in queue.");
-    entry.status = "MANUAL_SENT";
-    entry.sent_at = now;
-    entry.conversation_stage = "OUTREACH_SENT";
-
-    const updated = JSON.stringify(freshQueue, null, 2);
-    await ghPut(QUEUE_PATH, updated, sha, `manual: sent DM to ${username} ${now.slice(0, 10)}`);
-
-    // Update local queue
+    queue = newQueue || queue;
     const local = queue.find(l => l.username === username);
     if (local) { local.status = "MANUAL_SENT"; local.sent_at = now; }
 
-    // Update card UI
     const card = document.getElementById(`draft-${idx}`);
     card.classList.add("sent");
     btn.textContent = "Sent";
     btn.style.color = "var(--green)";
-
-    // Re-render stats
     renderAll();
   } catch (e) {
     btn.disabled = false;
@@ -478,16 +493,14 @@ async function skipLead(username, idx) {
   btn.textContent = "Skipping...";
 
   try {
-    const { content, sha } = await ghGet(QUEUE_PATH);
-    const q = JSON.parse(content);
+    const newQueue = await queueWrite(`skip: ${username} (${reason})`, q => {
+      const entry = q.find(l => l.username === username);
+      if (!entry) throw new Error("Lead not found in queue.");
+      entry.status = "SKIP";
+      entry.skip_reason = reason;
+    });
 
-    const entry = q.find(l => l.username === username);
-    if (!entry) throw new Error("Lead not found in queue.");
-    entry.status = "SKIP";
-    entry.skip_reason = reason;
-
-    await ghPut(QUEUE_PATH, JSON.stringify(q, null, 2), sha, `skip: ${username} (${reason})`);
-
+    queue = newQueue || queue;
     const local = queue.find(l => l.username === username);
     if (local) { local.status = "SKIP"; local.skip_reason = reason; }
 
@@ -516,14 +529,13 @@ async function removeLead(username, idx) {
   btn.disabled = true;
   btn.textContent = "Removing...";
 
+  const today = new Date().toISOString().slice(0, 10);
   try {
-    const { content, sha } = await ghGet(QUEUE_PATH);
-    const q = JSON.parse(content);
-
-    const filtered = q.filter(l => l.username !== username);
-    if (filtered.length === q.length) throw new Error("Lead not found in queue.");
-
-    await ghPut(QUEUE_PATH, JSON.stringify(filtered, null, 2), sha, `remove: ${username} 2026-04-13`);
+    await queueWrite(`remove: ${username} ${today}`, q => {
+      const idx2 = q.findIndex(l => l.username === username);
+      if (idx2 === -1) throw new Error("Lead not found in queue.");
+      q.splice(idx2, 1);
+    });
 
     queue = queue.filter(l => l.username !== username);
 
