@@ -70,3 +70,14 @@
 {"ts": "2026-04-13T07:00:00Z", "event": "LEAD_ADDED", "username": "@jdspwash", "niche": "pressure_washing", "score": 8, "variant": "WASH_A"}
 {"ts": "2026-04-13T07:00:00Z", "event": "LEAD_ADDED", "username": "@boguepressurewashing", "niche": "pressure_washing", "score": 10, "variant": "WASH_B"}
 {"ts": "2026-04-13T14:19:20Z", "event": "DM_SENT", "username": "@luchosdetailing_llc", "variant": "DETAIL_B"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@satinmedspa", "niche": "med_spa", "score": 8, "variant": "MEDSPA_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@aspiremedspas", "niche": "med_spa", "score": 6, "variant": "MEDSPA_B"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@erasablemedspa", "niche": "med_spa", "score": 6, "variant": "MEDSPA_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@glitzymedspa", "niche": "med_spa", "score": 10, "variant": "MEDSPA_B"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@myjunkgurus", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@irep_atx", "niche": "junk_removal", "score": 10, "variant": "JUNK_B"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@bullstxaustin", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@presidentialautodetail", "niche": "auto_detailing", "score": 6, "variant": "DETAIL_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@miyagisautodetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_B"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@diamondhands_detailing", "niche": "auto_detailing", "score": 8, "variant": "DETAIL_C"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@criticalcleanpw", "niche": "pressure_washing", "score": 8, "variant": "WASH_A"}
