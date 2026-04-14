@@ -1004,8 +1004,9 @@
     "score": 10,
     "variant": "MEDSPA_A",
     "dm": "Quick question about your booking flow. If someone wants to book after seeing your page, where do they go? I could build a cleaner website for your business, free, and you can decide from there if it's a better fit.",
-    "status": "PENDING",
-    "added": "2026-04-13"
+    "status": "SKIP",
+    "added": "2026-04-13",
+    "skip_reason": "has besite"
   },
   {
     "username": "@mycarcru",
@@ -1259,7 +1260,7 @@
     "variant": "JUNK_A",
     "service_hint": "",
     "dm": "Quick question about same-day jobs. If someone needs something gone today and finds your page, what do they do next? I could build a free website so they can request a pickup right away, then you decide from there.",
-    "status": "SKIP",
+    "status": "PENDING",
     "added": "2026-04-14",
     "conversation_stage": null,
     "replied": null,
@@ -1277,8 +1278,7 @@
     "paid_at": null,
     "site_live_url": null,
     "revision_requested": false,
-    "revision_notes": null,
-    "skip_reason": "has website"
+    "revision_notes": null
   },
   {
     "username": "@irep_atx",
