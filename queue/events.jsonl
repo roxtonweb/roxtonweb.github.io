@@ -86,3 +86,9 @@
 {"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@bullstxaustin", "niche": "junk_removal", "score": 10, "variant": "JUNK_B"}
 {"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@presidentialautodetail", "niche": "auto_detailing", "score": 6, "variant": "DETAIL_A"}
 {"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@criticalcleanpw", "niche": "pressure_washing", "score": 8, "variant": "WASH_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@junkinthetruckco", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@g.mautodetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@dr.detailz", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_B"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@royals_pressure_washing", "niche": "pressure_washing", "score": 10, "variant": "WASH_A"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@xcellentxteriors_sa", "niche": "pressure_washing", "score": 8, "variant": "WASH_B"}
+{"ts": "2026-04-14T07:00:00Z", "event": "LEAD_ADDED", "username": "@austinmowing", "niche": "lawn_care", "score": 10, "variant": "LAWN_A"}
