@@ -1122,8 +1122,9 @@
     "score": 10,
     "variant": "WASH_B",
     "dm": "How do people get pricing from your business right now, like if they're ready after seeing your page? Most people won't wait around in DM. I could build a free website so they can request a quote right away, then you decide from there.",
-    "status": "PENDING",
-    "added": "2026-04-13"
+    "status": "SKIP",
+    "added": "2026-04-13",
+    "skip_reason": "has wbesite"
   },
   {
     "username": "@satinmedspa",
