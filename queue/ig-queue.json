@@ -1004,9 +1004,8 @@
     "score": 10,
     "variant": "MEDSPA_A",
     "dm": "Quick question about your booking flow. If someone wants to book after seeing your page, where do they go? I could build a cleaner website for your business, free, and you can decide from there if it's a better fit.",
-    "status": "SKIP",
-    "added": "2026-04-13",
-    "skip_reason": "has besite"
+    "status": "PENDING",
+    "added": "2026-04-13"
   },
   {
     "username": "@mycarcru",
@@ -1032,8 +1031,10 @@
     "variant": "DETAIL_B",
     "service_hint": "full detail",
     "dm": "How do people actually book with your business right now, like after seeing your page is it just DM? I could build a free website so that part is way easier, then you can decide from there.",
-    "status": "PENDING",
-    "added": "2026-04-13"
+    "status": "MANUAL_SENT",
+    "added": "2026-04-13",
+    "sent_at": "2026-04-14T15:54:55.383Z",
+    "conversation_stage": "OUTREACH_SENT"
   },
   {
     "username": "@spotless.mobile.detailing.nc",
