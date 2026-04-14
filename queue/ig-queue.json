@@ -1004,8 +1004,9 @@
     "score": 10,
     "variant": "MEDSPA_A",
     "dm": "Quick question about your booking flow. If someone wants to book after seeing your page, where do they go? I could build a cleaner website for your business, free, and you can decide from there if it's a better fit.",
-    "status": "PENDING",
-    "added": "2026-04-13"
+    "status": "SKIP",
+    "added": "2026-04-13",
+    "skip_reason": "manual_skip"
   },
   {
     "username": "@mycarcru",
