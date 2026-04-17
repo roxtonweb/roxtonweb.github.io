@@ -8,7 +8,9 @@
     "username": "@ksmobiledetailing",
     "status": "SENT",
     "niche": "auto_detailing",
-    "sent_at": "2026-04-03T16:56:00"
+    "sent_at": "2026-04-03T16:56:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@musiccitydetailing",
@@ -19,7 +21,9 @@
     "username": "@pmdpressurewashing",
     "status": "SENT",
     "niche": "pressure_washing",
-    "sent_at": "2026-04-03T16:58:00"
+    "sent_at": "2026-04-03T16:58:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@elevatedlawncaref",
@@ -35,19 +39,25 @@
     "username": "@lillespristineclean",
     "status": "SENT",
     "niche": "pressure_washing",
-    "sent_at": "2026-04-03T17:20:00"
+    "sent_at": "2026-04-03T17:20:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@hensleymowing",
     "status": "SENT",
     "niche": "lawn_care",
-    "sent_at": "2026-04-03T17:25:00"
+    "sent_at": "2026-04-03T17:25:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@chapasautodetailing",
     "status": "SENT",
     "niche": "auto_detailing",
-    "sent_at": "2026-04-05T20:15:00"
+    "sent_at": "2026-04-05T20:15:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@dfwautodetailing",
@@ -68,19 +78,25 @@
     "username": "@superiorlawnsa",
     "status": "SENT",
     "niche": "lawn_care",
-    "sent_at": "2026-04-05T20:04:00"
+    "sent_at": "2026-04-05T20:04:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@preciselandscapes",
     "status": "SENT",
     "niche": "lawn_care",
-    "sent_at": "2026-04-05T20:07:00"
+    "sent_at": "2026-04-05T20:07:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@izhepressurewashing",
     "status": "SENT",
     "niche": "pressure_washing",
-    "sent_at": "2026-04-05T20:25:00"
+    "sent_at": "2026-04-05T20:25:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@byebyejunk_kc",
@@ -98,31 +114,41 @@
     "username": "@orlandolawncare",
     "status": "SENT",
     "niche": "lawn_care",
-    "sent_at": "2026-04-06T23:07:00"
+    "sent_at": "2026-04-06T23:07:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@fisherlawnlandscape",
     "status": "SENT",
     "niche": "lawn_care",
-    "sent_at": "2026-04-05T20:10:00"
+    "sent_at": "2026-04-05T20:10:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@mgdetailingmn",
     "status": "SENT",
     "niche": "auto_detailing",
-    "sent_at": "2026-04-06T05:08:00"
+    "sent_at": "2026-04-06T05:08:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@solidsudznashvilletn",
     "status": "SENT",
     "niche": "pressure_washing",
-    "sent_at": "2026-04-06T05:14:00"
+    "sent_at": "2026-04-06T05:14:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@ldclawncare",
     "status": "SENT",
     "niche": "lawn_care",
-    "sent_at": "2026-04-06T05:16:00"
+    "sent_at": "2026-04-06T05:16:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@318.junk.removal",
@@ -138,13 +164,17 @@
     "username": "@promise.lcs",
     "status": "SENT",
     "niche": "lawn_care",
-    "sent_at": "2026-04-06T05:17:00"
+    "sent_at": "2026-04-06T05:17:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@atymetoshinemobile",
     "status": "SENT",
     "niche": "auto_detailing",
-    "sent_at": "2026-04-06T05:00:00"
+    "sent_at": "2026-04-06T05:00:00",
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED"
   },
   {
     "username": "@richards_pressure_washing",
