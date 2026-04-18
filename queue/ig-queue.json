@@ -790,7 +790,7 @@
     "confidence_score": 1,
     "variant": "JUNK_A",
     "dm": "Quick question about same-day jobs. If someone needs something gone today and finds your page, what do they do next? I could build a free website so they can request a pickup right away, then you decide from there.",
-    "status": "SEND_LOCKED",
+    "status": "PENDING",
     "added": "2026-04-14"
   },
   {
@@ -804,7 +804,7 @@
     "variant": "DETAIL_A",
     "service_hint": "ceramic coating",
     "dm": "I noticed your business doesn't have a website, is there a reason for that? I could build one out for free, booking page, packages, everything, and you decide from there if it's worth keeping.",
-    "status": "SEND_LOCKED",
+    "status": "PENDING",
     "added": "2026-04-14"
   },
   {
@@ -818,7 +818,7 @@
     "variant": "DETAIL_B",
     "service_hint": "paint correction",
     "dm": "How do people actually book with your business right now, like after seeing your page is it just DM? I could build a free website so that part is way easier, then you can decide from there.",
-    "status": "SEND_LOCKED",
+    "status": "PENDING",
     "added": "2026-04-14"
   },
   {
@@ -831,7 +831,7 @@
     "confidence_score": 1,
     "variant": "WASH_A",
     "dm": "I noticed your business doesn't have a website. If someone wants pricing, where do they go right now? I could build a free website with a quote form and you can decide from there if it's worth using.",
-    "status": "SEND_LOCKED",
+    "status": "PENDING",
     "added": "2026-04-14"
   },
   {
@@ -857,7 +857,7 @@
     "confidence_score": 1,
     "variant": "LAWN_A",
     "dm": "I saw your business doesn't have a website. If someone finds your page and wants service, what do they do next? I could build a free website so they don't have to wait on DM, then you can decide from there.",
-    "status": "SEND_LOCKED",
+    "status": "PENDING",
     "added": "2026-04-14"
   },
   {
@@ -870,7 +870,7 @@
     "confidence_score": 1.0,
     "variant": "JUNK_B",
     "dm": "Same-day jobs go to whoever is easiest to reach online. Your business looks solid but there's nowhere obvious for someone to request a pickup right now without DMing and waiting. I could build a free website with pricing and a request form, and you can check it out before deciding anything.",
-    "status": "SEND_LOCKED",
+    "status": "PENDING",
     "added": "2026-04-17"
   },
   {
@@ -883,7 +883,7 @@
     "confidence_score": 1.0,
     "variant": "LAWN_B",
     "dm": "How do people usually sign up with your business, is it all DM or do you send them somewhere? I could build a free website with a simple signup flow, then you can decide if it's worth it.",
-    "status": "SEND_LOCKED",
+    "status": "PENDING",
     "added": "2026-04-17"
   },
   {
