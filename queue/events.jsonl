@@ -170,3 +170,4 @@
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@thedetailofportland", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_E"}
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@816medspa", "niche": "med_spa", "score": 10, "variant": "MEDSPA_A"}
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@drewsjunkremoval", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
+{"ts": "2026-04-18T10:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "morning_10am", "unread_threads": null, "replies_processed": 0, "leads_expired": 0, "action": "CHROME_ACCESS_TIMEOUT", "notes": "Chrome not available — 3rd consecutive run without inbox access. 2 replied leads remain in manual-review: @irep_atx (4 days), @byebyejunk_kc (12 days). Action required: open Instagram manually and check these threads."}
