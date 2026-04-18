@@ -163,3 +163,10 @@
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@lawnandbeyondllc", "niche": "lawn_care", "score": 6, "variant": "LAWN_B"}
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@bluegrasslandscape", "niche": "lawn_care", "score": 10, "variant": "LAWN_C"}
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@esthetic.medspa", "niche": "med_spa", "score": 8, "variant": "MEDSPA_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@matts.autodetails", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@mobile_detailing_orlando", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_B"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@marvelautodetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_C"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@nolimitautodetailing407", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_D"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@thedetailofportland", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_E"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@816medspa", "niche": "med_spa", "score": 10, "variant": "MEDSPA_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@drewsjunkremoval", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
