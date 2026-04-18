@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "username": "@irep_atx",
+    "niche": "junk_removal",
+    "stage": "OUTREACH_SENT",
+    "sent_at": "2026-04-14T13:32:00",
+    "reason": "replied:true — Chrome unavailable 2 consecutive runs, reply unread",
+    "flagged_at": "2026-04-17T19:00:00Z"
+  },
+  {
+    "username": "@byebyejunk_kc",
+    "niche": "junk_removal",
+    "stage": "UNKNOWN",
+    "sent_at": "2026-04-06T05:10:00",
+    "reason": "replied:true — no conversation_stage, reply unread since Apr 6",
+    "flagged_at": "2026-04-17T19:00:00Z"
+  }
+]
