@@ -142,3 +142,16 @@
 {"ts": "2026-04-17T19:00:00Z", "event": "MANUAL_REVIEW_FLAGGED", "username": "@irep_atx", "reason": "replied:true unread - Chrome unavailable 2 consecutive runs"}
 {"ts": "2026-04-17T19:00:00Z", "event": "MANUAL_REVIEW_FLAGGED", "username": "@byebyejunk_kc", "reason": "replied:true unread since 2026-04-06, no conversation_stage"}
 {"ts": "2026-04-17T19:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "evening_7pm", "unread_threads": null, "replies_processed": 0, "leads_expired": 0, "action": "CHROME_ACCESS_TIMEOUT", "notes": "Chrome not available in automated run. 2 replied leads flagged to manual-review."}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@dmoautodetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@mr.topclass", "niche": "auto_detailing", "score": 8, "variant": "DETAIL_B"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@mavericksoftwash", "niche": "pressure_washing", "score": 10, "variant": "WASH_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@docs_lawn_maintenance_", "niche": "lawn_care", "score": 10, "variant": "LAWN_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@ricardoslawncare", "niche": "lawn_care", "score": 8, "variant": "LAWN_B"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@diamond_cut_lawn_maintenance", "niche": "lawn_care", "score": 10, "variant": "LAWN_C"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@cowboy_lawn", "niche": "lawn_care", "score": 10, "variant": "LAWN_D"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@greensweepsolutionsllc", "niche": "lawn_care", "score": 10, "variant": "LAWN_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@revifymedicalspa", "niche": "med_spa", "score": 10, "variant": "MEDSPA_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@atouchofyouth", "niche": "med_spa", "score": 8, "variant": "MEDSPA_B"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@ageless.aesthetics.pdx", "niche": "med_spa", "score": 10, "variant": "MEDSPA_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@lunakc.skin", "niche": "med_spa", "score": 8, "variant": "MEDSPA_B"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@gm_hauling", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
