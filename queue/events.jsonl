@@ -138,4 +138,7 @@
 {"ts": "2026-04-17T17:05:45Z", "event": "EXPIRED_NO_REPLY", "username": "@ldclawncare", "outcome": "NO_REPLY_EXPIRED"}
 {"ts": "2026-04-17T17:05:45Z", "event": "EXPIRED_NO_REPLY", "username": "@promise.lcs", "outcome": "NO_REPLY_EXPIRED"}
 {"ts": "2026-04-17T17:05:45Z", "event": "EXPIRED_NO_REPLY", "username": "@atymetoshinemobile", "outcome": "NO_REPLY_EXPIRED"}
-{"ts": "2026-04-17T21:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "afternoon_2pm", "unread_threads": null, "replies_processed": 0, "action": "CHROME_ACCESS_TIMEOUT", "notes": "Chrome approval dialog timed out — automated run, user not present. Pending replied:true leads: @irep_atx (OUTREACH_SENT), @byebyejunk_kc (no stage)."}
+{"ts": "2026-04-17T21:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "afternoon_2pm", "unread_threads": null, "replies_processed": 0, "action": "CHROME_ACCESS_TIMEOUT", "notes": "Chrome approval dialog timed out - automated run, user not present. Pending replied:true leads: @irep_atx (OUTREACH_SENT), @byebyejunk_kc (no stage)."}
+{"ts": "2026-04-17T19:00:00Z", "event": "MANUAL_REVIEW_FLAGGED", "username": "@irep_atx", "reason": "replied:true unread - Chrome unavailable 2 consecutive runs"}
+{"ts": "2026-04-17T19:00:00Z", "event": "MANUAL_REVIEW_FLAGGED", "username": "@byebyejunk_kc", "reason": "replied:true unread since 2026-04-06, no conversation_stage"}
+{"ts": "2026-04-17T19:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "evening_7pm", "unread_threads": null, "replies_processed": 0, "leads_expired": 0, "action": "CHROME_ACCESS_TIMEOUT", "notes": "Chrome not available in automated run. 2 replied leads flagged to manual-review."}
