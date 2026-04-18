@@ -155,3 +155,11 @@
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@ageless.aesthetics.pdx", "niche": "med_spa", "score": 10, "variant": "MEDSPA_A"}
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@lunakc.skin", "niche": "med_spa", "score": 8, "variant": "MEDSPA_B"}
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@gm_hauling", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@newimageautosalon", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@niceandwetautodetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_B"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@prestige.autodetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_C"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@tridentexteriors", "niche": "pressure_washing", "score": 10, "variant": "WASH_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@metrowestlawn", "niche": "lawn_care", "score": 10, "variant": "LAWN_A"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@lawnandbeyondllc", "niche": "lawn_care", "score": 6, "variant": "LAWN_B"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@bluegrasslandscape", "niche": "lawn_care", "score": 10, "variant": "LAWN_C"}
+{"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@esthetic.medspa", "niche": "med_spa", "score": 8, "variant": "MEDSPA_A"}
