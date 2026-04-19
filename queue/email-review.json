@@ -1,4 +1,5 @@
 [
+  {"message_id":"19d9e8fd3ac43150","sender":"workspace-noreply@google.com","subject":"Write better emails with Gemini in Gmail","category":"SPAM","confidence":0.99,"summary":"Google Workspace marketing email","action":"MARKED_READ","processed_at":"2026-04-18T20:00:00Z","reason":null},
   {"message_id":"19d9cd34911579b0","sender":"friends@clay.com","subject":"💌 Get an extra 14 days of Clay Growth","category":"SPAM","confidence":0.99,"summary":"Clay marketing email","action":"MARKED_READ","processed_at":"2026-04-17T20:00:00Z","reason":null},
   {"message_id":"19d9ccb5ec7eb90e","sender":"hello@apify.com","subject":"Start building your own Actors","category":"SPAM","confidence":0.99,"summary":"Apify onboarding marketing","action":"MARKED_READ","processed_at":"2026-04-17T20:00:00Z","reason":null},
   {"message_id":"19d99952ad11441d","sender":"no-reply@accounts.google.com","subject":"Security alert","category":"SPAM","confidence":0.99,"summary":"Google automated security alert","action":"MARKED_READ","processed_at":"2026-04-17T20:00:00Z","reason":null},
