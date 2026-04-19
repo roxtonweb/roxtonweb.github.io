@@ -195,3 +195,4 @@
 {"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@jonesbrotherslawnandlandscape", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
 {"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@las_autodetailing", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
 {"ts": "2026-04-18T19:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "evening_7pm", "unread_threads": null, "replies_processed": 0, "leads_expired": 22, "action": "CHROME_UNAVAILABLE", "notes": "Chrome not available \u2014 5th consecutive run without inbox access. computer-use timed out, Claude-in-Chrome not connected. 22 stale leads expired. 2 replied leads remain in manual-review: @irep_atx (4d since DM), @byebyejunk_kc (12d since DM). Action required: check Instagram inbox manually."}
+{"ts": "2026-04-19T07:00:00Z", "event": "LEAD_ADDED", "username": "@mrprodetailing", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_A"}
