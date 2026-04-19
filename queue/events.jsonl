@@ -172,3 +172,26 @@
 {"ts": "2026-04-18T07:00:00Z", "event": "LEAD_ADDED", "username": "@drewsjunkremoval", "niche": "junk_removal", "score": 10, "variant": "JUNK_A"}
 {"ts": "2026-04-18T10:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "morning_10am", "unread_threads": null, "replies_processed": 0, "leads_expired": 0, "action": "CHROME_ACCESS_TIMEOUT", "notes": "Chrome not available — 3rd consecutive run without inbox access. 2 replied leads remain in manual-review: @irep_atx (4 days), @byebyejunk_kc (12 days). Action required: open Instagram manually and check these threads."}
 {"ts": "2026-04-18T14:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "afternoon_2pm", "unread_threads": null, "replies_processed": 0, "leads_expired": 0, "action": "CHROME_UNAVAILABLE", "notes": "Chrome not available — 4th consecutive run without inbox access. computer-use request_access timed out, Claude-in-Chrome extension not connected. 2 replied leads still in manual-review: @irep_atx (4 days since DM), @byebyejunk_kc (12 days since DM). Action required: open Instagram manually."}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@ksmobiledetailing", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@pmdpressurewashing", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@lillespristineclean", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@hensleymowing", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@chapasautodetailing", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@superiorlawnsa", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@preciselandscapes", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@izhepressurewashing", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@orlandolawncare", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@fisherlawnlandscape", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@mgdetailingmn", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@solidsudznashvilletn", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@ldclawncare", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@promise.lcs", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@atymetoshinemobile", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@redrhinojunkremoval", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@colemobiledetailing", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@palace.aesthetics", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@junkremoval_atl", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@secondtononedetailingmobile", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@jonesbrotherslawnandlandscape", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "EXPIRED_NO_REPLY", "username": "@las_autodetailing", "outcome": "NO_REPLY_EXPIRED", "note": "expired_evening_run_apr18"}
+{"ts": "2026-04-18T19:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "evening_7pm", "unread_threads": null, "replies_processed": 0, "leads_expired": 22, "action": "CHROME_UNAVAILABLE", "notes": "Chrome not available \u2014 5th consecutive run without inbox access. computer-use timed out, Claude-in-Chrome not connected. 22 stale leads expired. 2 replied leads remain in manual-review: @irep_atx (4d since DM), @byebyejunk_kc (12d since DM). Action required: check Instagram inbox manually."}
