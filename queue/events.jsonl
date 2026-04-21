@@ -199,3 +199,7 @@
 {"ts": "2026-04-19T07:00:00Z", "event": "LEAD_ADDED", "username": "@sddetailing_mobie", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_A"}
 {"ts": "2026-04-19T07:00:00Z", "event": "LEAD_ADDED", "username": "@renewdetails", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_B"}
 {"ts": "2026-04-19T10:00:00Z", "event": "INBOX_ROUTER_RUN", "run": "morning_10am", "unread_threads": null, "replies_processed": 0, "leads_expired": 0, "action": "CHROME_UNAVAILABLE", "notes": "Chrome not available — 6th consecutive run. computer-use request_access timed out (no user present to approve). 2 replied leads still in manual-review: @irep_atx (5d since DM), @byebyejunk_kc (13d since DM). No stale expirations due today (next batch: @directpressure.wash and @luchosdetailing_llc hit 7d tomorrow Apr 20). Action required: open Instagram inbox manually."}
+{"ts": "2026-04-21T07:00:00Z", "event": "LEAD_ADDED", "username": "@griffin_detail", "niche": "auto_detailing", "score": 10, "variant": "DETAIL_A"}
+{"ts": "2026-04-21T07:00:00Z", "event": "LEAD_ADDED", "username": "@nicos_lawn_maintenance", "niche": "lawn_care", "score": 10, "variant": "LAWN_A"}
+{"ts": "2026-04-21T07:00:00Z", "event": "LEAD_ADDED", "username": "@skindalemedspa", "niche": "med_spa", "score": 10, "variant": "MEDSPA_A"}
+{"ts": "2026-04-21T07:00:00Z", "event": "LEAD_ADDED", "username": "@vegasstrongjunkremoval", "niche": "junk_removal", "score": 8, "variant": "JUNK_A"}
