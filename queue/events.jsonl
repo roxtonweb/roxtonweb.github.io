@@ -203,3 +203,11 @@
 {"ts": "2026-04-21T07:00:00Z", "event": "LEAD_ADDED", "username": "@nicos_lawn_maintenance", "niche": "lawn_care", "score": 10, "variant": "LAWN_A"}
 {"ts": "2026-04-21T07:00:00Z", "event": "LEAD_ADDED", "username": "@skindalemedspa", "niche": "med_spa", "score": 10, "variant": "MEDSPA_A"}
 {"ts": "2026-04-21T07:00:00Z", "event": "LEAD_ADDED", "username": "@vegasstrongjunkremoval", "niche": "junk_removal", "score": 8, "variant": "JUNK_A"}
+{"ts": "2026-04-23T10:00:00+00:00", "event": "EXPIRED", "username": "@luchosdetailing_llc", "reason": "no_reply_7d"}
+{"ts": "2026-04-23T10:00:00+00:00", "event": "EXPIRED", "username": "@extreme_mobile_detailing_", "reason": "no_reply_7d"}
+{"ts": "2026-04-23T10:00:00+00:00", "event": "EXPIRED", "username": "@directpressure.wash", "reason": "no_reply_7d"}
+{"ts": "2026-04-23T10:00:00+00:00", "event": "EXPIRED", "username": "@boguepressurewashing", "reason": "no_reply_7d"}
+{"ts": "2026-04-23T10:00:00+00:00", "event": "EXPIRED", "username": "@glitzymedspa", "reason": "no_reply_7d"}
+{"ts": "2026-04-23T10:00:00+00:00", "event": "EXPIRED", "username": "@myjunkgurus", "reason": "no_reply_7d"}
+{"ts": "2026-04-23T10:00:00+00:00", "event": "EXPIRED", "username": "@bullstxaustin", "reason": "no_reply_7d"}
+{"ts": "2026-04-23T10:00:00+00:00", "event": "INBOX_ROUTER_RUN", "run": "morning_10am", "unread_threads": null, "replies_processed": 0, "leads_expired": 7, "action": "CHROME_UNAVAILABLE", "notes": "Chrome not connected (computer-use timed out, extension not reachable). 7 stale SENT leads expired. 2 replied leads remain in manual-review: @irep_atx (9d since DM), @byebyejunk_kc (17d since DM). Action required: check Instagram inbox manually."}
