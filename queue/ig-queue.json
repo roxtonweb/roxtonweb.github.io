@@ -380,9 +380,12 @@
   },
   {
     "username": "@luchosdetailing_llc",
-    "status": "SENT",
+    "status": "CLOSED_LOST",
     "niche": "auto_detailing",
-    "sent_at": "2026-04-13T14:29:17Z"
+    "sent_at": "2026-04-13T14:29:17Z",
+    "outcome": "NO_REPLY_EXPIRED",
+    "closed_at": "2026-04-23T10:00:00+00:00",
+    "close_reason": "no_reply_7d"
   },
   {
     "username": "@purepressuremobilewash",
@@ -617,9 +620,12 @@
   {
     "username": "@extreme_mobile_detailing_",
     "niche": "auto_detailing",
-    "status": "SENT",
+    "status": "CLOSED_LOST",
     "sent_at": "2026-04-14T08:52:00",
-    "conversation_stage": "OUTREACH_SENT"
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED",
+    "closed_at": "2026-04-23T10:00:00+00:00",
+    "close_reason": "no_reply_7d"
   },
   {
     "username": "@spotless.mobile.detailing.nc",
@@ -662,9 +668,12 @@
   {
     "username": "@directpressure.wash",
     "niche": "pressure_washing",
-    "status": "SENT",
+    "status": "CLOSED_LOST",
     "sent_at": "2026-04-13T13:13:00",
-    "conversation_stage": "OUTREACH_SENT"
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED",
+    "closed_at": "2026-04-23T10:00:00+00:00",
+    "close_reason": "no_reply_7d"
   },
   {
     "username": "@jdspwash",
@@ -675,9 +684,12 @@
   {
     "username": "@boguepressurewashing",
     "niche": "pressure_washing",
-    "status": "SENT",
+    "status": "CLOSED_LOST",
     "sent_at": "2026-04-14T13:20:00",
-    "conversation_stage": "OUTREACH_SENT"
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED",
+    "closed_at": "2026-04-23T10:00:00+00:00",
+    "close_reason": "no_reply_7d"
   },
   {
     "username": "@satinmedspa",
@@ -721,16 +733,22 @@
   {
     "username": "@glitzymedspa",
     "niche": "med_spa",
-    "status": "SENT",
+    "status": "CLOSED_LOST",
     "sent_at": "2026-04-14T13:23:00",
-    "conversation_stage": "OUTREACH_SENT"
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED",
+    "closed_at": "2026-04-23T10:00:00+00:00",
+    "close_reason": "no_reply_7d"
   },
   {
     "username": "@myjunkgurus",
     "niche": "junk_removal",
-    "status": "SENT",
+    "status": "CLOSED_LOST",
     "sent_at": "2026-04-14T13:26:00",
-    "conversation_stage": "OUTREACH_SENT"
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED",
+    "closed_at": "2026-04-23T10:00:00+00:00",
+    "close_reason": "no_reply_7d"
   },
   {
     "username": "@irep_atx",
@@ -743,9 +761,12 @@
   {
     "username": "@bullstxaustin",
     "niche": "junk_removal",
-    "status": "SENT",
+    "status": "CLOSED_LOST",
     "sent_at": "2026-04-14T13:36:00",
-    "conversation_stage": "OUTREACH_SENT"
+    "conversation_stage": "CLOSED_LOST",
+    "outcome": "NO_REPLY_EXPIRED",
+    "closed_at": "2026-04-23T10:00:00+00:00",
+    "close_reason": "no_reply_7d"
   },
   {
     "username": "@presidentialautodetail",
@@ -1189,7 +1210,7 @@
   },
   {
     "username": "@griffin_detail",
-    "business_name": "Griffin’s Auto Detailing",
+    "business_name": "Griffin\u2019s Auto Detailing",
     "niche": "auto_detailing",
     "city": "Kansas City MO",
     "followers": 340,
